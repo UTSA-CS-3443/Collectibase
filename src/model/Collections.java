@@ -13,9 +13,10 @@ public abstract class Collections {
 	 */
 	private String name;
 	private String rarity;
-	private double value;
 	private String genre;
 	private String condition;
+	private String year; 
+	private double value;
 
 	//////// Getters and Setters////////
 	public String getCondition() {
@@ -56,6 +57,14 @@ public abstract class Collections {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
 	}
 
 }
