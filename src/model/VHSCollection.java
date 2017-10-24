@@ -10,6 +10,7 @@ public class VHSCollection extends MoviesCollection {
 	private boolean multiTape; // VHS movies with multiple tapes, i.e Titanic and Gone With the Wind
 	private boolean clamShell; // if the sleeve is a clamshell, i.e. sleeves that disney movies came in.
 
+	// using constructor will make the parameters required
 	public VHSCollection(String title, String year, String director, String format, String sleeve, String cassManufact,
 			boolean homeRecording, boolean multiProgram, boolean multiTape, boolean clamShell) {
 		super(title, year);
