@@ -7,4 +7,5 @@ import java.util.ArrayList;
  */
 public class Storage {
 	public ArrayList<VHSCollection> vhs = new ArrayList<VHSCollection>();
+	public ArrayList<DVDCollection> dvd = new ArrayList<DVDCollection>();
 }
