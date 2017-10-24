@@ -6,10 +6,11 @@ public class MoviesCollection extends Collections {
 	
 	private String format;
 	private String director;
-	private String year;
+	private String specialEdition; // possible boolean?
 
-	public MoviesCollection(String title) {
+	public MoviesCollection(String title, String year) {
 		setName(title);
+		setYear(year);
 	}
 
 	////////// getters and setters//////////
@@ -29,12 +30,13 @@ public class MoviesCollection extends Collections {
 		this.director = director;
 	}
 
-	public String getYear() {
-		return year;
+	public String getSpecialEdition() {
+		return specialEdition;
 	}
 
-	public void setYear(String year) {
-		this.year = year;
+	public void setSpecialEdition(String specialEdition) {
+		this.specialEdition = specialEdition;
 	}
+
 
 }
