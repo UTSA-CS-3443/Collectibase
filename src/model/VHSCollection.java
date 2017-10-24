@@ -1,19 +1,26 @@
 package model;
 
 public class VHSCollection extends MoviesCollection {
+
 	private String sleeveCondition;
 	private String cassManufact; // who manufactured the
 	private boolean homeRecording; // i.e. taped from tv or from another tape
 	private boolean multiProgram; // if there are more the one programs on a single tape, primarily home
 									// recordings
 	private boolean multiTape; // VHS movies with multiple tapes, i.e Titanic and Gone With the Wind
+	private boolean clamShell; // if the sleeve is a clamshell, i.e. sleeves that disney movies came in.
 
-	public VHSCollection(String title, String director, String year, String format, String sleeve) {
-		super(title);
+	public VHSCollection(String title, String year, String director, String format, String sleeve, String cassManufact,
+			boolean homeRecording, boolean multiProgram, boolean multiTape, boolean clamShell) {
+		super(title, year);
 		setDirector(director);
-		setYear(year);
 		setFormat(format);
 		this.sleeveCondition = sleeve;
+		this.cassManufact = cassManufact;
+		this.homeRecording = homeRecording;
+		this.multiProgram = multiProgram;
+		this.multiTape = multiTape;
+		this.clamShell = clamShell;
 	}
 
 	//////// getters and setters////////
@@ -55,6 +62,14 @@ public class VHSCollection extends MoviesCollection {
 
 	public void setMultiTape(boolean multiTape) {
 		this.multiTape = multiTape;
+	}
+
+	public boolean isClamShell() {
+		return clamShell;
+	}
+
+	public void setClamShell(boolean clamShell) {
+		this.clamShell = clamShell;
 	}
 
 }
