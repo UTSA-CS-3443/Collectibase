@@ -3,21 +3,22 @@ package model;
 public class MusicCollection extends Collections{
 	
 	
-	private String artist; // artist
+	private String albumName; // artist
 	private String musicFormat; // type of format like cd, tape, etc.
 	
 	
-	public MusicCollection(String albumName, String year) {
-		setName(albumName); //maybe album name? 
+	public MusicCollection(String artist,String albumName, String year) {
+		setName(artist); //maybe album name? 
 		setYear(year); // year the album was released
+		this.albumName = albumName;
 	}
 	
-	public String getArtist() {
-		return artist;
+	public String getAlbum() {
+		return albumName;
 	}
 	
-	public void setArtist(String artist) {
-		this.artist = artist;
+	public void setAlbum(String album) {
+		this.albumName = album;
 	}
 	
 	public String getMusicFormat() {

@@ -3,10 +3,10 @@ package model;
 public class DVDCollection extends MoviesCollection {
 
 	//TODO: add variables to the constructor
-	private String discRot;
+	private String discRot; // actual disc becomes physical or chemical deterioration
 	private String caseType; //cardboard, plastic, jewel case, paper sleeve, generic.
 	private String specialFeatDisc; //is a special features disc included. change to type boolean?
-	private boolean criterion; // is the DVD part of the Criterion collection
+	private boolean criterion; // is the DVD part of the Criterion collection (printing and pressing of historical movies)
 	private String spineNumber; // if  Criterion, the film will have a spine number
 	
 	/***** Constructor *****/
