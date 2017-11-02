@@ -7,10 +7,15 @@ public class MusicCollection extends Collections{
 	private String musicFormat; // type of format like cd, tape, etc.
 	
 	
-	public MusicCollection(String artist,String albumName, String year) {
+	public MusicCollection(String artist, String year) {
 		setName(artist); //maybe album name? 
 		setYear(year); // year the album was released
-		this.albumName = albumName;
+		//this.albumName = albumName;
+		
+	}
+	
+	public MusicCollection(String artist) {
+		setName(artist);		
 	}
 	
 	public String getAlbum() {
