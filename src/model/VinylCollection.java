@@ -4,7 +4,7 @@ package model;
 public class VinylCollection extends MusicCollection {
 
 	public VinylCollection(String artist, String albumName, String year) {
-		super(artist, albumName, year);
+		super(artist, year);
 		// TODO Auto-generated constructor stub
 	}
 
