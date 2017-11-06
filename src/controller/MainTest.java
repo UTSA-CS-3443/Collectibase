@@ -19,12 +19,13 @@ import model.Tools;
  * @author Travis
  *
  */
+//addes comment for reasons
 public class MainTest {
 
 	public static void main(String[] args) throws IOException {
 		// Storage storedList = new Storage();
 		Scanner in = new Scanner(System.in);
-
+		
 		Tools.readInFile();
 		for (int i = 0; i < Storage.vhs.size(); i++) {
 			System.out.println("Read in title: " + Storage.vhs.get(i).getName());
