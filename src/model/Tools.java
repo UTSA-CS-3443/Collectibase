@@ -1,10 +1,9 @@
 package model;
 
-import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 /**
  * \ Different tools used for Collectibase. Writing to file, reading form file,
@@ -22,70 +21,68 @@ public class Tools {
 			if (Storage.vhs.size() > 0) {
 				out.println("VHS");
 				for (int i = 0; i < Storage.vhs.size(); i++) {
-					out.println("format " + Storage.vhs.get(i).getFormat());
-					out.println("title " + Storage.vhs.get(i).getName());
-					// out.println(Storage.vhs.get(i).getSleeveCondition());
+					out.println("vhs title " + Storage.vhs.get(i).getName());
+					out.println("vhs format " + Storage.vhs.get(i).getFormat());
+					out.println("vhs sleeve " + Storage.vhs.get(i).getSleeveCondition());
 				}
 			}
 
 			if (Storage.dvd.size() > 0) {
-
+				out.println("DVD");
+				for (int i = 0; i < Storage.dvd.size(); i++) {
+					out.println("dvd title " + Storage.dvd.get(i).getName());
+					out.println("dvd format " + Storage.dvd.get(i).getFormat());
+				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void readInFile() throws IOException {
+	public static void readInFile() {
 		System.out.println("Tools.readInFile()");
-		String fileName = "Master.txt";
-		String line = null;
-
+		Scanner in = null;
+		VHSCollection vhs;
+		DVDCollection dvd;
+		String title = null;
 		String format;
-		String title;
-		VHSCollection newVHS;
-		DVDCollection newDVD;
-
 		try {
-			FileReader fileReader = new FileReader(fileName);
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			in = new Scanner(new File("Master.txt"));
+		} catch (FileNotFoundException exception) {
+			throw new RuntimeException("failed to open Master.txt");
+		}
 
-			while ((line = bufferedReader.readLine()) != null) {
-				// format can be used for movies and music
-				
-				if (line.contains("format")) {
-					String[] tokens = line.split(" ");
-					format = tokens[1];
-
-					if (format.equals("vhs")) {
-						for (int i = 0; i < Storage.vhs.size(); i++) {
-							Storage.vhs.get(i).setFormat(format);
-						}
-					}
+		while (in.hasNext()) {
+			if (in.next().equals("vhs")) {
+				if (in.next().equals("title")) {
+					title = in.nextLine();
+					vhs = new VHSCollection(title);
+					Storage.vhs.add(vhs);
 				}
-				
 
-				if (line.contains("title")) {
-					String[] tokens = line.split(" ");
-					if (tokens.length > 2) {
-						title = "";
-						for (int i = 1; i < tokens.length; i++)
-							title += tokens[i] + " ";
-					} else {
-						title = tokens[1];
+				if (in.next().equals("vhs") && in.next().equals("format")) {
+					format = in.nextLine();
+					for (int i = 0; i < Storage.vhs.size(); i++) {
+						Storage.vhs.get(i).setFormat(format);
 					}
-					newVHS = new VHSCollection(title);
-					Storage.vhs.add(newVHS);
 				}
 
 			}
 
-			bufferedReader.close();
-		} catch (FileNotFoundException exception) {
-			System.err.println("Failed to open Master.txt");
-			System.exit(1);
-		}
+			if (in.next().equals("dvd")) {
+				if (in.next().equals("title")) {
+					title = in.nextLine();
+					dvd = new DVDCollection(title);
+					Storage.dvd.add(dvd);
+				}
 
-		// in.close();
+				if (in.next().equals("format")) {
+					format = in.nextLine();
+					Storage.dvd.get(0).setFormat(format);
+				}
+			}
+
+		}
+		in.close();
 	}
 }
