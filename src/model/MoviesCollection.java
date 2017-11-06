@@ -12,6 +12,10 @@ public class MoviesCollection extends Collections {
 		setName(title);
 		setYear(year);
 	}
+	
+	public MoviesCollection(String title) {
+		setName(title);
+	}
 
 	////////// getters and setters//////////
 	public String getFormat() {

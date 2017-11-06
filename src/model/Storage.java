@@ -10,6 +10,7 @@ public class Storage {
 	// Array Lists can be accessed by Storage."list type"
 	public static ArrayList<VHSCollection> vhs = new ArrayList<VHSCollection>();
 	public static ArrayList<DVDCollection> dvd = new ArrayList<DVDCollection>();
+	public static ArrayList<CDCollection> cd = new ArrayList<CDCollection>();
 	
 	
 	

@@ -67,16 +67,14 @@ public class Tools {
 					}
 				}
 
-			}
-
-			if (in.next().equals("dvd")) {
+			}else if (in.next().equals("dvd")) {
 				if (in.next().equals("title")) {
 					title = in.nextLine();
 					dvd = new DVDCollection(title);
 					Storage.dvd.add(dvd);
 				}
 
-				if (in.next().equals("format")) {
+				if ( in.next().equals("dvd") && in.next().equals("format")) {
 					format = in.nextLine();
 					Storage.dvd.get(0).setFormat(format);
 				}
