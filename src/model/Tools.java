@@ -53,7 +53,19 @@ public class Tools {
 		}
 
 		while (in.hasNext()) {
-			if (in.next().equals("vhs")) {
+			if(in.next().equals("dvd")) {
+				if (in.next().equals("title")) {
+					title = in.nextLine();
+					dvd = new DVDCollection(title);
+					Storage.dvd.add(dvd);
+				}
+
+				if ( in.next().equals("dvd") && in.next().equals("format")) {
+					format = in.nextLine();
+					Storage.dvd.get(0).setFormat(format);
+				}
+			}
+			else if (in.next().equals("vhs")) {
 				System.out.println("This is " + in);
 				if (in.next().equals("title")) {
 					title = in.nextLine();
@@ -68,18 +80,8 @@ public class Tools {
 					}
 				}
 
-			} else if(in.next().equals("dvd")) {
-				if (in.next().equals("title")) {
-					title = in.nextLine();
-					dvd = new DVDCollection(title);
-					Storage.dvd.add(dvd);
-				}
-
-				if ( in.next().equals("dvd") && in.next().equals("format")) {
-					format = in.nextLine();
-					Storage.dvd.get(0).setFormat(format);
-				}
-			}
+			} 
+			
 
 		}
 		in.close();

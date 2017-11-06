@@ -1,7 +1,12 @@
 VHS
-vhs title Lady and the tramp
+vhs title   Lady and the tramp
+vhs format   vhs
+vhs sleeve null
+vhs title Some name
 vhs format vhs
-vhs sleeve nah
+vhs sleeve some
 DVD
-dvd title face/off
-dvd format dvd
+dvd title   face/off
+dvd format  dvd
+dvd title  h
+dvd format null
