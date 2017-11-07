@@ -23,6 +23,10 @@ public class VHSCollection extends MoviesCollection {
 		this.multiTape = multiTape;
 		this.clamShell = clamShell;
 	}
+	
+	public VHSCollection(String title) {
+		super(title);
+	}
 
 	//////// getters and setters////////
 	public String getSleeveCondition() {

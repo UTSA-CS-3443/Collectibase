@@ -12,7 +12,14 @@ public class MusicCollection extends Collections{
 		setYear(year); // year the album was released
 		
 		
+		//this.albumName = albumName;
 	}
+	
+	public MusicCollection(String artist) {
+		setName(artist);
+	}		
+
+	
 	
 	public String getAlbum() {
 		return albumName;

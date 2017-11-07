@@ -17,6 +17,10 @@ public class DVDCollection extends MoviesCollection {
 		this.criterion = criterion;
 		this.spineNumber = spineNumber;		
 	}
+	
+	public DVDCollection(String title) {
+		super(title);
+	}
 
 	public String getDiscRot() {
 		return discRot;

@@ -1,6 +1,7 @@
 package model;
 
 public class CDCollection extends MusicCollection{
+
 	
 
 	private String multiCDAlbums;//albums with multiple CDs
