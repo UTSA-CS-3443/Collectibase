@@ -5,18 +5,22 @@ public class MusicCollection extends Collections{
 	
 	private String albumName; // artist
 	private String musicFormat; // type of format like cd, tape, etc.
+	private String runningTime;
 	
 	
 	public MusicCollection(String artist, String year) {
 		setName(artist); //maybe album name? 
 		setYear(year); // year the album was released
-		//this.albumName = albumName;
 		
+		
+		//this.albumName = albumName;
 	}
 	
 	public MusicCollection(String artist) {
-		setName(artist);		
-	}
+		setName(artist);
+	}		
+
+	
 	
 	public String getAlbum() {
 		return albumName;
@@ -33,6 +37,14 @@ public class MusicCollection extends Collections{
 	public void setMusicFormat(String musicFormat) {
 		this.musicFormat = musicFormat;
 		
+	}
+
+	public String getRunningTime() {
+		return runningTime;
+	}
+
+	public void setRunningTime(String runningTime) {
+		this.runningTime = runningTime;
 	}
 
 }
