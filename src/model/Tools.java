@@ -14,76 +14,45 @@ import java.util.Scanner;
  */
 public class Tools {
 
-	public static void WriteFile() {
+	public static void WriteFile() throws FileNotFoundException {
 		System.out.println("\nWrite File\n");
-
-		try (PrintWriter out = new PrintWriter("Master.txt")) {
-			if (Storage.vhs.size() > 0) {
-				out.println("VHS");
+		
+		try (PrintWriter out = new PrintWriter("vhs.txt")) {
+		if (Storage.vhs.size() > 0) {
+				System.out.println("Made it to VHS write");
 				for (int i = 0; i < Storage.vhs.size(); i++) {
-					out.println("vhs title " + Storage.vhs.get(i).getName());
-					out.println("vhs format " + Storage.vhs.get(i).getFormat());
-					out.println("vhs sleeve " + Storage.vhs.get(i).getSleeveCondition());
+					out.printf("%s, %s", Storage.vhs.get(i).getName(), Storage.vhs.get(i).getFormat());
+					out.println("");
 				}
-			}
-
-			if (Storage.dvd.size() > 0) {
-				out.println("DVD");
-				for (int i = 0; i < Storage.dvd.size(); i++) {
-					out.println("dvd title " + Storage.dvd.get(i).getName());
-					out.println("dvd format " + Storage.dvd.get(i).getFormat());
-				}
-			}
-		} catch (FileNotFoundException e) {
+				//out.close();
+			} 
+		}catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
+	
 
 	public static void readInFile() {
 		System.out.println("Tools.readInFile()");
 		Scanner in = null;
 		VHSCollection vhs;
-		DVDCollection dvd;
-		String title = null;
 		String format;
+		String title;
+		// write for each file, one line per, use nextLine()
 		try {
-			in = new Scanner(new File("Master.txt"));
+			in = new Scanner(new File("vhs.txt"));
+			while(in.hasNextLine()) {
+				String line = in.nextLine();
+				String[] tokens = line.split(",");
+				title = tokens[0];
+				format = tokens[1];
+				vhs = new VHSCollection(title);
+				vhs.setFormat(format);
+				Storage.vhs.add(vhs);
+			}
+			in.close();
 		} catch (FileNotFoundException exception) {
 			throw new RuntimeException("failed to open Master.txt");
 		}
-
-		while (in.hasNext()) {
-			if(in.next().equals("dvd")) {
-				if (in.next().equals("title")) {
-					title = in.nextLine();
-					dvd = new DVDCollection(title);
-					Storage.dvd.add(dvd);
-				}
-
-				if ( in.next().equals("dvd") && in.next().equals("format")) {
-					format = in.nextLine();
-					Storage.dvd.get(0).setFormat(format);
-				}
-			}
-			else if (in.next().equals("vhs")) {
-				System.out.println("This is " + in);
-				if (in.next().equals("title")) {
-					title = in.nextLine();
-					vhs = new VHSCollection(title);
-					Storage.vhs.add(vhs);
-				}
-
-				if (in.next().equals("vhs") && in.next().equals("format")) {
-					format = in.nextLine();
-					for (int i = 0; i < Storage.vhs.size(); i++) {
-						Storage.vhs.get(i).setFormat(format);
-					}
-				}
-
-			} 
-			
-
-		}
-		in.close();
 	}
 }
