@@ -1,8 +1,6 @@
 package controller;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 import model.CDCollection;
@@ -19,26 +17,23 @@ import model.Tools;
  * @author Travis
  *
  */
-//addes comment for reasons
 public class MainTest {
 
 	public static void main(String[] args) throws IOException {
 		// Storage storedList = new Storage();
 		Scanner in = new Scanner(System.in);
-		
+
 		Tools.readInFile();
 		for (int i = 0; i < Storage.vhs.size(); i++) {
 			System.out.println("Read in title: " + Storage.vhs.get(i).getName());
 			System.out.println("Read in format: " + Storage.vhs.get(i).getFormat());
-			// System.out.println("Read in sleeve: " +
-			// Storage.vhs.get(i).getSleeveCondition());
+			System.out.println("Read in sleeve: " + Storage.vhs.get(i).getSleeveCondition());
 		}
-		
-		  for (int i = 0; i < Storage.dvd.size(); i++) {
-		  System.out.println("Read in title dvd: " + Storage.dvd.get(i).getName());
-		  System.out.println("Read in format dvd: " + Storage.dvd.get(i).getFormat());
-		  }
-		 
+
+		for (int i = 0; i < Storage.dvd.size(); i++) {
+			System.out.println("Read in title dvd: " + Storage.dvd.get(i).getName());
+			System.out.println("Read in format dvd: " + Storage.dvd.get(i).getFormat());
+		}
 
 		boolean test = true;
 		String title;
@@ -58,33 +53,30 @@ public class MainTest {
 			year = in.nextLine();
 			System.out.print("Format: ");
 			format = in.nextLine();
-			System.out.print("Sleeve: ");
-			sleeve = in.nextLine();
+			if (format.equals("vhs")) {
+				newVHS = new VHSCollection(title);
+				newVHS.setFormat(format);
+				System.out.print("Sleeve: ");
+				sleeve = in.nextLine();
+				if (sleeve.equals(""))
+					sleeve = " ";
+				newVHS.setSleeveCondition(sleeve);
+				Storage.vhs.add(newVHS);
+			}
+
+			if (format.equals("dvd")) {
+				newDVD = new DVDCollection(title);
+				newDVD.setFormat(format);
+				Storage.dvd.add(newDVD);
+			}
+
 			System.out.print("Exit: ");
 			exit = in.nextLine();
 			if (exit.equals("yes"))
 				test = false;
-			if (format.equals("vhs")) {
-				newVHS = new VHSCollection(title);
-				newVHS.setFormat(format);
-				newVHS.setSleeveCondition(sleeve);
-				Storage.vhs.add(newVHS);
-			}
-			
-			if(format.equals("dvd")) {
-				newDVD = new DVDCollection(title);
-				newDVD.setFormat(format);
-				Storage.dvd.add(newDVD);	
-			}
-			Tools.WriteFile();
+			in.close();
+			Tools.writeFile();
 		}
-
-		// VHSCollection newVHS = new VHSCollection(title);
-		// Storage.vhs.add(newVHS);
-		// Storage.vhs.get(0).setSleeveCondition(sleeve);
-
-		// Tools.WriteFile();
-		// in.close();
 
 	}
 
