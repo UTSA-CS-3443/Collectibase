@@ -9,6 +9,8 @@ import java.util.Scanner;
  * \ Different tools used for Collectibase. Writing to file, reading form file,
  * and various sorting methods
  * 
+ * Updated 11/7/17
+ * 
  * @author Travis
  *
  */
