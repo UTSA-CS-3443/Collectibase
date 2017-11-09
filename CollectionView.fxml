@@ -1,27 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import com.gluonhq.charm.glisten.control.Icon?>
-<?import javafx.scene.control.Button?>
+<?import com.gluonhq.charm.glisten.layout.Layer?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="225.0" layoutY="33.0" text="What type of Collection?" />
-      <Button layoutX="196.0" layoutY="78.0" mnemonicParsing="false" text="Music" />
-      <Button layoutX="271.0" layoutY="78.0" mnemonicParsing="false" text="Movies" />
-      <Button layoutX="347.0" layoutY="78.0" mnemonicParsing="false" text="Comics" />
-      <Button layoutX="122.0" layoutY="78.0" mnemonicParsing="false" text="Books" />
-      <Button layoutX="424.0" layoutY="78.0" mnemonicParsing="false" text="Cards" />
-      <Button layoutX="49.0" layoutY="78.0" mnemonicParsing="false" text="Games" />
-      <Button layoutX="493.0" layoutY="78.0" mnemonicParsing="false" text="Misc." />
-      <Icon content="HELP_OUTLINE" layoutX="217.0" layoutY="122.0" />
-      <Icon content="ACCESSIBLE" layoutX="73.0" layoutY="122.0" />
-      <Icon content="HELP_OUTLINE" layoutX="144.0" layoutY="122.0" />
-      <Icon content="HELP_OUTLINE" layoutX="294.0" layoutY="122.0" />
-      <Icon content="HELP_OUTLINE" layoutX="370.0" layoutY="122.0" />
-      <Icon content="HELP_OUTLINE" layoutX="445.0" layoutY="122.0" />
-      <Icon content="HELP_OUTLINE" layoutX="512.0" layoutY="122.0" />
+      <Label layoutX="39.0" layoutY="48.0" text="What type of Collection?" />
+      <Label layoutX="62.0" layoutY="87.0" text="Games" />
+      <Label layoutX="64.0" layoutY="152.0" text="Books" />
+      <Label layoutX="65.0" layoutY="224.0" text="Music" />
+      <Label layoutX="121.0" layoutY="296.0" text="Misc." />
+      <Label layoutX="190.0" layoutY="87.0" text="Comics" />
+      <Label layoutX="188.0" layoutY="224.0" text="Cards" />
+      <Label layoutX="191.0" layoutY="152.0" text="Movies" />
+      <DropdownButton layoutX="33.0" layoutY="110.0">
+          <items>
+              <MenuItem text="Choice 1" />
+              <MenuItem text="Choice 2" />
+              <MenuItem text="Choice 3" />
+          </items>
+      </DropdownButton>
+      <DropdownButton layoutX="161.0" layoutY="109.0">
+         <items>
+            <MenuItem text="Choice 1" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton layoutX="33.0" layoutY="178.0">
+         <items>
+            <MenuItem text="Choice 1" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton layoutX="160.0" layoutY="178.0">
+         <items>
+            <MenuItem text="DVD" />
+            <MenuItem text="VHS" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton layoutX="35.0" layoutY="251.0" prefHeight="27.0" prefWidth="88.0">
+         <items>
+            <MenuItem text="CD" />
+            <MenuItem text="Vinyl" />
+         </items>
+      </DropdownButton>
+      <DropdownButton layoutX="161.0" layoutY="251.0">
+         <items>
+            <MenuItem text="Choice 1" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton layoutX="93.0" layoutY="318.0">
+         <items>
+            <MenuItem text="Choice 1" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <Icon content="GAMES" layoutX="33.0" layoutY="83.0" />
+      <Icon content="BOOK" layoutX="33.0" layoutY="148.0" />
+      <Layer />
+      <Icon content="MUSIC_VIDEO" layoutX="33.0" layoutY="220.0" />
+      <Icon content="DASHBOARD" layoutX="161.0" layoutY="83.0" />
+      <Icon content="MOVIE_FILTER" layoutX="161.0" layoutY="148.0" />
+      <Icon content="STYLE" layoutX="161.0" layoutY="221.0" />
+      <Icon content="MENU" layoutX="95.0" layoutY="292.0" />
    </children>
 </AnchorPane>
