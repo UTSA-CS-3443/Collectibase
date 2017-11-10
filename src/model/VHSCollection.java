@@ -1,32 +1,27 @@
 package model;
 // TODO: add toStrings
 
-public class VHSCollection extends MoviesCollection implements Comparable<VHSCollection>{
+public class VHSCollection extends MoviesCollection implements Comparable<VHSCollection> {
 
 	private String sleeveCondition;
-	private String cassManufact; // who manufactured the
-	private boolean homeRecording; // i.e. taped from tv or from another tape
-	private boolean multiProgram; // if there are more the one programs on a single tape, primarily home
+	private String homeRecording; // i.e. taped from tv, other tapes, home movies, etc..
+	private String multiProgram; // if there are more the one programs on a single tape, primarily home
 									// recordings
-	private boolean multiTape; // VHS movies with multiple tapes, i.e Titanic and Gone With the Wind
-	private boolean clamShell; // if the sleeve is a clamshell, i.e. sleeves that disney movies came in.
+	private String multiTape; // VHS movies with multiple tapes, i.e Titanic and Gone With the Wind
+	private String clamShell; // if the sleeve is a clamshell, i.e. cases that disney movies came in.
 
-	// using constructor will make the parameters required
-	public VHSCollection(String title, String year, String director, String format, String sleeve, String cassManufact,
-			boolean homeRecording, boolean multiProgram, boolean multiTape, boolean clamShell) {
-		super(title, year);
-		setDirector(director);
-		setFormat(format);
-		this.sleeveCondition = sleeve;
-		this.cassManufact = cassManufact;
-		this.homeRecording = homeRecording;
-		this.multiProgram = multiProgram;
-		this.multiTape = multiTape;
-		this.clamShell = clamShell;
-	}
-	
 	public VHSCollection(String title) {
 		super(title);
+	}
+
+	/**
+	 * compareTo method used to alphabetize the ArrayList
+	 */
+	public int compareTo(VHSCollection vhs) {
+		if (this.getName() != null && vhs.getName() != null) {
+			return this.getName().compareToIgnoreCase(vhs.getName());
+		}
+		return 0;
 	}
 
 	//////// getters and setters////////
@@ -38,50 +33,35 @@ public class VHSCollection extends MoviesCollection implements Comparable<VHSCol
 		this.sleeveCondition = sleeveCondition;
 	}
 
-	public String getCassManufact() {
-		return cassManufact;
-	}
-
-	public void setCassManufact(String cassetteManufact) {
-		this.cassManufact = cassetteManufact;
-	}
-
-	public boolean isHomeRecording() {
+	public String getHomeRecording() {
 		return homeRecording;
 	}
 
-	public void setHomeRecording(boolean homeRecording) {
+	public void setHomeRecording(String homeRecording) {
 		this.homeRecording = homeRecording;
 	}
 
-	public boolean isMultiProgram() {
+	public String getMultiProgram() {
 		return multiProgram;
 	}
 
-	public void setMultiProgram(boolean multiProgram) {
+	public void setMultiProgram(String multiProgram) {
 		this.multiProgram = multiProgram;
 	}
 
-	public boolean isMultiTape() {
+	public String getMultiTape() {
 		return multiTape;
 	}
 
-	public void setMultiTape(boolean multiTape) {
+	public void setMultiTape(String multiTape) {
 		this.multiTape = multiTape;
 	}
 
-	public boolean isClamShell() {
+	public String getClamShell() {
 		return clamShell;
 	}
 
-	public void setClamShell(boolean clamShell) {
+	public void setClamShell(String clamShell) {
 		this.clamShell = clamShell;
 	}
-
-	@Override
-	public int compareTo(VHSCollection arg0) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }
