@@ -6,17 +6,17 @@ public class DVDCollection extends MoviesCollection {
 	private String discRot; // actual disc becomes physical or chemical deterioration
 	private String caseType; //cardboard, plastic, jewel case, paper sleeve, generic.
 	private String specialFeatDisc; //is a special features disc included. change to type boolean?
-	private boolean criterion; // is the DVD part of the Criterion collection (printing and pressing of historical movies)
+	private String criterion; // is the DVD part of the Criterion collection (printing and pressing of historical movies)
 	private String spineNumber; // if  Criterion, the film will have a spine number
 	
 	/***** Constructor *****/
-	public DVDCollection(String title, String year, String discRot, String specialFeatDisc, boolean criterion, String spineNumber) {
+	/*public DVDCollection(String title, String year, String discRot, String specialFeatDisc, boolean criterion, String spineNumber) {
 		super(title, year);
 		this.discRot = discRot;
 		this.specialFeatDisc = specialFeatDisc;
 		this.criterion = criterion;
 		this.spineNumber = spineNumber;		
-	}
+	}*/
 	
 	public DVDCollection(String title) {
 		super(title);
@@ -46,11 +46,11 @@ public class DVDCollection extends MoviesCollection {
 		this.specialFeatDisc = specialFeatDisc;
 	}
 
-	public Boolean getCriterion() {
+	public String getCriterion() {
 		return criterion;
 	}
 
-	public void setCriterion(Boolean criterion) {
+	public void setCriterion(String criterion) {
 		this.criterion = criterion;
 	}
 
