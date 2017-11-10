@@ -1,7 +1,12 @@
-The shining,vhs,poor
-Dr. Strangelove: or How I Stopped Worrying and Learned to Love the Bomb,vhs,fair
-2001: A Space Odyssey,vhs,none
-Full metal jacket,vhs, 
-Lion King,vhs,Good
-Major Payne,vhs,yes
-The Omen,vhs,good
+a,j,vhs,no,no
+aa,none,vhs,nothing,no
+aaa,n,vhs,no,yes
+b,j,vhs,no,no
+b,n,vhs,poor,no
+Beatles,ringo,vhs,no,no
+Bugs Bunny,,vhs,generic,yes
+Fuuuuuu,franklin,vhs,no,no
+Jackie Brown,Quentin Tarantino,vhs,fair,no
+Pulp Fiction,Quentin Tarantino,vhs,good,no
+Tommy Boy,h,vhs,none,no
+XXX,j,vhs,butts,no
