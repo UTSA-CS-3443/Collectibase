@@ -16,22 +16,18 @@ import java.util.Scanner;
  */
 public class Tools {
 	/**
-	 * writeFile() will write information to a specific .txt depending on the type of collection.
-	 * Currently the write file only will write vhs.txt and dvd.txt with minimal information such as 
+	 * writeFileVHS() will write information to a specific .txt depending on the type of collection.
+	 * Currently the write file only will write minimal information such as 
 	 * 		- movie title
 	 * 		- media format
-	 * 		- sleeve condition (for vhs only)
+	 * 		- sleeve condition
 	 * 
-	 * TODO: add the information for the other variables to the VHSCollection and DVDCollection
-	 * TODO: add the logic/algorithm for each type of collection.
+	 * TODO: add the information for the other variables from the VHSCollection
 	 * 
 	 */
-	public static void writeFile() {
-		System.out.println("\nWrite File\n");
-
+	public static void writeFileVHS() {
 		try (PrintWriter out = new PrintWriter("vhs.txt")) {
 			if (Storage.vhs.size() > 0) {
-				System.out.println("Made it to VHS write");
 				for (int i = 0; i < Storage.vhs.size(); i++) {
 					out.printf("%s,%s,%s", Storage.vhs.get(i).getName(), Storage.vhs.get(i).getFormat().trim(),
 							Storage.vhs.get(i).getSleeveCondition());
@@ -42,10 +38,20 @@ public class Tools {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
 
+	/**
+	 * writeFileDVD() will write information to a specific .txt depending on the type of collection.
+	 * Currently the write file only will write minimal information such as 
+	 * 		- movie title
+	 * 		- media format
+	 * 
+	 * TODO: add the information for the other variables from the DVDCollection
+	 * 
+	 */
+	public static void writeFileDVD() {
 		try (PrintWriter out = new PrintWriter("dvd.txt")) {
 			if (Storage.dvd.size() > 0) {
-				System.out.println("Made it to dvd write");
 				for (int i = 0; i < Storage.dvd.size(); i++) {
 					out.printf("%s,%s", Storage.dvd.get(i).getName(), Storage.dvd.get(i).getFormat().trim());
 					out.println("");
@@ -56,26 +62,45 @@ public class Tools {
 			e.printStackTrace();
 		}
 	}
-
+	
 	/**
-	 * readInFile() will write information to a specific .txt depending on the type of collection.
-	 * Currently the teadInFile will only read vhs.txt and dvd.txt with minimal information such as 
+	 * writeFileVHS() will write information to a specific .txt depending on the type of collection.
+	 * Currently the write file only will write minimal information such as 
 	 * 		- movie title
 	 * 		- media format
-	 * 		- sleeve condition (for vhs only)
+	 * 		- sleeve condition
 	 * 
-	 * TODO: add the information for the other variables to the VHSCollection and DVDCollection
-	 * TODO: add the logic/algorithm for each type of collection.
+	 * TODO: add the information for the other variables to the VHSCollection
 	 * 
 	 */
-	public static void readInFile() {
-		System.out.println("Tools.readInFile()");
+	public static void writeFileLD() {
+		try (PrintWriter out = new PrintWriter("laserdisc.txt")) {
+			if (Storage.ld.size() > 0) {
+				for (int i = 0; i < Storage.ld.size(); i++) {
+					out.printf("%s,%s", Storage.ld.get(i).getName(), Storage.ld.get(i).getFormat().trim());
+					out.println("");
+				}
+				out.close();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * readInFile() will write information to a specific .txt depending on the type
+	 * of collection. Currently the teadInFile will only read vhs.txt and dvd.txt
+	 * with minimal information such as - movie title - media format - sleeve
+	 * condition (for vhs only)
+	 * 
+	 * TODO: add the information for the other variables to the VHSCollection and
+	 * DVDCollection TODO: add the logic/algorithm for each type of collection.
+	 * 
+	 */
+	public static void readInFileVHS() {
 		Scanner in = null;
 		VHSCollection vhs;
-		DVDCollection dvd;
 		String format, title, sleeve;
-
-		// write for each file, one line per, use nextLine()
 		try {
 			in = new Scanner(new File("vhs.txt"));
 			while (in.hasNextLine()) {
@@ -94,6 +119,13 @@ public class Tools {
 			throw new RuntimeException("failed to open vhs.txt");
 		}
 
+		
+	}
+	
+	public static void readInFileDVD() {
+		Scanner in = null;
+		DVDCollection dvd;
+		String format, title;
 		try {
 			in = new Scanner(new File("dvd.txt"));
 			while (in.hasNextLine()) {
