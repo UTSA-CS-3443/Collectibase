@@ -5,11 +5,17 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+/**
+ * 
+ * load the actual app
+ * @author jesusnieto
+ *
+ */
 public class CollectApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/CollectMainMenu.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/fxml/CollectMainMenu.fxml"));
 			primaryStage.setScene(new Scene(root, 500, 575));
 			primaryStage.show();
 		} catch (Exception e) {
