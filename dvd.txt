@@ -1,3 +1,4 @@
 Pulp Fiction,dvd
 Hateful Eight,dvd
 Good Burger,dvd
+Reservoir Dogs,dvd
