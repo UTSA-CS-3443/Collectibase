@@ -1,6 +1,7 @@
 package model;
+// TODO: add toStrings
 
-public class VHSCollection extends MoviesCollection {
+public class VHSCollection extends MoviesCollection implements Comparable<VHSCollection>{
 
 	private String sleeveCondition;
 	private String cassManufact; // who manufactured the
@@ -75,6 +76,12 @@ public class VHSCollection extends MoviesCollection {
 
 	public void setClamShell(boolean clamShell) {
 		this.clamShell = clamShell;
+	}
+
+	@Override
+	public int compareTo(VHSCollection arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
