@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Collectibase">
+         <font>
+            <Font name="Beirut Regular" size="39.0" />
+         </font>
+      </Label>
+      <Icon content="LIBRARY_BOOKS" layoutX="243.0" layoutY="23.0" prefHeight="32.0" prefWidth="30.0" />
+      <Label layoutX="279.0" layoutY="25.0" text="Music Collection: CD">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField layoutX="14.0" layoutY="103.0" opacity="0.43" promptText="eg.(Name of Band)" text="eg.(Dr. Dre)">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="14.0" layoutY="87.0" text="Artist" />
+      <Label layoutX="14.0" layoutY="134.0" text="Condition" />
+      <TextField layoutX="14.0" layoutY="206.0" opacity="0.44" promptText="eg.(Name of Band)" text="eg.(The Chronic)">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="14.0" layoutY="187.0" text="Album Name" />
+      <TextField layoutX="14.0" layoutY="251.0" opacity="0.44" promptText="eg.(Name of Band)" text="eg.(20-30 mins)">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="14.0" layoutY="236.0" text="Runtime" />
+      <TextField layoutX="14.0" layoutY="301.0" opacity="0.44" prefHeight="26.0" prefWidth="185.0" promptText="eg.(Name of Band)" text="If yes input number of discs">
+         <font>
+            <Font size="7.0" />
+         </font>
+      </TextField>
+      <Label layoutX="14.0" layoutY="285.0" text="Multiple CD Abum?" />
+      <TextField layoutX="14.0" layoutY="358.0" opacity="0.44" promptText="eg.(Name of Band)" text="eg.(Deluxe, Live, etc.)">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="14.0" layoutY="337.0" text="Enhanced CD?" />
+      <ChoiceBox layoutX="14.0" layoutY="152.0" prefWidth="150.0" />
+      <Label layoutX="242.0" layoutY="134.0" text="Year" />
+      <TextField layoutX="240.0" layoutY="153.0" opacity="0.44" promptText="eg.(Name of Band)" text="eg.(1992)">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="238.0" layoutY="185.0" text="Rarity" />
+      <TextField layoutX="237.0" layoutY="103.0" opacity="0.44" prefHeight="21.0" prefWidth="150.0" promptText="eg.(Name of Band)" text="eg.(Rock, Rap, Country, etc.)">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="237.0" layoutY="87.0" text="Genre" />
+      <ChoiceBox layoutX="237.0" layoutY="202.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
