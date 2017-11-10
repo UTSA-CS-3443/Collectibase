@@ -142,4 +142,25 @@ public class Tools {
 			throw new RuntimeException("failed to open dvd.txt");
 		}
 	}
+	
+	public static void readInFileLD() {
+		Scanner in = null;
+		LaserDiscCollection ld;
+		String format, title;
+		try {
+			in = new Scanner(new File("laserdisc.txt"));
+			while (in.hasNextLine()) {
+				String line = in.nextLine();
+				String[] tokens = line.split(",");
+				title = tokens[0];
+				format = tokens[1];
+				ld = new LaserDiscCollection(title);
+				ld.setFormat(format);
+				Storage.ld.add(ld);
+			}
+			in.close();
+		} catch (FileNotFoundException exception) {
+			throw new RuntimeException("failed to open ld.txt");
+		}
+	}
 }
