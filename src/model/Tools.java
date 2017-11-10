@@ -29,8 +29,8 @@ public class Tools {
 		try (PrintWriter out = new PrintWriter("vhs.txt")) {
 			if (Storage.vhs.size() > 0) {
 				for (int i = 0; i < Storage.vhs.size(); i++) {
-					out.printf("%s,%s,%s", Storage.vhs.get(i).getName(), Storage.vhs.get(i).getFormat().trim(),
-							Storage.vhs.get(i).getSleeveCondition());
+					out.printf("%s,%s,%s,%s,%s", Storage.vhs.get(i).getName(), Storage.vhs.get(i).getDirector(),Storage.vhs.get(i).getFormat().trim(),
+							Storage.vhs.get(i).getSleeveCondition(), Storage.vhs.get(i).getHomeRecording());
 					out.println("");
 				}
 				out.close();
@@ -100,18 +100,22 @@ public class Tools {
 	public static void readInFileVHS() {
 		Scanner in = null;
 		VHSCollection vhs;
-		String format, title, sleeve;
+		String format, title, sleeve, director, homeVideo;
 		try {
 			in = new Scanner(new File("vhs.txt"));
 			while (in.hasNextLine()) {
 				String line = in.nextLine();
 				String[] tokens = line.split(",");
 				title = tokens[0];
-				format = tokens[1];
-				sleeve = tokens[2];
+				director = tokens[1];
+				format = tokens[2];
+				sleeve = tokens[3];
+				homeVideo = tokens[4];
 				vhs = new VHSCollection(title);
 				vhs.setFormat(format);
+				vhs.setDirector(director);
 				vhs.setSleeveCondition(sleeve);
+				vhs.setHomeRecording(homeVideo);
 				Storage.vhs.add(vhs);
 			}
 			in.close();
