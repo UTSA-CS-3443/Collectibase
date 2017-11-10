@@ -10,8 +10,10 @@ public class Storage {
 	// Array Lists can be accessed by Storage."list type"
 	public static ArrayList<VHSCollection> vhs = new ArrayList<VHSCollection>();
 	public static ArrayList<DVDCollection> dvd = new ArrayList<DVDCollection>();
+	public static ArrayList<LaserDiscCollection> ld = new ArrayList<LaserDiscCollection>();
 	public static ArrayList<CDCollection> cd = new ArrayList<CDCollection>();
 	
+	// Implement comparable, each will need a compareTo
 	
 	
 	
