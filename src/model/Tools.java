@@ -24,7 +24,7 @@ public class Tools {
 	 */
 	public static void writeFileVHS() {
 		try (PrintWriter out = new PrintWriter("vhs.txt")) {
-			if (Storage.vhs.size() > 0) {
+			if (Storage.vhs.size() > 0 ) {
 				for (int i = 0; i < Storage.vhs.size(); i++) {
 					out.printf("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", Storage.vhs.get(i).getName(),
 							Storage.vhs.get(i).getGenre(), Storage.vhs.get(i).getFormat(), Storage.vhs.get(i).getYear(),
