@@ -1,35 +1,26 @@
 package model;
 
+/**
+ * 
+ * @author Travis
+ *
+ */
 public class DVDCollection extends MoviesCollection {
 
-	//TODO: add variables to the constructor
-	private String discRot; // actual disc becomes physical or chemical deterioration
 	private String caseType; //cardboard, plastic, jewel case, paper sleeve, generic.
 	private String specialFeatDisc; //is a special features disc included. change to type boolean?
 	private String criterion; // is the DVD part of the Criterion collection (printing and pressing of historical movies)
 	private String spineNumber; // if  Criterion, the film will have a spine number
 	
-	/***** Constructor *****/
-	/*public DVDCollection(String title, String year, String discRot, String specialFeatDisc, boolean criterion, String spineNumber) {
-		super(title, year);
-		this.discRot = discRot;
-		this.specialFeatDisc = specialFeatDisc;
-		this.criterion = criterion;
-		this.spineNumber = spineNumber;		
-	}*/
-	
+	/**
+	 * Constructor for DVDCollection
+	 * @param title
+	 */
 	public DVDCollection(String title) {
 		super(title);
 	}
 
-	public String getDiscRot() {
-		return discRot;
-	}
-
-	public void setDiscRot(String discRot) {
-		this.discRot = discRot;
-	}
-
+	////////Getters and Setters\\\\\\\\
 	public String getCaseType() {
 		return caseType;
 	}
