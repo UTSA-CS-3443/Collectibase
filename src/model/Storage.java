@@ -2,19 +2,23 @@ package model;
 
 import java.util.ArrayList;
 
-/*
- * used to hold the lists of specific collections. 
+/**
+ * This purpose of the Storage class is to hold the Array Lists for each type of collection.
+ * Since each array list is static, you are able to access each AL and the contents within it
+ * through out the application by calling as "Tools.vhs.get(i).someMethodHere()"
+ * 
+ * @author Travis
+ *
  */
 public class Storage {
-	// ArrayList set as static because there will be only one of each collection.
-	// Array Lists can be accessed by Storage."list type"
+
 	public static ArrayList<VHSCollection> vhs = new ArrayList<VHSCollection>();
 	public static ArrayList<DVDCollection> dvd = new ArrayList<DVDCollection>();
 	public static ArrayList<LaserDiscCollection> ld = new ArrayList<LaserDiscCollection>();
 	public static ArrayList<CDCollection> cd = new ArrayList<CDCollection>();
-	
-	// Implement comparable, each will need a compareTo
-	
-	
+	public static ArrayList<CassetteCollection> cass = new ArrayList<CassetteCollection>();
+	public static ArrayList<VinylCollection> vin = new ArrayList<VinylCollection>();
+	public static ArrayList<PokemonCardCollection> pkm = new ArrayList<PokemonCardCollection>();
+	public static ArrayList<MTGCollection> mtg = new ArrayList<MTGCollection>();
 	
 }
