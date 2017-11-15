@@ -13,24 +13,24 @@ import java.util.Scanner;
  * 
  * @author Travis
  *
+ *
  */
 public class Tools {
 	/**
-	 * writeFileVHS() will write information to a specific .txt depending on the type of collection.
-	 * Currently the write file only will write minimal information such as 
-	 * 		- movie title
-	 * 		- media format
-	 * 		- sleeve condition
-	 * 
-	 * TODO: add the information for the other variables from the VHSCollection
+	 * writeFileVHS() will write information to a specific .txt depending on the
+	 * type of collection. Currently the write file only will write minimal
+	 * information such as - movie title - media format - sleeve condition
 	 * 
 	 */
 	public static void writeFileVHS() {
 		try (PrintWriter out = new PrintWriter("vhs.txt")) {
 			if (Storage.vhs.size() > 0) {
 				for (int i = 0; i < Storage.vhs.size(); i++) {
-					out.printf("%s,%s,%s,%s,%s", Storage.vhs.get(i).getName(), Storage.vhs.get(i).getDirector(),Storage.vhs.get(i).getFormat().trim(),
-							Storage.vhs.get(i).getSleeveCondition(), Storage.vhs.get(i).getHomeRecording());
+					out.printf("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", Storage.vhs.get(i).getName(),
+							Storage.vhs.get(i).getGenre(), Storage.vhs.get(i).getFormat(), Storage.vhs.get(i).getYear(),
+							Storage.vhs.get(i).getDirector(), Storage.vhs.get(i).getSpecialEdition(),
+							Storage.vhs.get(i).getHomeRecording(), Storage.vhs.get(i).getMultiProgram(),
+							Storage.vhs.get(i).getMultiTape(), Storage.vhs.get(i).getSleeveType());
 					out.println("");
 				}
 				out.close();
@@ -41,10 +41,9 @@ public class Tools {
 	}
 
 	/**
-	 * writeFileDVD() will write information to a specific .txt depending on the type of collection.
-	 * Currently the write file only will write minimal information such as 
-	 * 		- movie title
-	 * 		- media format
+	 * writeFileDVD() will write information to a specific .txt depending on the
+	 * type of collection. Currently the write file only will write minimal
+	 * information such as - movie title - media format
 	 * 
 	 * TODO: add the information for the other variables from the DVDCollection
 	 * 
@@ -62,13 +61,11 @@ public class Tools {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
-	 * writeFileVHS() will write information to a specific .txt depending on the type of collection.
-	 * Currently the write file only will write minimal information such as 
-	 * 		- movie title
-	 * 		- media format
-	 * 		- sleeve condition
+	 * writeFileVHS() will write information to a specific .txt depending on the
+	 * type of collection. Currently the write file only will write minimal
+	 * information such as - movie title - media format - sleeve condition
 	 * 
 	 * TODO: add the information for the other variables to the VHSCollection
 	 * 
@@ -100,22 +97,35 @@ public class Tools {
 	public static void readInFileVHS() {
 		Scanner in = null;
 		VHSCollection vhs;
-		String format, title, sleeve, director, homeVideo;
+		String title, genre, format, year, director, specialEd, homeRec, multiProg, multiTape, sleeveType;
+
 		try {
 			in = new Scanner(new File("vhs.txt"));
 			while (in.hasNextLine()) {
 				String line = in.nextLine();
 				String[] tokens = line.split(",");
+				
 				title = tokens[0];
-				director = tokens[1];
+				genre = tokens[1];
 				format = tokens[2];
-				sleeve = tokens[3];
-				homeVideo = tokens[4];
+				year = tokens[3];
+				director = tokens[4];
+				specialEd = tokens[5];
+				homeRec = tokens[6];
+				multiProg = tokens[7];
+				multiTape = tokens[8];
+				sleeveType = tokens[9];
+				
 				vhs = new VHSCollection(title);
+				vhs.setGenre(genre);
 				vhs.setFormat(format);
+				vhs.setYear(year);
 				vhs.setDirector(director);
-				vhs.setSleeveCondition(sleeve);
-				vhs.setHomeRecording(homeVideo);
+				vhs.setSpecialEdition(specialEd);
+				vhs.setHomeRecording(homeRec);
+				vhs.setMultiProgram(multiProg);
+				vhs.setMultiTape(multiTape);
+				vhs.setSleeveType(sleeveType);
 				Storage.vhs.add(vhs);
 			}
 			in.close();
@@ -123,9 +133,8 @@ public class Tools {
 			throw new RuntimeException("failed to open vhs.txt");
 		}
 
-		
 	}
-	
+
 	public static void readInFileDVD() {
 		Scanner in = null;
 		DVDCollection dvd;
@@ -146,7 +155,7 @@ public class Tools {
 			throw new RuntimeException("failed to open dvd.txt");
 		}
 	}
-	
+
 	public static void readInFileLD() {
 		Scanner in = null;
 		LaserDiscCollection ld;
