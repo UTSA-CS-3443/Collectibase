@@ -3,12 +3,11 @@ package model;
 
 public class VHSCollection extends MoviesCollection implements Comparable<VHSCollection> {
 
-	private String sleeveCondition;
 	private String homeRecording; // i.e. taped from tv, other tapes, home movies, etc..
 	private String multiProgram; // if there are more the one programs on a single tape, primarily home
 									// recordings
 	private String multiTape; // VHS movies with multiple tapes, i.e Titanic and Gone With the Wind
-	private String clamShell; // if the sleeve is a clamshell, i.e. cases that disney movies came in.
+	private String sleeveType; // clamshell, plastic, cardboard.
 
 	public VHSCollection(String title) {
 		super(title);
@@ -23,16 +22,11 @@ public class VHSCollection extends MoviesCollection implements Comparable<VHSCol
 		}
 		return 0;
 	}
+	public String toString() {
+		return String.format("%s", getName());
+	}
 
 	//////// getters and setters////////
-	public String getSleeveCondition() {
-		return sleeveCondition;
-	}
-
-	public void setSleeveCondition(String sleeveCondition) {
-		this.sleeveCondition = sleeveCondition;
-	}
-
 	public String getHomeRecording() {
 		return homeRecording;
 	}
@@ -57,11 +51,13 @@ public class VHSCollection extends MoviesCollection implements Comparable<VHSCol
 		this.multiTape = multiTape;
 	}
 
-	public String getClamShell() {
-		return clamShell;
+	public String getSleeveType() {
+		return sleeveType;
 	}
 
-	public void setClamShell(String clamShell) {
-		this.clamShell = clamShell;
+	public void setSleeveType(String sleeveType) {
+		this.sleeveType = sleeveType;
 	}
+
+	
 }
