@@ -1,15 +1,3 @@
-a,j,vhs,no,no
-aa,none,vhs,nothing,no
-aaa,n,vhs,no,yes
-b,j,vhs,no,no
-b,n,vhs,poor,no
-Beatles,ringo,vhs,no,no
-Bugs Bunny,,vhs,generic,yes
-Devil's Rejects,,vhs, , 
-Fuuuuuu,franklin,vhs,no,no
-Jackie Brown,Quentin Tarantino,vhs,fair,no
-Lords of Salem,,vhs,, 
-Pulp Fiction,Quentin Tarantino,vhs,good,no
-The Sandlot,,vhs,, 
-Tommy Boy,h,vhs,none,no
-XXX,j,vhs,butts,no
+Hateful Eight,western,vhs,2016,Tarantino,yes,no,no,2 tapes,plastic
+Pulp Fiction,action,vhs,1995,Tarantino,no,no,no,no,cardboard
+Reservoir Dogs, ,vhs, , , , , , , 
