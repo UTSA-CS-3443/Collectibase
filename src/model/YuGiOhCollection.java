@@ -12,10 +12,10 @@ package model;
 
 public class YuGiOhCollection extends TCGCollection {
 
-	private String cardType; 
-	private String attack;
-	private String defense;
-	private String serialNumber; //optional
+	private String cardType; //spell, trap, etc. 
+	private String attack; //some number
+	private String defense; //some number
+	private String serialNumber; //optional serial number
 	
 	public YuGiOhCollection(String name) {
 		super(name);
