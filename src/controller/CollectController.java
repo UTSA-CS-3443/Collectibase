@@ -52,6 +52,10 @@ public class CollectController{
 		musicChoice.getItems().addAll("CD","Vinyl","Cassette");	
 		movieChoice.getItems().addAll("VHS","DVD","Laser Disc");
 		cardChoice.getItems().addAll("MTG", "Pokemon","TCG","Yu-Gi-Oh");
+		//nextButton.setTooltip(new Tooltip("Next"));
+		musicChoice.setTooltip(new Tooltip("Select a music collection"));
+		movieChoice.setTooltip(new Tooltip("Select a movie collection"));
+		cardChoice.setTooltip(new Tooltip("Select a card collection"));
 	}
 	
 	
