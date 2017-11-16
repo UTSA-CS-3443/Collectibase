@@ -44,6 +44,9 @@ public class CollectController{
 	@FXML
 	public AnchorPane rootPane;
 	
+	@FXML
+	public static Stage childScene = new Stage();
+	
 	
 	/**
 	 * this initializes the values in the choice box 
@@ -166,7 +169,6 @@ public class CollectController{
 			fxmlString = "/fxml/Yu-Gi-Oh.fxml";
 		}
 		
-		Stage childScene = new Stage();
 		try {
 		Parent root = FXMLLoader.load(getClass().getResource(fxmlString));
 		childScene.setScene(new Scene(root,500,575));

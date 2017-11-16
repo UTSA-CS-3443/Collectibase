@@ -34,7 +34,7 @@ public class MainTest {
 				System.out.println("Read in title: " + Storage.vhs.get(i).getName());
 				System.out.println("Read in director: " + Storage.vhs.get(i).getDirector());
 				System.out.println("Read in format: " + Storage.vhs.get(i).getFormat());
-				System.out.println("Read in sleeve: " + Storage.vhs.get(i).getSleeveCondition());
+				//System.out.println("Read in sleeve: " + Storage.vhs.get(i).getSleeveCondition());
 				System.out.println("Read in home recording: " + Storage.vhs.get(i).getHomeRecording());
 			}
 		}
@@ -77,7 +77,7 @@ public class MainTest {
 				homeRecording = in.nextLine();
 				if (homeRecording.equals(""))
 					homeRecording = " ";
-				newVHS.setSleeveCondition(sleeve);
+				//newVHS.setSleeveCondition(sleeve);
 				newVHS.setHomeRecording(homeRecording);
 				Storage.vhs.add(newVHS);
 				Collections.sort(Storage.vhs);
