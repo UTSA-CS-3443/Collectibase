@@ -5,6 +5,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import view.CollectApp;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.MenuButton;
 import javafx.scene.layout.AnchorPane;
@@ -37,7 +38,7 @@ public class CollectController{
 	public String getChoiceValue;
 	
 	@FXML
-	public String passString;
+	public static String passString;
 	@FXML 
 	public String fxmlString;
 	@FXML
@@ -170,6 +171,7 @@ public class CollectController{
 		Parent root = FXMLLoader.load(getClass().getResource(fxmlString));
 		childScene.setScene(new Scene(root,500,575));
 		childScene.show();
+		CollectApp.stage.hide(); // closes the main menu
 		
 		}catch(Exception e) {
 			e.printStackTrace();
