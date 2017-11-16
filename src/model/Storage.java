@@ -20,5 +20,7 @@ public class Storage {
 	public static ArrayList<VinylCollection> vin = new ArrayList<VinylCollection>();
 	public static ArrayList<PokemonCardCollection> pkm = new ArrayList<PokemonCardCollection>();
 	public static ArrayList<MTGCollection> mtg = new ArrayList<MTGCollection>();
+	public static ArrayList<CustomCollection> custom = new ArrayList<CustomCollection>();
+	public static ArrayList<YuGiOhCollection> ygo = new ArrayList<YuGiOhCollection>();
 	
 }
