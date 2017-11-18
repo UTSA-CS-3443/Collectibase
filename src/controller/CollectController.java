@@ -46,6 +46,8 @@ public class CollectController{
 	
 	@FXML
 	public static Stage childScene = new Stage();
+	@FXML 
+	public static String path;
 	
 	
 	/**
@@ -149,6 +151,7 @@ public class CollectController{
 	public void changeScene(String a){
 		if(a == "VHS") {
 			fxmlString = "/fxml/VHS.fxml";
+			path = "/vhs.txt";
 		}else if(a == "DVD") {
 			fxmlString = "/fxml/DVD.fxml";
 		}else if(a == "Laser Disc") {
@@ -182,15 +185,4 @@ public class CollectController{
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
