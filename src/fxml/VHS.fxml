@@ -1,21 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VHSController">
    <children>
-      <TableView layoutX="11.0" layoutY="57.0" prefHeight="431.0" prefWidth="478.0">
+      <TableView fx:id="vhsTable" layoutX="4.0" layoutY="77.0" prefHeight="401.0" prefWidth="1272.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Title" />
-          <TableColumn prefWidth="75.0" text="Genre" />
-            <TableColumn prefWidth="75.0" text="Year" />
-            <TableColumn prefWidth="75.0" text="Director " />
-            <TableColumn prefWidth="75.0" />
+          <TableColumn fx:id="titleColumn" onEditCommit="#changeTitleName" prefWidth="186.0" text="Title" />
+          <TableColumn fx:id="genreColumn" minWidth="0.0" prefWidth="110.0" text="Genre" />
+            <TableColumn fx:id="formatColumn" minWidth="0.0" prefWidth="69.0" text="Format" />
+            <TableColumn fx:id="yearColumn" minWidth="0.0" prefWidth="104.0" text="Year" />
+            <TableColumn fx:id="directorColumn" minWidth="0.0" prefWidth="162.0" text="Director" />
+            <TableColumn fx:id="specialEditionColumn" prefWidth="115.0" text="Special Edition" />
+            <TableColumn fx:id="homeRecordingsColumn" prefWidth="132.0" text="Home Recordings" />
+            <TableColumn fx:id="multiProgramColumn" minWidth="0.0" prefWidth="137.0" text="Multi-Program" />
+            <TableColumn fx:id="multiTapeColumn" prefWidth="107.0" text="MultiTape" />
+            <TableColumn fx:id="sleeveTypeColumn" prefWidth="147.0" text="Sleeve Type" />
         </columns>
       </TableView>
-      <Label layoutX="182.0" layoutY="40.0" text="VHS Collection" />
+      <Label layoutX="567.0" layoutY="42.0" text="VHS Collection" />
+      <GridPane layoutX="72.0" layoutY="502.0" prefHeight="180.0" prefWidth="308.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="57.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="435.0" minWidth="10.0" prefWidth="251.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Title:" />
+            <Label text="Genre:" GridPane.rowIndex="1" />
+            <Label text="Format:" GridPane.rowIndex="2" />
+            <Label text="Year:" GridPane.rowIndex="3" />
+            <Label text="Director:" GridPane.rowIndex="4" />
+            <TextField fx:id="genreField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="formatField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="yearField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="directorField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="titleField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="441.0" layoutY="502.0" prefHeight="180.0" prefWidth="327.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="117.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="193.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Special Edition:" />
+            <Label text="Home Recordings:" GridPane.rowIndex="1" />
+            <Label text="Multi-Program:" GridPane.rowIndex="2" />
+            <Label text="Multi-Tape:" GridPane.rowIndex="3" />
+            <Label text="Sleeve Type:" GridPane.rowIndex="4" />
+            <TextField fx:id="specialEditionField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+            <TextField fx:id="homeRecordingsField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="multiProgramField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="multiTapeField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="sleeveTypeField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Button fx:id="insertButton" layoutX="864.0" layoutY="655.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Insert" />
+      <Button fx:id="deleteButton" layoutX="1069.0" layoutY="655.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
+      <Button fx:id="backButton" layoutX="43.0" layoutY="24.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
    </children>
 </AnchorPane>

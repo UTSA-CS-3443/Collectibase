@@ -118,7 +118,7 @@ public class CollectController{
 	public void alert() {
 		Alert alert = new Alert(Alert.AlertType.WARNING);
 		alert.setTitle("Warning");
-		alert.setContentText("Please select type of databse collection you want to create!");
+		alert.setContentText("Please select type of databse collection you want to fill!");
 		alert.setHeaderText(null);
 		alert.showAndWait();
 		
@@ -174,7 +174,7 @@ public class CollectController{
 		
 		try {
 		Parent root = FXMLLoader.load(getClass().getResource(fxmlString));
-		childScene.setScene(new Scene(root,500,575));
+		childScene.setScene(new Scene(root,1280,720));
 		childScene.show();
 		CollectApp.stage.hide(); // closes the main menu
 		
