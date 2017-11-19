@@ -35,6 +35,7 @@ import view.CollectApp;
  */
 public class VHSController {
 	public Button backButton;
+	public Button updateButton;
 	public Button insertButton;
 	public Button deleteButton;
 	@FXML
@@ -81,7 +82,6 @@ public class VHSController {
 	TableColumn<VHSTestCollection, String> sleeveTypeColumn;
 	ObservableList<VHSTestCollection> allVHS;
 	
-	//VHSTestCollection vhsAdd = new VHSTestCollection();
 	
 	
 	public void initialize() {
@@ -105,33 +105,85 @@ public class VHSController {
 		}
 		
 	}
+	/**
+	 * this button is for when user changes a value 
+	 * in the table view
+	 */
+	public void updateButtonHandle() {
+		allVHS = vhsTable.getItems();
+		try {
+			writeVHSFile();
+		}catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		
+	}
 	
 	
 	public void insertButtonHandle() {
 		VHSTestCollection vhsAdd = new VHSTestCollection();
-		
+		// error checks if text fields are empty
 		if(titleField.getText().equals("")) {
 			vhsAdd.setTitle("");
 		}else {
 			vhsAdd.setTitle(titleField.getText());
 		}
 		
+		if(genreField.getText().equals("")) {
+			vhsAdd.setGenre("");
+		}else {
+			vhsAdd.setGenre(genreField.getText());
+		}
 		
+		if(formatField.getText().equals("")) {
+			vhsAdd.setFormat("");
+		}else {
+			vhsAdd.setFormat(formatField.getText());
+		}
 		
-		vhsAdd.setGenre(genreField.getText());
-		vhsAdd.setFormat(formatField.getText());
 		if(yearField.getText().equals("")) {
 			vhsAdd.setYear(0);
 		}else {
 			vhsAdd.setYear(Integer.parseInt(yearField.getText()));
 		}
 		
-		vhsAdd.setDirector(directorField.getText());
-		vhsAdd.setSpecialEdition(specialEditionField.getText());
-		vhsAdd.setHomeRecording(homeRecordingsField.getText());
-		vhsAdd.setMultiProgram(multiProgramField.getText());
-		vhsAdd.setMultiTape(multiTapeField.getText());
-		vhsAdd.setSleeveType(sleeveTypeField.getText());
+		if(directorField.getText().equals("")) {
+			vhsAdd.setDirector("");
+		}else {
+			vhsAdd.setDirector(directorField.getText());
+		}
+		
+		if(specialEditionField.getText().equals("")) {
+			vhsAdd.setSpecialEdition("");
+		}else {
+			vhsAdd.setSpecialEdition(specialEditionField.getText());
+		}
+		
+		if(homeRecordingsField.getText().equals("")) {
+			vhsAdd.setHomeRecording("");
+		}else {
+			vhsAdd.setHomeRecording(homeRecordingsField.getText());
+		}
+		
+		if(multiProgramField.getText().equals("")) {
+			vhsAdd.setMultiProgram("");
+		}else {
+			vhsAdd.setMultiProgram(multiProgramField.getText());
+		}
+		
+		if(multiTapeField.getText().equals("")) {
+			vhsAdd.setMultiTape("");
+		}else {
+			vhsAdd.setMultiTape(multiTapeField.getText());
+		}
+		
+		if(sleeveTypeField.getText().equals("")) {
+			vhsAdd.setSleeveType("");
+		}else {
+			vhsAdd.setSleeveType(sleeveTypeField.getText());
+		}
+		
+		// clears the text field when inserting
 		vhsTable.getItems().add(vhsAdd);
 		titleField.clear();
 		genreField.clear();
@@ -143,15 +195,14 @@ public class VHSController {
 		multiProgramField.clear();
 		multiTapeField.clear();
 		sleeveTypeField.clear();
+		
+		//writes to the file to keep table updated
 		allVHS = vhsTable.getItems();
 		try {
 			writeVHSFile();
 		}catch (Exception ex) {
 			ex.printStackTrace();
-		}
-		
-		
-		
+		}	
 	}
 	
 	public void deleteButtonHandle() {
@@ -179,10 +230,19 @@ public class VHSController {
 		multiTapeColumn.setCellValueFactory(new PropertyValueFactory<>("multiTape"));
 		sleeveTypeColumn.setCellValueFactory(new PropertyValueFactory<>("sleeveType"));
 		
-		// the code down gives it the ability to edit info
+		// the code below gives it the ability to edit info
 		vhsTable.setEditable(true);
 		titleColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 		yearColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+		genreColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		formatColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		directorColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		specialEditionColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		homeRecordingsColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		multiProgramColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		multiTapeColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		sleeveTypeColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		
 	}
 	
 	/**
@@ -194,11 +254,56 @@ public class VHSController {
 		titleSelected.setTitle(edditedCell.getNewValue().toString());
 	}
 	
+	public void changeGenre(CellEditEvent edditedCell1) {
+		VHSTestCollection genreSelected = vhsTable.getSelectionModel().getSelectedItem();
+		genreSelected.setGenre(edditedCell1.getNewValue().toString());
+	}
+	
+	public void changeFormat(CellEditEvent edditedCell) {
+		VHSTestCollection formatSelected = vhsTable.getSelectionModel().getSelectedItem();
+		formatSelected.setFormat(edditedCell.getNewValue().toString());
+	}
+	
+	/**
+	 * makes the year column changable with double clicking it
+	 * @param edditedCell
+	 */
 	public void changeYear(CellEditEvent edditedCell) {
 		VHSTestCollection yearSelected = vhsTable.getSelectionModel().getSelectedItem();
-		yearSelected.setYear((Integer)edditedCell.getNewValue());
-		
+		yearSelected.setYear((Integer)edditedCell.getNewValue());	
 	}
+	
+	public void changeDirector(CellEditEvent edditedCell) {
+		VHSTestCollection directorSelected = vhsTable.getSelectionModel().getSelectedItem();
+		directorSelected.setDirector(edditedCell.getNewValue().toString());
+	}
+	
+	public void changeSpecialEdition(CellEditEvent edditedCell) {
+		VHSTestCollection specialSelected = vhsTable.getSelectionModel().getSelectedItem();
+		specialSelected.setSpecialEdition(edditedCell.getNewValue().toString());
+	}
+	
+	public void changeHomeRecordings(CellEditEvent edditedCell) {
+		VHSTestCollection homeSelected = vhsTable.getSelectionModel().getSelectedItem();
+		homeSelected.setHomeRecording(edditedCell.getNewValue().toString());
+	}
+	
+	public void changeMultiProgram(CellEditEvent edditedCell) {
+		VHSTestCollection multiProgramSelected = vhsTable.getSelectionModel().getSelectedItem();
+		multiProgramSelected.setMultiProgram(edditedCell.getNewValue().toString());
+	}
+	
+	public void changeMultiTape(CellEditEvent edditedCell) {
+		VHSTestCollection multiTapeSelected = vhsTable.getSelectionModel().getSelectedItem();
+		multiTapeSelected.setMultiTape(edditedCell.getNewValue().toString());
+	}
+	
+	public void changeSleeveType(CellEditEvent edditedCell) {
+		VHSTestCollection sleeveSelected = vhsTable.getSelectionModel().getSelectedItem();
+		sleeveSelected.setSleeveType(edditedCell.getNewValue().toString());
+	}
+	
+	
 	
 	private void getVHSFromFile() {
 		try {
@@ -207,17 +312,14 @@ public class VHSController {
 			String[] array;
 			while ((line = br.readLine()) != null) {
 				array = line.split(",");
-				vhsTable.getItems().add(new VHSTestCollection(array[0],array[1],array[2], Integer.parseInt(array[3]),array[4], array[5], array[6], array[7], array[8], array[9]));
-				
+				vhsTable.getItems().add(new VHSTestCollection(array[0],array[1],array[2], Integer.parseInt(array[3]),array[4], array[5], array[6], array[7], array[8], array[9]));	
 			}
 			br.close();
 			
 		}catch (Exception ex) {
 			ex.printStackTrace();
 			
-		}
-		
-		
+		}	
 	}
 	
 	public void writeVHSFile() throws Exception{
@@ -229,8 +331,6 @@ public class VHSController {
 				String text = vhs.getTitle() + "," + vhs.getGenre() + "," + vhs.getFormat() + "," + vhs.getYear() + "," + vhs.getDirector() + "," + vhs.getSpecialEdition() + "," + vhs.getHomeRecording() + "," + vhs.getMultiProgram() + "," + vhs.getMultiTape() + "," + vhs.getSleeveType() + "\n";                      
 				writer.write(text);
 			}
-			
-			
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}
@@ -239,22 +339,5 @@ public class VHSController {
 			writer.close();
 			
 		}
-		
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
