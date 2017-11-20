@@ -79,7 +79,7 @@
       </GridPane>
       <Button fx:id="insertButton" layoutX="864.0" layoutY="655.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Insert" />
       <Button fx:id="deleteButton" layoutX="1069.0" layoutY="655.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
-      <Button fx:id="backButton" layoutX="43.0" layoutY="24.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
-      <Button fx:id="updateButton" layoutX="952.0" layoutY="502.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
+      <Button fx:id="backButton" layoutX="48.0" layoutY="29.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
+      <Button fx:id="updateButton" layoutX="1189.0" layoutY="29.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
    </children>
 </AnchorPane>
