@@ -15,12 +15,12 @@
       <Label layoutX="598.0" layoutY="30.0" text="CD Collection" />
       <TableView fx:id="cdTable" layoutX="11.0" layoutY="83.0" prefHeight="399.0" prefWidth="1259.0">
         <columns>
-          <TableColumn fx:id="artistColumn" prefWidth="263.0" text="Artist" />
-          <TableColumn fx:id="albumColumn" prefWidth="221.0" text="Album" />
-            <TableColumn fx:id="runningColumn" prefWidth="170.0" text="Running Time" />
-            <TableColumn fx:id="multiColumn" minWidth="0.0" prefWidth="145.0" text="Multi-CD" />
-            <TableColumn fx:id="posterColumn" prefWidth="240.0" text="Poster" />
-            <TableColumn fx:id="enhancedColumn" prefWidth="219.0" text="EnhancedCD" />
+          <TableColumn fx:id="artistColumn" onEditCommit="#changeArtist" prefWidth="263.0" text="Artist" />
+          <TableColumn fx:id="albumColumn" onEditCommit="#changeAlbum" prefWidth="221.0" text="Album" />
+            <TableColumn fx:id="runningColumn" onEditCommit="#changeRunning" prefWidth="170.0" text="Running Time" />
+            <TableColumn fx:id="multiColumn" minWidth="0.0" onEditCommit="#changeMulti" prefWidth="145.0" text="Multi-CD" />
+            <TableColumn fx:id="posterColumn" onEditCommit="#changePoster" prefWidth="240.0" text="Poster" />
+            <TableColumn fx:id="enhancedColumn" onEditCommit="#changeEnhanced" prefWidth="219.0" text="EnhancedCD" />
         </columns>
       </TableView>
       <GridPane layoutX="68.0" layoutY="494.0" prefHeight="201.0" prefWidth="388.0">

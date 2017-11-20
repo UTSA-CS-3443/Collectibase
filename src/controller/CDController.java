@@ -143,6 +143,7 @@ public class CDController {
 		}catch (Exception ex) {
 			ex.printStackTrace();
 		}
+		
 	}
 	
 	public void cellValueFactory() {
