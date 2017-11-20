@@ -19,6 +19,12 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import model.CDTestCollection;
 import view.CollectApp;
 
+/**
+ * 
+ * controller for CD collection fxml
+ * @author jesusnieto
+ *
+ */
 public class CDController {
 	@FXML
 	public Button backButton;
