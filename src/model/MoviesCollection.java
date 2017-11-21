@@ -1,21 +1,29 @@
 package model;
 
-public class MoviesCollection extends Collections {
+public class MoviesCollection /*extends Collections*/ {
 
 	// possible variables: awardWinning
 	
 	private String format;
 	private String director;
 	private String specialEdition; // possible boolean?
+	private String title;
+	private String genre; 
+	private int year;
 
-	public MoviesCollection(String title, String year) {
-		setName(title);
+	public MoviesCollection(String title, int year,String genre ,String format, String director,
+			String specialEdition) {
+		setTitle(title);
 		setYear(year);
+		setGenre(genre);
+		this.format = format;
+		this.director = director;
+		this.specialEdition = specialEdition;
 	}
 	
-	public MoviesCollection(String title) {
+	/*public MoviesCollection(String title) {
 		setName(title);
-	}
+	}*/
 
 	////////// getters and setters//////////
 	public String getFormat() {
@@ -40,6 +48,30 @@ public class MoviesCollection extends Collections {
 
 	public void setSpecialEdition(String specialEdition) {
 		this.specialEdition = specialEdition;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 

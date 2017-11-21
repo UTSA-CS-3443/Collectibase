@@ -1,42 +1,28 @@
 package model;
 
-public class MusicCollection extends Collections{
-	
-	
-	private String albumName; // artist
-	private String musicFormat; // type of format like cd, tape, etc.
-	private String runningTime;
-	
-	
-	public MusicCollection(String artist, String year) {
-		setName(artist); //maybe album name? 
-		setYear(year); // year the album was released
-		
-		
-		//this.albumName = albumName;
-	}
-	
-	public MusicCollection(String artist) {
-		setName(artist);
-	}		
+public class MusicCollection {
 
-	
-	
+	private String albumName; // artist
+	// private String musicFormat; // type of format like cd, tape, etc.
+	private String runningTime;
+	private String artist;
+	private String year;
+
+	public MusicCollection(String artist, String year, String album, String runTime) {
+		setArtist(artist); // maybe album name?
+		setYear(year); // year the album was released
+		setAlbum(album);
+		setRunningTime(runTime);
+
+		// this.albumName = albumName;
+	}
+
 	public String getAlbum() {
 		return albumName;
 	}
-	
+
 	public void setAlbum(String album) {
 		this.albumName = album;
-	}
-	
-	public String getMusicFormat() {
-		return musicFormat;
-	}
-	
-	public void setMusicFormat(String musicFormat) {
-		this.musicFormat = musicFormat;
-		
 	}
 
 	public String getRunningTime() {
@@ -45,6 +31,22 @@ public class MusicCollection extends Collections{
 
 	public void setRunningTime(String runningTime) {
 		this.runningTime = runningTime;
+	}
+
+	public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
 	}
 
 }

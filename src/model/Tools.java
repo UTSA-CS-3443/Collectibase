@@ -97,8 +97,8 @@ public class Tools {
 	public static void readInFileVHS() {
 		Scanner in = null;
 		VHSCollection vhs;
-		String title, genre, format, year, director, specialEd, homeRec, multiProg, multiTape, sleeveType;
-
+		String title, genre, format, /*year,*/ director, specialEd, homeRec, multiProg, multiTape, sleeveType;
+		int year;
 		try {
 			in = new Scanner(new File("vhs.txt"));
 			while (in.hasNextLine()) {
@@ -108,7 +108,7 @@ public class Tools {
 				title = tokens[0];
 				genre = tokens[1];
 				format = tokens[2];
-				year = tokens[3];
+				year = Integer.parseInt(tokens[3]);
 				director = tokens[4];
 				specialEd = tokens[5];
 				homeRec = tokens[6];
@@ -116,7 +116,8 @@ public class Tools {
 				multiTape = tokens[8];
 				sleeveType = tokens[9];
 				
-				vhs = new VHSCollection(title);
+				vhs = new VHSCollection();
+				vhs.setName(title);
 				vhs.setGenre(genre);
 				vhs.setFormat(format);
 				vhs.setYear(year);

@@ -1,6 +1,6 @@
 package model;
 
-public class TCGCollection extends Collections {
+public class TCGCollection{
 	
 	private String rarity;
 	private String condition;

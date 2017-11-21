@@ -1,44 +1,49 @@
 package model;
 
-public class CDCollection extends MusicCollection{
+public class CDCollection extends MusicCollection {
 
-	
+	private String multiCD;// albums with multiple CDs
+	private String poster; // albums that came with posters
+	private String enhancedCD; // deluxe edition, additional media, etc....
 
-	private String multiCDAlbums;//albums with multiple CDs
-	private String posters; // albums that came with posters
-	private String enhancedCDs; // deluxe edition, additional media, etc.... 
-	
-	public CDCollection(String artist, String year,String albumName, String format) {
-		super(artist, year);
-		setAlbum(albumName);
-		setMusicFormat(format);
-		//setMusicFormat(format);
-		// TODO Auto-generated constructor stub
+	public CDCollection() {
+		super("", "", "", "");
+		this.multiCD = "";
+		this.poster = "";
+		this.enhancedCD = "";
 	}
 
-	public String getMultiCDAlbums() {
-		return multiCDAlbums;
+	public CDCollection(String artist, String year, String album, String runtime, String multiCD, String poster, 
+			String enhancedCD) {
+		super(artist, year, album, runtime);
+		this.multiCD = multiCD;
+		this.poster = poster;
+		this.enhancedCD = enhancedCD;
 	}
 
-	public void setMultiCDAlbums(String multiCDAlbums) {
-		this.multiCDAlbums = multiCDAlbums;
+	public String getMultiCD() {
+		return multiCD;
 	}
 
-	public String getPosters() {
-		return posters;
+	public void setMultiCD(String multiCD) {
+		this.multiCD = multiCD;
 	}
 
-	public void setPosters(String posters) {
-		this.posters = posters;
+	public String getPoster() {
+		return poster;
 	}
 
-	public String getEnhancedCDs() {
-		return enhancedCDs;
+	public void setPoster(String poster) {
+		this.poster = poster;
 	}
 
-	public void setEnhancedCDs(String enhancedCDs) {
-		this.enhancedCDs = enhancedCDs;
+	public String getEnhancedCD() {
+		return enhancedCD;
 	}
-	
+
+	public void setEnhancedCD(String enhancedCD) {
+		this.enhancedCD = enhancedCD;
+	}
+
 
 }
