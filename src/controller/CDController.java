@@ -58,7 +58,7 @@ public class CDController {
 	TableColumn<CDCollection, String> posterColumn;
 	@FXML
 	TableColumn<CDCollection, String> enhancedColumn;
-	ObservableList<CDCollection> allCD;
+	//ObservableList<CDCollection> allCD;
 	
 	public void initialize() {
 		cellValueFactory();
@@ -68,7 +68,7 @@ public class CDController {
 	public void backButtonHandle(){
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
-		allCD = cdTable.getItems();
+		Storage.allCD = cdTable.getItems();
 		try {
 			writeCDFile();
 		}catch (Exception ex) {
@@ -130,7 +130,7 @@ public class CDController {
 		enhancedField.clear();
 		yearField.clear();
 		
-		allCD = cdTable.getItems();
+		Storage.allCD = cdTable.getItems();
 		try {
 			writeCDFile();
 		}catch (Exception ex) {
@@ -142,11 +142,11 @@ public class CDController {
 	
 	public void deleteButtonHandle() {
 		ObservableList<CDCollection> cdSelected;
-		allCD = cdTable.getItems();
+		Storage.allCD = cdTable.getItems();
 		cdSelected = cdTable.getSelectionModel().getSelectedItems();
-		cdSelected.forEach(allCD::remove);
+		cdSelected.forEach(Storage.allCD::remove);
 		
-		allCD = cdTable.getItems();
+		Storage.allCD = cdTable.getItems();
 		try {
 			writeCDFile();
 		}catch (Exception ex) {
@@ -157,7 +157,7 @@ public class CDController {
 	}
 	
 	public void updateButtonHandle() {
-		allCD = cdTable.getItems();
+		Storage.allCD = cdTable.getItems();
 		try {
 			writeCDFile();
 		}catch (Exception ex) {
@@ -244,7 +244,7 @@ public class CDController {
 		try {
 			File file = new File("cd.txt");
 			write = new BufferedWriter(new FileWriter(file));
-			for(CDCollection cd : allCD) {
+			for(CDCollection cd : Storage.allCD) {
 				String text = cd.getArtist() + "," + cd.getAlbum() + "," + cd.getYear() + ","  + cd.getRunningTime() + "," + cd.getMultiCD() + "," + cd.getPoster() + "," + cd.getEnhancedCD() + "\n";
 				write.write(text);
 			}

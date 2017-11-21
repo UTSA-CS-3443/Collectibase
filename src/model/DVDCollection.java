@@ -8,7 +8,7 @@ package model;
 public class DVDCollection extends MoviesCollection {
 
 	private String caseType; //cardboard, plastic, jewel case, paper sleeve, generic.
-	private String specialFeatDisc; //is a special features disc included. change to type boolean?
+	private String specialFeaturing; //is a special features disc included. change to type boolean?
 	private String criterion; // is the DVD part of the Criterion collection (printing and pressing of historical movies)
 	private String spineNumber; // if  Criterion, the film will have a spine number
 	
@@ -19,7 +19,7 @@ public class DVDCollection extends MoviesCollection {
 	public DVDCollection() {
 		super("", "0", "", "", "", "");
 		this.caseType = "";
-		this.specialFeatDisc = "";
+		this.specialFeaturing = "";
 		this.criterion = "";
 		this.spineNumber = "";
 	}
@@ -27,7 +27,7 @@ public class DVDCollection extends MoviesCollection {
 	public DVDCollection(String title, String year, String genre, String format, String director, String specialEdition, String caseType, String specialFeatDisc, String criterion, String spineNumber ) {
 		super(title, year, genre, format, director, specialEdition);
 		this.caseType = caseType;
-		this.specialFeatDisc = specialFeatDisc;
+		this.specialFeaturing = specialFeatDisc;
 		this.criterion = criterion;
 		this.spineNumber = spineNumber;
 	}
@@ -41,12 +41,12 @@ public class DVDCollection extends MoviesCollection {
 		this.caseType = caseType;
 	}
 
-	public String getSpecialFeatDisc() {
-		return specialFeatDisc;
+	public String getSpecialFeaturing() {
+		return specialFeaturing;
 	}
 
-	public void setSpecialFeatDisc(String specialFeatDisc) {
-		this.specialFeatDisc = specialFeatDisc;
+	public void setSpecialFeaturing(String specialFeatDisc) {
+		this.specialFeaturing = specialFeatDisc;
 	}
 
 	public String getCriterion() {
