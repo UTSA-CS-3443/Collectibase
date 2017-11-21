@@ -7,9 +7,21 @@ public class VinylCollection extends MusicCollection {
 	private String color;
 	private String speed;
 	
-	public VinylCollection(String artist, String albumName) {
-		super(artist, albumName);
+	public VinylCollection() {
+		super("", "0", "", "0");
+		this.size = "";
+		this.color = "";
+		this.speed = "";
 	}
+	
+	public VinylCollection(String artist, String year, String album, String runTime, String size, String color, String speed ) {
+		super(artist, year, album, runTime);
+		this.size = size;
+		this.color = color;
+		this.speed = speed;
+		
+	}
+	
 
 	public String getSize() {
 		return size;

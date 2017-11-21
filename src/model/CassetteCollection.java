@@ -19,8 +19,9 @@ public class CassetteCollection extends MusicCollection {
 	private String  audioOutput;
 	private String endlessLoop;
 	
-	public CassetteCollection(String artist, String albumName) {
+	public CassetteCollection() {
 		super(artist, albumName);
+		
 	}
 
 	public String getType() {
