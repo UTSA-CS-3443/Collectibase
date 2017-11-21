@@ -17,9 +17,17 @@ public class YuGiOhCollection extends TCGCollection {
 	private String defense; //some number
 	private String serialNumber; //optional serial number
 	
-	public YuGiOhCollection(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	public YuGiOhCollection() {
+		super("", "", "", "");
+	}
+	
+	public YuGiOhCollection(String rarity, String condition, String value, String name,
+						String cardType, String attack, String defense, String serialNumber) {
+		super(rarity, condition, value, name);
+		this.cardType = cardType;
+		this.attack = attack;
+		this.defense = defense;
+		this.serialNumber = serialNumber;
 	}
 
 	public String getCardType() {
