@@ -4,14 +4,18 @@ public class TCGCollection{
 	
 	private String rarity;
 	private String condition;
-	private String cardGame; //which TCG: i.e. Pokemon, Magic, etc..
-	private double value;
+	private String value;
+	private String name;
+	
 	
 	/**
 	 * Constructor for TCGCollection
 	 * @param name
 	 */
-	public TCGCollection(String name) {
+	public TCGCollection(String rarity, String condition, String value, String name) {
+		setRarity(rarity);
+		setCondition(condition);
+		setValue(value);
 		setName(name);
 	}
 	
@@ -32,20 +36,20 @@ public class TCGCollection{
 		this.condition = condition;
 	}
 
-	public double getValue() {
+	public String getValue() {
 		return value;
 	}
 
-	public void setValue(double value) {
+	public void setValue(String value) {
 		this.value = value;
 	}
 
-	public String getCardGame() {
-		return cardGame;
+	public String getName() {
+		return name;
 	}
 
-	public void setCardGame(String cardGame) {
-		this.cardGame = cardGame;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
