@@ -16,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
 import model.Storage;
+import model.Tools;
 import model.VHSCollection;
 import view.CollectApp;
 
@@ -52,28 +53,28 @@ public class VHSController{
 	@FXML
 	public TextField sleeveTypeField;
 	@FXML
-	TableView<VHSCollection> vhsTable;
+	public TableView<VHSCollection> vhsTable;
 	@FXML
-	TableColumn<VHSCollection, String> titleColumn;
+	public TableColumn<VHSCollection, String> titleColumn;
 	@FXML
-	TableColumn<VHSCollection, String> genreColumn;
+	public TableColumn<VHSCollection, String> genreColumn;
 	@FXML
-	TableColumn<VHSCollection, String> formatColumn;
+	public TableColumn<VHSCollection, String> formatColumn;
 	@FXML
-	TableColumn<VHSCollection, String> yearColumn;
+	public TableColumn<VHSCollection, String> yearColumn;
 	@FXML
-	TableColumn<VHSCollection, String> directorColumn;
+	public TableColumn<VHSCollection, String> directorColumn;
 	@FXML
-	TableColumn<VHSCollection, String> specialEditionColumn;
+	public TableColumn<VHSCollection, String> specialEditionColumn;
 	@FXML
-	TableColumn<VHSCollection, String> homeRecordingsColumn;
+	public TableColumn<VHSCollection, String> homeRecordingsColumn;
 	@FXML
-	TableColumn<VHSCollection, String> multiProgramColumn;
+	public TableColumn<VHSCollection, String> multiProgramColumn;
 	@FXML
-	TableColumn<VHSCollection, String> multiTapeColumn;
+	public TableColumn<VHSCollection, String> multiTapeColumn;
 	@FXML
-	TableColumn<VHSCollection, String> sleeveTypeColumn;
-	ObservableList<VHSCollection> allVHS;
+	public TableColumn<VHSCollection, String> sleeveTypeColumn;
+	//ObservableList<VHSCollection> allVHS;
 
 	public void initialize() {
 		cellValueFactory();
@@ -87,7 +88,7 @@ public class VHSController{
 	public void backButtonHandle() {
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
-		allVHS = vhsTable.getItems();
+		Storage.allVHS = vhsTable.getItems();
 		try {
 			writeVHSFile();
 		} catch (Exception ex) {
@@ -100,7 +101,7 @@ public class VHSController{
 	 * this button is for when user changes a value in the table view
 	 */
 	public void updateButtonHandle() {
-		allVHS = vhsTable.getItems();
+		Storage.allVHS = vhsTable.getItems();
 		try {
 			writeVHSFile();
 		} catch (Exception ex) {
@@ -186,7 +187,7 @@ public class VHSController{
 		sleeveTypeField.clear();
 
 		// writes to the file to keep table updated
-		allVHS = vhsTable.getItems();
+		Storage.allVHS = vhsTable.getItems();
 		try {
 			writeVHSFile();
 		} catch (Exception ex) {
@@ -196,10 +197,10 @@ public class VHSController{
 
 	public void deleteButtonHandle() {
 		ObservableList<VHSCollection> vhsSelected;
-		allVHS = vhsTable.getItems();
+		Storage.allVHS = vhsTable.getItems();
 		vhsSelected = vhsTable.getSelectionModel().getSelectedItems();
-		vhsSelected.forEach(allVHS::remove);
-		allVHS = vhsTable.getItems();
+		vhsSelected.forEach(Storage.allVHS::remove);
+		Storage.allVHS = vhsTable.getItems();
 		try {
 			writeVHSFile();
 		} catch (Exception ex) {
@@ -313,13 +314,12 @@ public class VHSController{
 
 		}
 	}
-
 	public void writeVHSFile() throws Exception {
 		Writer writer = null;
 		try {
 			File file = new File("vhs.txt");
 			writer = new BufferedWriter(new FileWriter(file));
-			for (VHSCollection vhs : allVHS) {
+			for (VHSCollection vhs : Storage.allVHS) {
 				String text = vhs.getTitle() + "," + vhs.getGenre() + "," + vhs.getFormat() + "," + vhs.getYear() + ","
 						+ vhs.getDirector() + "," + vhs.getSpecialEdition() + "," + vhs.getHomeRecording() + ","
 						+ vhs.getMultiProgram() + "," + vhs.getMultiTape() + "," + vhs.getSleeveType() + "\n";

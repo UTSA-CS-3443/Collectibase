@@ -56,5 +56,30 @@ public class DVDController {
 	TableColumn<DVDCollection, String> specialFeaturingColumn;
 	ObservableList<DVDCollection> allDVD;
 	
+	public void initialize() {
+		
+	}
+	
+	public void backButton() {
+		
+	}
+	
+	public void insertButton() {
+		
+	}
+	
+	public void updateButton() {
+		
+		
+	}
+	
+	public void cellValueFactory() {
+		
+		
+	}
+	
+	
+	
+	
 	
 }

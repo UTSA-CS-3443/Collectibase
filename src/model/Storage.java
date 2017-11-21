@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
  *
  */
 public class Storage {
+	public static ObservableList<VHSCollection> allVHS;
 	
 	
 	
@@ -20,14 +21,5 @@ public class Storage {
 	
 	
 	
-	/*
-	public static ArrayList<VHSCollection> vhs = new ArrayList<VHSCollection>();
-	public static ArrayList<DVDCollection> dvd = new ArrayList<DVDCollection>();
-	public static ArrayList<LaserDiscCollection> ld = new ArrayList<LaserDiscCollection>();
-	public static ArrayList<CDCollection> cd = new ArrayList<CDCollection>();
-	public static ArrayList<CassetteCollection> cass = new ArrayList<CassetteCollection>();
-	public static ArrayList<VinylCollection> vin = new ArrayList<VinylCollection>();
-	public static ArrayList<PokemonCardCollection> pkm = new ArrayList<PokemonCardCollection>();
-	public static ArrayList<MTGCollection> mtg = new ArrayList<MTGCollection>();
-	*/
+	
 }
