@@ -27,8 +27,16 @@ public class PokemonCardCollection extends TCGCollection {
 
 	}*/
 
-    public PokemonCardCollection(String name) {
-        super(name);
+    public PokemonCardCollection() {
+        super("","","","");
+    }
+    
+    public PokemonCardCollection(String rarity, String condition, String value, String name,
+    						String series, String set, String type){
+    	super(rarity, condition, value, name);
+    	this.series = series;
+    	this.set = set;
+    	this.type = type;
     }
 
     public String getSeries() {
