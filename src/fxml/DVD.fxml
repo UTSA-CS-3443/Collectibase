@@ -10,20 +10,20 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DVDController">
    <children>
-      <TableView layoutX="14.0" layoutY="86.0" prefHeight="399.0" prefWidth="1259.0">
+      <TableView fx:id="dvdTable" layoutX="14.0" layoutY="86.0" prefHeight="399.0" prefWidth="1259.0">
         <columns>
-          <TableColumn prefWidth="205.0" text="Title" />
-          <TableColumn prefWidth="60.0" text="Year" />
-            <TableColumn prefWidth="123.0" text="Genre" />
-            <TableColumn prefWidth="83.0" text="Format" />
-            <TableColumn prefWidth="138.0" text="Director" />
-            <TableColumn prefWidth="150.0" text="Special Edition" />
-            <TableColumn prefWidth="110.0" text="Case Type" />
-            <TableColumn prefWidth="117.0" text="SpecialFeaturing" />
-            <TableColumn prefWidth="130.0" text="Criterion" />
-            <TableColumn prefWidth="142.0" text="Spine Number" />
+          <TableColumn fx:id="titleColumn" onEditCommit="#changeTitleName" prefWidth="205.0" text="Title" />
+          <TableColumn fx:id="yearColumn" onEditCommit="#changeYear" prefWidth="60.0" text="Year" />
+            <TableColumn fx:id="genreColumn" onEditCommit="#changeGenre" prefWidth="123.0" text="Genre" />
+            <TableColumn fx:id="formatColumn" onEditCommit="#changeFormat" prefWidth="83.0" text="Format" />
+            <TableColumn fx:id="directorColumn" onEditCommit="#changeDirector" prefWidth="138.0" text="Director" />
+            <TableColumn fx:id="specialEditionColumn" onEditCommit="#changeSpecialEdition" prefWidth="150.0" text="Special Edition" />
+            <TableColumn fx:id="caseTypeColumn" onEditCommit="#changeCaseType" prefWidth="110.0" text="Case Type" />
+            <TableColumn fx:id="specialFeaturingColumn" onEditCommit="#changeSpecialFeaturing" prefWidth="117.0" text="SpecialFeaturing" />
+            <TableColumn fx:id="criterionColumn" onEditCommit="#changeCriterion" prefWidth="130.0" text="Criterion" />
+            <TableColumn fx:id="spineNumberColumn" onEditCommit="#changeSpineNumber" prefWidth="142.0" text="Spine Number" />
         </columns>
       </TableView>
       <Label layoutX="597.0" layoutY="43.0" text="DVD Collection" />
@@ -45,11 +45,11 @@
             <Label text="Genre:" GridPane.rowIndex="2" />
             <Label text="Format:" GridPane.rowIndex="3" />
             <Label text="Director:" GridPane.rowIndex="4" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="genreField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="yearField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="titleField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+            <TextField fx:id="formatField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="directorField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
       <GridPane layoutX="463.0" layoutY="497.0" prefHeight="201.0" prefWidth="388.0">
@@ -70,16 +70,16 @@
             <Label text="Special Featuring" GridPane.rowIndex="2" />
             <Label text="Criterion:" GridPane.rowIndex="3" />
             <Label text="Spine Number:" GridPane.rowIndex="4" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="specialEditionField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+            <TextField fx:id="caseTypeField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="specialFeaturingField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="criterionField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="spineNumberField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <Button layoutX="38.0" layoutY="29.0" mnemonicParsing="false" text="Back" />
-      <Button layoutX="1147.0" layoutY="43.0" mnemonicParsing="false" text="Update" />
-      <Button layoutX="932.0" layoutY="645.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="69.0" text="Insert" />
-      <Button layoutX="1144.0" layoutY="645.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="69.0" text="Delete" />
+      <Button fx:id="backButton" layoutX="38.0" layoutY="29.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
+      <Button fx:id="updateButton" layoutX="1147.0" layoutY="43.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
+      <Button fx:id="insertButton" layoutX="932.0" layoutY="645.0" mnemonicParsing="false" onAction="#insertButtonHandle" prefHeight="27.0" prefWidth="69.0" text="Insert" />
+      <Button fx:id="deleteButton" layoutX="1144.0" layoutY="645.0" mnemonicParsing="false" onAction="#deleteButtonHandle" prefHeight="27.0" prefWidth="69.0" text="Delete" />
    </children>
 </AnchorPane>
