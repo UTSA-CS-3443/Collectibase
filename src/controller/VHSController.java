@@ -21,6 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.shape.Line;
 import javafx.util.converter.IntegerStringConverter;
+import model.Storage;
 import model.VHSCollection;
 import model.VHSTestCollection;
 import view.CollectApp;

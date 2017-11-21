@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import model.CDTestCollection;
+import model.Storage;
 import view.CollectApp;
 
 /**
@@ -116,7 +117,7 @@ public class CDController {
 		posterField.clear();
 		enhancedField.clear();
 		
-		allCD = cdTable.getItems();
+		Storage.allCD = cdTable.getItems();
 		try {
 			writeCDFile();
 		}catch (Exception ex) {
