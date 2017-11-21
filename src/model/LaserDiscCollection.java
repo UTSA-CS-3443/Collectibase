@@ -7,8 +7,21 @@ public class LaserDiscCollection extends MoviesCollection {
 	private String sides;
 	private String cover;
 	
-	public LaserDiscCollection(String title) {
-		super(title);
+	public LaserDiscCollection() {
+		super("", "0", "", "", "", "");
+		this.encodingFormat = "";
+		this.region = "";
+		this.sides = "";
+		this.cover = "";
+	}
+	
+	public LaserDiscCollection(String title, String year, String genre, String format, String director, String specialEdition, String encodingFormat, String region, String sides,String cover ) {
+		super(title, year, genre, format, director, specialEdition);
+		this.encodingFormat = encodingFormat;
+		this.region = region;
+		this.sides = sides;
+		this.cover = cover;
+		
 	}
 
 	public String getEncodingFormat() {
