@@ -16,8 +16,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import model.CDTestCollection;
+
 import model.Storage;
+
+import model.CDCollection;
+
 import view.CollectApp;
 
 /**
@@ -38,21 +41,24 @@ public class CDController {
 	public TextField multiField;
 	public TextField posterField;
 	public TextField enhancedField;
+	public TextField yearField;
 	@FXML
-	TableView<CDTestCollection> cdTable;
+	TableView<CDCollection> cdTable;
 	@FXML
-	TableColumn<CDTestCollection, String> artistColumn;
+	TableColumn<CDCollection, String> artistColumn;
 	@FXML
-	TableColumn<CDTestCollection, String> albumColumn;
+	TableColumn<CDCollection, String> albumColumn;
 	@FXML
-	TableColumn<CDTestCollection, String> runningColumn;
+	TableColumn<CDCollection, String> yearColumn;
 	@FXML
-	TableColumn<CDTestCollection, String> multiColumn;
+	TableColumn<CDCollection, String> runningColumn;
 	@FXML
-	TableColumn<CDTestCollection, String> posterColumn;
+	TableColumn<CDCollection, String> multiColumn;
 	@FXML
-	TableColumn<CDTestCollection, String> enhancedColumn;
-	ObservableList<CDTestCollection> allCD;
+	TableColumn<CDCollection, String> posterColumn;
+	@FXML
+	TableColumn<CDCollection, String> enhancedColumn;
+	ObservableList<CDCollection> allCD;
 	
 	public void initialize() {
 		cellValueFactory();
@@ -72,7 +78,7 @@ public class CDController {
 	}
 	
 	public void insertButtonHandle() {
-		CDTestCollection cdAdd = new CDTestCollection();
+		CDCollection cdAdd = new CDCollection();
 		if(artistField.getText().equals("")) {
 			cdAdd.setArtist("");
 		}else {
@@ -109,6 +115,12 @@ public class CDController {
 			cdAdd.setEnhancedCD(enhancedField.getText());
 		}
 		
+		if(yearField.getText().equals("")) {
+			cdAdd.setYear("");
+		}else {
+			cdAdd.setYear(yearField.getText());
+		}
+		
 		cdTable.getItems().add(cdAdd);
 		artistField.clear();
 		albumField.clear();
@@ -116,8 +128,9 @@ public class CDController {
 		multiField.clear();
 		posterField.clear();
 		enhancedField.clear();
+		yearField.clear();
 		
-		Storage.allCD = cdTable.getItems();
+		allCD = cdTable.getItems();
 		try {
 			writeCDFile();
 		}catch (Exception ex) {
@@ -128,7 +141,7 @@ public class CDController {
 	}
 	
 	public void deleteButtonHandle() {
-		ObservableList<CDTestCollection> cdSelected;
+		ObservableList<CDCollection> cdSelected;
 		allCD = cdTable.getItems();
 		cdSelected = cdTable.getSelectionModel().getSelectedItems();
 		cdSelected.forEach(allCD::remove);
@@ -160,6 +173,7 @@ public class CDController {
 		multiColumn.setCellValueFactory(new PropertyValueFactory<>("multiCD"));
 		posterColumn.setCellValueFactory(new PropertyValueFactory<>("poster"));
 		enhancedColumn.setCellValueFactory(new PropertyValueFactory<>("enhancedCD"));
+		yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
 		
 		// code below lets you edit table cells
 		cdTable.setEditable(true);
@@ -172,34 +186,39 @@ public class CDController {
 	}
 	
 	public void changeArtist(CellEditEvent edditedCell) {
-		CDTestCollection artistSelected = cdTable.getSelectionModel().getSelectedItem();
+		CDCollection artistSelected = cdTable.getSelectionModel().getSelectedItem();
 		artistSelected.setArtist(edditedCell.getNewValue().toString());
 		
 	}
 	
 	public void changeAlbum(CellEditEvent edditedCell) {
-		CDTestCollection albumSelected = cdTable.getSelectionModel().getSelectedItem();
+		CDCollection albumSelected = cdTable.getSelectionModel().getSelectedItem();
 		albumSelected.setAlbum(edditedCell.getNewValue().toString());
 	}
 	
 	public void changeRunning(CellEditEvent edditedCell) {
-		CDTestCollection runSelected = cdTable.getSelectionModel().getSelectedItem();
+		CDCollection runSelected = cdTable.getSelectionModel().getSelectedItem();
 		runSelected.setRunningTime(edditedCell.getNewValue().toString());
 	}
 	
 	public void changeMulti(CellEditEvent edditedCell) {
-		CDTestCollection multiSelected = cdTable.getSelectionModel().getSelectedItem();
+		CDCollection multiSelected = cdTable.getSelectionModel().getSelectedItem();
 		multiSelected.setMultiCD(edditedCell.getNewValue().toString());
 	}
 	
 	public void changePoster(CellEditEvent edditedCell) {
-		CDTestCollection posterSelected = cdTable.getSelectionModel().getSelectedItem();
+		CDCollection posterSelected = cdTable.getSelectionModel().getSelectedItem();
 		posterSelected.setPoster(edditedCell.getNewValue().toString());
 	}
 	
 	public void changeEnhanced(CellEditEvent edditedCell) {
-		CDTestCollection enhancedSelected = cdTable.getSelectionModel().getSelectedItem();
+		CDCollection enhancedSelected = cdTable.getSelectionModel().getSelectedItem();
 		enhancedSelected.setEnhancedCD(edditedCell.getNewValue().toString());
+	}
+	
+	public void changeYear(CellEditEvent edditedCell) {
+		CDCollection yearSelected = cdTable.getSelectionModel().getSelectedItem();
+		yearSelected.setYear(edditedCell.getNewValue().toString());
 	}
 	
 	private void getCDFromFile() {
@@ -209,7 +228,7 @@ public class CDController {
 			String[] array;
 			while ((line = br.readLine()) != null) {
 				array = line.split(",");
-				cdTable.getItems().add(new CDTestCollection(array[0],array[1],array[2],array[3],array[4], array[5]));	
+				cdTable.getItems().add(new CDCollection(array[0],array[1],array[2],array[3],array[4], array[5], array[6] ));	
 			}
 			br.close();
 			
@@ -225,8 +244,8 @@ public class CDController {
 		try {
 			File file = new File("cd.txt");
 			write = new BufferedWriter(new FileWriter(file));
-			for(CDTestCollection cd : allCD) {
-				String text = cd.getArtist() + "," + cd.getAlbum() + "," + cd.getRunningTime() + "," + cd.getMultiCD() + "," + cd.getPoster() + "," + cd.getEnhancedCD() + "\n";
+			for(CDCollection cd : allCD) {
+				String text = cd.getArtist() + "," + cd.getAlbum() + "," + cd.getYear() + ","  + cd.getRunningTime() + "," + cd.getMultiCD() + "," + cd.getPoster() + "," + cd.getEnhancedCD() + "\n";
 				write.write(text);
 			}
 			

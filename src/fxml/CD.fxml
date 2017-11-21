@@ -10,13 +10,14 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CDController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CDController">
    <children>
       <Label layoutX="598.0" layoutY="30.0" text="CD Collection" />
       <TableView fx:id="cdTable" layoutX="11.0" layoutY="83.0" prefHeight="399.0" prefWidth="1259.0">
         <columns>
           <TableColumn fx:id="artistColumn" onEditCommit="#changeArtist" prefWidth="263.0" text="Artist" />
           <TableColumn fx:id="albumColumn" onEditCommit="#changeAlbum" prefWidth="221.0" text="Album" />
+            <TableColumn id="yearColumn" fx:id="yearColumn" onEditCommit="#changeYear" prefWidth="75.0" text="Year" />
             <TableColumn fx:id="runningColumn" onEditCommit="#changeRunning" prefWidth="170.0" text="Running Time" />
             <TableColumn fx:id="multiColumn" minWidth="0.0" onEditCommit="#changeMulti" prefWidth="145.0" text="Multi-CD" />
             <TableColumn fx:id="posterColumn" onEditCommit="#changePoster" prefWidth="240.0" text="Poster" />
@@ -48,22 +49,25 @@
             <TextField fx:id="posterField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <GridPane layoutX="495.0" layoutY="504.0" prefHeight="17.0" prefWidth="375.0">
+      <GridPane layoutX="495.0" layoutY="504.0" prefHeight="83.0" prefWidth="388.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="Enhanced-CD:" />
-            <TextField fx:id="enhancedField" prefHeight="56.0" prefWidth="225.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+            <TextField fx:id="enhancedField" prefHeight="16.0" prefWidth="194.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+            <Label text="Year:" GridPane.rowIndex="1" />
+            <TextField fx:id="yearField" prefHeight="15.0" prefWidth="194.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <Button fx:id="backButton" layoutX="39.0" layoutY="39.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
-      <Button fx:id="insertButton" layoutX="611.0" layoutY="589.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Insert" />
-      <Button fx:id="deleteButton" layoutX="811.0" layoutY="589.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
+      <Button fx:id="insertButton" layoutX="605.0" layoutY="641.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Insert" />
+      <Button fx:id="deleteButton" layoutX="805.0" layoutY="641.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
       <Button fx:id="updateButton" layoutX="1189.0" layoutY="39.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
    </children>
 </AnchorPane>
