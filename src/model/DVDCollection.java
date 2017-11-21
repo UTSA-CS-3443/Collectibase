@@ -1,7 +1,7 @@
 package model;
 
 /**
- * 
+ * @author jesusnieto
  * @author Travis
  *
  */
@@ -16,8 +16,20 @@ public class DVDCollection extends MoviesCollection {
 	 * Constructor for DVDCollection
 	 * @param title
 	 */
-	public DVDCollection(String title) {
-		super(title);
+	public DVDCollection() {
+		super("", "0", "", "", "", "");
+		this.caseType = "";
+		this.specialFeatDisc = "";
+		this.criterion = "";
+		this.spineNumber = "";
+	}
+	
+	public DVDCollection(String title, String year, String genre, String format, String director, String specialEdition, String caseType, String specialFeatDisc, String criterion, String spineNumber ) {
+		super(title, year, genre, format, director, specialEdition);
+		this.caseType = caseType;
+		this.specialFeatDisc = specialFeatDisc;
+		this.criterion = criterion;
+		this.spineNumber = spineNumber;
 	}
 
 	////////Getters and Setters\\\\\\\\
