@@ -1,6 +1,11 @@
 package model;
 
-
+/**
+ * 
+ * fixing vinyl stuff
+ * @author jesusnieto
+ *
+ */
 public class VinylCollection extends MusicCollection {
 
 	private String size; 
