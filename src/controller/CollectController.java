@@ -92,6 +92,7 @@ public class CollectController{
 			}
 		}
 		
+		
 		if(getChoiceValue != null) {
 			changeScene(passString);
 		}
