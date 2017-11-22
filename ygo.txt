@@ -1,2 +1,2 @@
-Dragon Dude,New,Super,A million dollars,Magic,500,200,023123-123123-1222
+Super,New,A million dollars,Dragon Dude,Magic,500,200,023123-123123-1222
 weee,weee,weee,weee,weee,weee,weee,weee
