@@ -38,6 +38,7 @@ public class MTGController {
 	public TextField powerField;
 	public TextField cardColorField;
 	
+	
 	@FXML
 	public TableView<MTGCollection> mtgTable;
 	@FXML
@@ -189,7 +190,7 @@ public class MTGController {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-	}
+	} 
 	
 	
 	public void cellValueFactory() {
