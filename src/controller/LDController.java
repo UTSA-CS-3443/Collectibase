@@ -17,6 +17,11 @@ import model.LaserDiscCollection;
 import model.Storage;
 import view.CollectApp;
 
+/**
+ * controller for the laserdisc interface
+ * @author Travis
+ *
+ */
 public class LDController {
 
 	public Button backButton;
