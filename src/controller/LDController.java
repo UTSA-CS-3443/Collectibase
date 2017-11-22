@@ -37,7 +37,7 @@ public class LDController {
 	@FXML
 	public TextField specialEditionField; // movie
 	@FXML
-	public TextField encodingFormat;
+	public TextField encodingFormatField;
 	@FXML
 	public TextField regionField;
 	@FXML
@@ -70,7 +70,7 @@ public class LDController {
 
 	public void initialize() {
 		cellValueFactory();
-		getDVDFromFile();
+		getLDFromFile();
 	}
 	
 	public void backButtonHandle() {
@@ -78,7 +78,7 @@ public class LDController {
 		CollectController.childScene.hide();
 		Storage.allLD = ldTable.getItems();
 		try {
-			writeDVDFile();
+			writeLDFile();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -87,7 +87,7 @@ public class LDController {
 	public void updateButtonHandle() {
 		Storage.allLD = ldTable.getItems();
 		try {
-			writeDVDFile();
+			writeLDFile();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -133,11 +133,11 @@ public class LDController {
 			ldAdd.setSpecialEdition(specialEditionField.getText());
 		}
 
-		if (encodingFormat.getText().equals("")) {
+		if (encodingFormatField.getText().equals("")) {
 			ldAdd.setEncodingFormat("");
-			ldAdd.setEncodingFormat(encodingFormat.getText());
+			ldAdd.setEncodingFormat(encodingFormatField.getText());
 		} else {
-			ldAdd.setEncodingFormat(encodingFormat.getText());
+			ldAdd.setEncodingFormat(encodingFormatField.getText());
 		}
 
 		if (regionField.getText().equals("")) {
@@ -166,7 +166,7 @@ public class LDController {
 		yearField.clear();
 		directorField.clear();
 		specialEditionField.clear();
-		encodingFormat.clear();
+		encodingFormatField.clear();
 		regionField.clear();
 		sidesField.clear();
 		coverField.clear();
@@ -174,20 +174,20 @@ public class LDController {
 		// writes to the file to keep table updated
 		Storage.allLD = ldTable.getItems();
 		try {
-			writeDVDFile();
+			writeLDFile();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 	
 	public void deleteButtonHandle() {
-		ObservableList<LaserDiscCollection> dvdSelected;
+		ObservableList<LaserDiscCollection> ldSelected;
 		Storage.allLD = ldTable.getItems();
-		dvdSelected = ldTable.getSelectionModel().getSelectedItems();
-		dvdSelected.forEach(Storage.allLD::remove);
+		ldSelected = ldTable.getSelectionModel().getSelectedItems();
+		ldSelected.forEach(Storage.allLD::remove);
 		Storage.allLD = ldTable.getItems();
 		try {
-			writeDVDFile();
+			writeLDFile();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -200,10 +200,10 @@ public class LDController {
 		yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
 		directorColumn.setCellValueFactory(new PropertyValueFactory<>("director"));
 		specialEditionColumn.setCellValueFactory(new PropertyValueFactory<>("specialEdition"));
-		encodingFormatColumn.setCellValueFactory(new PropertyValueFactory<>("caseType"));
-		regionColumn.setCellValueFactory(new PropertyValueFactory<>("criterion"));
-		sidesColumn.setCellValueFactory(new PropertyValueFactory<>("spineNumber"));
-		coverColumn.setCellValueFactory(new PropertyValueFactory<>("specialFeaturing"));
+		encodingFormatColumn.setCellValueFactory(new PropertyValueFactory<>("encodingFormat"));
+		regionColumn.setCellValueFactory(new PropertyValueFactory<>("region"));
+		sidesColumn.setCellValueFactory(new PropertyValueFactory<>("sides"));
+		coverColumn.setCellValueFactory(new PropertyValueFactory<>("cover"));
 
 		// the code below gives it the ability to edit info
 		ldTable.setEditable(true);
@@ -282,9 +282,9 @@ public class LDController {
 		coverSelected.setCover(edditedCell.getNewValue().toString());
 	}
 	
-	private void getDVDFromFile() {
+	private void getLDFromFile() {
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(new File("ld.txt")));
+			BufferedReader br = new BufferedReader(new FileReader(new File("laserdisc.txt")));
 			String line;
 			String[] array;
 			while ((line = br.readLine()) != null) {
@@ -300,10 +300,10 @@ public class LDController {
 		}
 	}
 
-	public void writeDVDFile() throws Exception {
+	public void writeLDFile() throws Exception {
 		Writer writer = null;
 		try {
-			File file = new File("ld.txt");
+			File file = new File("laserdisc.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (LaserDiscCollection dvd : Storage.allLD) {
 				String text = dvd.getTitle() + "," + dvd.getYear() + "," + dvd.getGenre() + "," + dvd.getFormat() + ","
