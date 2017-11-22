@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 import javafx.collections.ObservableList;
 
 /**
@@ -20,13 +18,6 @@ public class Storage {
 	public static ObservableList<MTGCollection> allMTG;
 	public static ObservableList<YuGiOhCollection> allYGO;
 	public static ObservableList<VinylCollection> allVinyl;
-	
-	
-	
-	
-	
-	
-	
-	
+	public static ObservableList<LaserDiscCollection> allLD;
 	
 }
