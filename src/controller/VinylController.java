@@ -19,14 +19,14 @@ import javafx.scene.control.cell.TextFieldTableCell;
 
 import model.Storage;
 import model.VinylCollection;
-import model.VinylCollection;
+
 
 import view.CollectApp;
 
 /**
  * 
- * controller for CD collection fxml
- * @author jesusnieto
+ * controller for vinyl collection fxml
+ * @author Travis
  *
  */
 public class VinylController {
