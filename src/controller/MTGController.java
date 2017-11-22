@@ -20,7 +20,16 @@ import model.MTGCollection;
 import model.Storage;
 import model.VHSCollection;
 import view.CollectApp;
-
+/**
+ * 
+ * 
+ * 
+ * Debugged by Jesus and Travis.
+ * 
+ * @author Jesus
+ * @author Travis
+ *
+ */
 public class MTGController {
 	public Button backButton;
 	public Button insertButton;

@@ -4,10 +4,9 @@ package model;
  * Template to add cards to a collection for the Magic the Gathering trading
  * card game
  * 
+ * debugged by: Gabriel, Jesus, and Travis.
  * @author Travis
  * 
- * 
- *
  */
 public class MTGCollection extends TCGCollection {
 
