@@ -183,40 +183,41 @@ public class VinylController {
 		sizeColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 		colorColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 		speedColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		yearColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 	}
 	
-	public void changeArtist(CellEditEvent edditedCell) {
+	public void changeArtist(CellEditEvent<Integer, String> edditedCell) {
 		VinylCollection artistSelected = vinylTable.getSelectionModel().getSelectedItem();
 		artistSelected.setArtist(edditedCell.getNewValue().toString());
 		
 	}
 	
-	public void changeAlbum(CellEditEvent edditedCell) {
+	public void changeAlbum(CellEditEvent<Integer, String> edditedCell) {
 		VinylCollection albumSelected = vinylTable.getSelectionModel().getSelectedItem();
 		albumSelected.setAlbum(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeRunning(CellEditEvent edditedCell) {
+	public void changeRunning(CellEditEvent<VinylCollection, String> edditedCell) {
 		VinylCollection runSelected = vinylTable.getSelectionModel().getSelectedItem();
 		runSelected.setRunningTime(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeSize(CellEditEvent edditedCell) {
+	public void changeSize(CellEditEvent<VinylCollection, String> edditedCell) {
 		VinylCollection sizeSelected = vinylTable.getSelectionModel().getSelectedItem();
 		sizeSelected.setSize(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeColor(CellEditEvent edditedCell) {
+	public void changeColor(CellEditEvent<VinylCollection, String> edditedCell) {
 		VinylCollection colorSelected = vinylTable.getSelectionModel().getSelectedItem();
 		colorSelected.setColor(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeSpeed(CellEditEvent edditedCell) {
+	public void changeSpeed(CellEditEvent<VinylCollection, String> edditedCell) {
 		VinylCollection speedSelected = vinylTable.getSelectionModel().getSelectedItem();
 		speedSelected.setSpeed(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeYear(CellEditEvent edditedCell) {
+	public void changeYear(CellEditEvent<VinylCollection, String> edditedCell) {
 		VinylCollection yearSelected = vinylTable.getSelectionModel().getSelectedItem();
 		yearSelected.setYear(edditedCell.getNewValue().toString());
 	}
