@@ -1,4 +1,6 @@
-hklj,adsfadsf,dfdf,0,dsf,sdfsdf,1,2,3,j
-Something,1999,Here,H,H,H,ljlk,h,h,h
-ve,wfvdf,fad,vadf,adfv,adfv,adfv,dafv,adfv,afdv
-vsdfv,dfv,sdfv,sdfv,sdfv,sdfv,sdfv,dfv,sdfv,sdfv
+The Evil Dead,1981,Horror,DVD,Sam Raimi,N/A,Original,N/A,N/A,N/A
+Evil Dead II,1987,Horror,DVD,Sam Raimi,N/A,Original,N/A,N/A,N/A
+Army of Darkness,1992,Cult Film,DVD,Sam Raimi,N/A,Original,N/A,N/A,N/A
+House of 1000 Corpses,2003,Slasher/Horror,DVD,Rob Zombie,N/A,Original,N/A,N/A,N/A
+The Devils Rejects,2005,Thriller/Horror,DVD,Rob Zombie,Yes,Original,Bonus Disc,N/A,N/A
+Two-Lane Blacktop,1971,Cult Film,DVD,Monte Hellman,Yes,Original,Commentary,Yes,414

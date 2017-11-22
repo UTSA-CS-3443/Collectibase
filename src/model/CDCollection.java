@@ -15,7 +15,7 @@ public class CDCollection extends MusicCollection {
 
 	public CDCollection(String artist, String year, String album, String runtime, String multiCD, String poster, 
 			String enhancedCD) {
-		super(artist, year, album, runtime);
+		super(artist, album, year, runtime);
 		this.multiCD = multiCD;
 		this.poster = poster;
 		this.enhancedCD = enhancedCD;
