@@ -20,22 +20,41 @@ import model.MTGCollection;
 import model.Storage;
 import model.VHSCollection;
 import view.CollectApp;
-
+/**
+ * 
+ * 
+ * 
+ * Debugged by Jesus and Travis.
+ * 
+ * @author Jesus
+ * @author Travis
+ *
+ */
 public class MTGController {
 	public Button backButton;
 	public Button insertButton;
 	public Button deleteButton;
 	public Button updateButton;
 	
+	@FXML
 	public TextField nameField;
+	@FXML
 	public TextField conditionField;
+	@FXML
 	public TextField rarityField;
+	@FXML
 	public TextField valueField;
+	@FXML
 	public TextField manaField;
+	@FXML
 	public TextField cardTypeField;
+	@FXML
 	public TextField cardSetField;
+	@FXML
 	public TextField artistField;
+	@FXML
 	public TextField powerField;
+	@FXML
 	public TextField cardColorField;
 	
 	

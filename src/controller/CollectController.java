@@ -57,7 +57,7 @@ public class CollectController{
 	public void initialize() {
 		musicChoice.getItems().addAll("CD","Vinyl","Cassette");	
 		movieChoice.getItems().addAll("VHS","DVD","Laser Disc");
-		cardChoice.getItems().addAll("MTG", "Pokemon","TCG","Yu-Gi-Oh");
+		cardChoice.getItems().addAll("MTG", "Pokemon","Yu-Gi-Oh");
 		//nextButton.setTooltip(new Tooltip("Next"));
 		musicChoice.setTooltip(new Tooltip("Select a music collection"));
 		movieChoice.setTooltip(new Tooltip("Select a movie collection"));
@@ -91,6 +91,7 @@ public class CollectController{
 				}
 			}
 		}
+		
 		
 		if(getChoiceValue != null) {
 			changeScene(passString);
@@ -164,8 +165,6 @@ public class CollectController{
 			fxmlString = "/fxml/Cassette.fxml";
 		}else if(a == "Pokemon") {
 			fxmlString = "/fxml/Pokemon.fxml";
-		}else if(a == "TCG") {
-			fxmlString = "/fxml/TCG.fxml";
 		}else if(a == "MTG") {
 			fxmlString = "/fxml/MTG.fxml";
 		}else if(a == "Yu-Gi-Oh") {

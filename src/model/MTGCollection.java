@@ -4,10 +4,9 @@ package model;
  * Template to add cards to a collection for the Magic the Gathering trading
  * card game
  * 
+ * debugged by: Gabriel, Jesus, and Travis.
  * @author Travis
  * 
- * 
- *
  */
 public class MTGCollection extends TCGCollection {
 
@@ -37,9 +36,9 @@ public class MTGCollection extends TCGCollection {
 	 * private String rarity; private String condition; private String value;
 	 * private String name;
 	 */
-	public MTGCollection(String rarity, String condition, String value, String name, String manaCost, String cardType,
+	public MTGCollection(String name, String condition, String rarity, String value, String manaCost, String cardType,
 			String cardSet, String artistInfo, String powerToughness, String cardColor) {
-		super(rarity, condition, value, name);
+		super(name, condition, rarity, value);
 		this.manaCost = manaCost;
 		this.cardType = cardType;
 		this.cardSet = cardSet;

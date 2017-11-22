@@ -12,11 +12,12 @@ public class TCGCollection{
 	 * Constructor for TCGCollection
 	 * @param name
 	 */
-	public TCGCollection(String rarity, String condition, String value, String name) {
-		setRarity(rarity);
-		setCondition(condition);
-		setValue(value);
+	public TCGCollection(String name, String condition, String rarity, String value) {
 		setName(name);
+		setCondition(condition);
+		setRarity(rarity);
+		setValue(value);
+		
 	}
 	
 	////////Getters and Setters\\\\\\\\
