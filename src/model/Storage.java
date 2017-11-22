@@ -17,6 +17,8 @@ public class Storage {
 	public static ObservableList<VHSCollection> allVHS;
 	public static ObservableList<CDCollection> allCD;
 	public static ObservableList<DVDCollection> allDVD;
+	public static ObservableList<MTGCollection> allMTG;
+	
 	
 	
 	
