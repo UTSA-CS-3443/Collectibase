@@ -18,6 +18,7 @@ public class Storage {
 	public static ObservableList<CDCollection> allCD;
 	public static ObservableList<DVDCollection> allDVD;
 	public static ObservableList<MTGCollection> allMTG;
+	public static ObservableList<YuGiOhCollection> allYGO;
 	
 	
 	

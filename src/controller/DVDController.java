@@ -15,7 +15,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import model.DVDCollection;
 import model.Storage;
-import model.VHSCollection;
 import view.CollectApp;
 
 public class DVDController {
