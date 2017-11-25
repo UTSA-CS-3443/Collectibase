@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 Super,New,A million dollars,Dragon Dude,Magic,500,200,023123-123123-1222
 weee,weee,weee,weee,weee,weee,weee,weee
+=======
+Very Rare,Immaculate,$$$,Feraligator,,,,
+Star,bad,,Totadile,Team Rocket,100,40,
+Star,Aight,$$$$$,Raichu,Jungle,30,45,666777
+Circle,Basic,$,Pikachu,Basic,50,20,25
+>>>>>>> branch 'master' of https://github.com/UTSA-CS-3443/Collectibase.git
