@@ -18,7 +18,7 @@
           <TableColumn fx:id="artistColumn" onEditCommit="#changeArtist" prefWidth="254.2062644958496" text="Artist" />
           <TableColumn fx:id="yearColumn" onEditCommit="#changeYear" prefWidth="54.79375457763672" text="Year" />
             <TableColumn fx:id="albumColumn" onEditCommit="#changeAlbum" prefWidth="293.1453094482422" text="Album" />
-            <TableColumn fx:id="runTimeColumn" onEditCommit="#changeRunTime" prefWidth="109.30328369140625" text="Run Time" />
+            <TableColumn fx:id="runningTimeColumn" onEditCommit="#changeRunningTime" prefWidth="109.30328369140625" text="Run Time" />
             <TableColumn fx:id="typeColumn" onEditCommit="#changeType" prefWidth="204.68389892578125" text="Type" />
             <TableColumn fx:id="writeProtectionColumn" onEditCommit="#changeWriteProtection" prefWidth="114.74847412109375" text="Write Protection" />
             <TableColumn fx:id="audioOutputColumn" onEditCommit="#changeAudioOutput" prefWidth="132.2515869140625" text="Audio Output" />
@@ -44,7 +44,7 @@
             <TextField fx:id="artistField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
             <TextField fx:id="yearField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="albumField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="runTimeField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="runningTimeField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane layoutX="464.0" layoutY="504.0" prefHeight="180.0" prefWidth="308.0">

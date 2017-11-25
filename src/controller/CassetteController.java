@@ -19,6 +19,7 @@ import view.CollectApp;
 
 public class CassetteController {
 
+	@FXML
 	public Button backButton;
 	public Button updateButton;
 	public Button deleteButton;
@@ -31,7 +32,7 @@ public class CassetteController {
 	@FXML
 	public TextField albumField;
 	@FXML
-	public TextField runTimeField;
+	public TextField runningTimeField;
 	@FXML
 	public TextField typeField;
 	@FXML
@@ -49,7 +50,7 @@ public class CassetteController {
 	@FXML
 	TableColumn<CassetteCollection, String> albumColumn;
 	@FXML
-	TableColumn<CassetteCollection, String> runTimeColumn;
+	TableColumn<CassetteCollection, String> runningTimeColumn;
 	@FXML
 	TableColumn<CassetteCollection, String> typeColumn;
 	@FXML
@@ -105,10 +106,10 @@ public class CassetteController {
 			cassAdd.setAlbum(albumField.getText());
 		}
 		
-		if (runTimeField.getText().equals("")) {
+		if (runningTimeField.getText().equals("")) {
 			cassAdd.setRunningTime("");
 		} else {
-			cassAdd.setRunningTime(runTimeField.getText());
+			cassAdd.setRunningTime(runningTimeField.getText());
 		}
 		
 		if (typeField.getText().equals("")) {
@@ -140,7 +141,7 @@ public class CassetteController {
 		artistField.clear();
 		yearField.clear();
 		albumField.clear();
-		runTimeField.clear();
+		runningTimeField.clear();
 		typeField.clear();
 		writeProtectionField.clear();
 		audioOutputField.clear();
@@ -170,9 +171,9 @@ public class CassetteController {
 	
 	public void cellValueFactory() {
 		artistColumn.setCellValueFactory(new PropertyValueFactory<>("artist"));
-		yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
+		yearColumn.setCellValueFactory(new PropertyValueFactory<>("yeavr"));
 		albumColumn.setCellValueFactory(new PropertyValueFactory<>("album"));
-		runTimeColumn.setCellValueFactory(new PropertyValueFactory<>("runTime"));
+		runningTimeColumn.setCellValueFactory(new PropertyValueFactory<>("runningTime"));
 		typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 		writeProtectionColumn.setCellValueFactory(new PropertyValueFactory<>("writeProtection"));
 		audioOutputColumn.setCellValueFactory(new PropertyValueFactory<>("audioOutput"));
@@ -182,7 +183,7 @@ public class CassetteController {
 		artistColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 		yearColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 		albumColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-		runTimeColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+		runningTimeColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 		typeColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 		writeProtectionColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 		audioOutputColumn.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -205,13 +206,12 @@ public class CassetteController {
 		CassetteCollection albumSelected = cassTable.getSelectionModel().getSelectedItem();
 		albumSelected.setAlbum(edditedCell.getNewValue().toString());
 	}
-	public void changeRunTime(CellEditEvent edditedCell) {
-		CassetteCollection runTimeSelected = cassTable.getSelectionModel().getSelectedItem();
-		runTimeSelected.setRunningTime(edditedCell.getNewValue().toString());
+	public void changeRunningTime(CellEditEvent edditedCell) {
+		CassetteCollection runningTimeSelected = cassTable.getSelectionModel().getSelectedItem();
+		runningTimeSelected.setRunningTime(edditedCell.getNewValue().toString());
 	}
 	public void changeType(CellEditEvent edditedCell) {
-		CassetteCollection typeSelected = cassTable.
-				getSelectionModel().getSelectedItem();
+		CassetteCollection typeSelected = cassTable.getSelectionModel().getSelectedItem();
 		typeSelected.setType(edditedCell.getNewValue().toString());
 	}
 	public void changeWriteProtection(CellEditEvent edditedCell) {
