@@ -1,1 +1,2 @@
-Alien,1970,Sci-Fi/Horror,Laserdisc,Ridley Scott,no,CLV,NTSC,2,Mint
+Alien, 1970, Sci-Fi/Horror, Laserdisc, Ridley Scott, no, CLV, NTSC, 2, Mint
+Another Test, 0, , , , , , , , 
