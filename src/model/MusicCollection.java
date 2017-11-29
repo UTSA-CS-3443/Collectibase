@@ -1,22 +1,28 @@
 package model;
 
+/**
+ * MusicCollection is a parent class to Cassette, CD, and Vinyl. It holds
+ * variables that each one of these classes have in common.
+ * 
+ * @author Travis
+ *
+ */
 public class MusicCollection {
 
-	private String albumName; // artist
-	// private String musicFormat; // type of format like cd, tape, etc.
-	private String runningTime;
-	private String artist;
-	private String year;
+	private String albumName; // name of a given album
+	private String runningTime; // length of a given album
+	private String artist; // artist of a given album
+	private String year; // release of a given album
 
+	//////// constructors ////////
 	public MusicCollection(String artist, String year, String album, String runTime) {
 		setArtist(artist); // maybe album name?
 		setYear(year); // year the album was released
 		setAlbum(album);
 		setRunningTime(runTime);
-
-		// this.albumName = albumName;
 	}
-
+	
+	//////// getters and setters ////////
 	public String getAlbum() {
 		return albumName;
 	}

@@ -1,16 +1,27 @@
 package model;
 
+/**
+ * TCGCollection is the parent class for PokemonCardCollection, YuGiOhCollection, and MTGCollection.
+ * This class holds variables that each child class have in common.
+ * 
+ * @author Travis
+ *
+ */
 public class TCGCollection{
 	
-	private String rarity;
-	private String condition;
-	private String value;
-	private String name;
+	private String rarity; // how rare is a card
+	private String condition; // is the card in poor, good, great, mint condition
+	private String value; // monitary value of a card
+	private String name; // name of a card
 	
 	
 	/**
-	 * Constructor for TCGCollection
+	 * Constructor
+	 * 
 	 * @param name
+	 * @param condition
+	 * @param rarity
+	 * @param value
 	 */
 	public TCGCollection(String name, String condition, String rarity, String value) {
 		setName(name);

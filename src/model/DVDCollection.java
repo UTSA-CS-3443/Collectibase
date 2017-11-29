@@ -1,6 +1,9 @@
 package model;
 
 /**
+ * DVDCollection is an extension of MoviesCollection.The DVDCollection
+ * holds variable that are more specific to the DVD format.
+ * 
  * @author jesusnieto
  * @author Travis
  *
@@ -12,10 +15,7 @@ public class DVDCollection extends MoviesCollection {
 	private String criterion; // is the DVD part of the Criterion collection (printing and pressing of historical movies)
 	private String spineNumber; // if  Criterion, the film will have a spine number
 	
-	/**
-	 * Constructor for DVDCollection
-	 * @param title
-	 */
+	//////// constructors ////////
 	public DVDCollection() {
 		super("", "0", "", "", "", "");
 		this.caseType = "";

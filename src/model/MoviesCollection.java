@@ -1,17 +1,24 @@
 package model;
 
-public class MoviesCollection /*extends Collections*/ {
+/**
+ * MoviesCollection is a parent class to DVD, LasesrDisc, and VHS. It holds
+ * variables that each one of these classes have in common.
+ * 
+ * @author Travis
+ *
+ */
+public class MoviesCollection {
 
-	// possible variables: awardWinning
-	
 	private String format;
 	private String director;
-	private String specialEdition; // possible boolean?
+	private String specialEdition;
 	private String title;
-	private String genre; 
+	private String genre;
 	private String year;
 
-	public MoviesCollection(String title, String year,String genre ,String format, String director, String specialEdition) {
+	//////// constructor ////////
+	public MoviesCollection(String title, String year, String genre, String format, String director,
+			String specialEdition) {
 		setTitle(title);
 		setYear(year);
 		setGenre(genre);
@@ -19,10 +26,6 @@ public class MoviesCollection /*extends Collections*/ {
 		this.director = director;
 		this.specialEdition = specialEdition;
 	}
-	
-	/*public MoviesCollection(String title) {
-		setName(title);
-	}*/
 
 	////////// getters and setters//////////
 	public String getFormat() {
@@ -72,6 +75,5 @@ public class MoviesCollection /*extends Collections*/ {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-
 
 }

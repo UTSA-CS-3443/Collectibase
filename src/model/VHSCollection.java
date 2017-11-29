@@ -1,7 +1,13 @@
 package model;
-// TODO: add toStrings
 
-public class VHSCollection extends MoviesCollection /* implements Comparable<VHSCollection> */ {
+/**
+ * 
+ * VHSCollection is an extension of MoviesCollection.The VHSCollection
+ * holds variable that are more specific to the VHS format.
+ * @author Travis
+ *
+ */
+public class VHSCollection extends MoviesCollection {
 
 	private String homeRecording; // i.e. taped from tv, other tapes, home movies, etc..
 	private String multiProgram; // if there are more the one programs on a single tape, primarily home
@@ -9,6 +15,7 @@ public class VHSCollection extends MoviesCollection /* implements Comparable<VHS
 	private String multiTape; // VHS movies with multiple tapes, i.e Titanic and Gone With the Wind
 	private String sleeveType; // clamshell, plastic, cardboard.
 
+	//////// constructors ////////
 	public VHSCollection() {
 		super("", "0","", "", "", "");
 		this.homeRecording = "";
@@ -27,7 +34,7 @@ public class VHSCollection extends MoviesCollection /* implements Comparable<VHS
 		
 	}
 	
-	//////// getters and setters////////
+	//////// getters and setters ////////
 	public String getHomeRecording() {
 		return homeRecording;
 	}

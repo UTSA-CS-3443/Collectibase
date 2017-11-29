@@ -1,12 +1,20 @@
 package model;
 
+/**
+ * LaserDiscCollection is an extension of MoviesCollection.The LaserDiscCollection
+ * holds variable that are more specific to the Laserdisc format.
+ * 
+ * @author Travis
+ *
+ */
 public class LaserDiscCollection extends MoviesCollection {
 	
 	private String encodingFormat; //CAV, CLV, CAA
-	private String region;
-	private String sides;
+	private String region; // NTSC, JP, PAL
+	private String sides; 
 	private String cover;
 	
+	//////// constructors ////////
 	public LaserDiscCollection() {
 		super("", "0", "", "", "", "");
 		this.encodingFormat = "";
@@ -24,6 +32,7 @@ public class LaserDiscCollection extends MoviesCollection {
 		
 	}
 
+	//////// getters and setters ////////
 	public String getEncodingFormat() {
 		return encodingFormat;
 	}

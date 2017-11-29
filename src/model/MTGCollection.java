@@ -32,10 +32,6 @@ public class MTGCollection extends TCGCollection {
 		this.cardColor = "";
 	}
 
-	/*
-	 * private String rarity; private String condition; private String value;
-	 * private String name;
-	 */
 	public MTGCollection(String name, String condition, String rarity, String value, String manaCost, String cardType,
 			String cardSet, String artistInfo, String powerToughness, String cardColor) {
 		super(name, condition, rarity, value);
