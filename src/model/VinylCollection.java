@@ -9,9 +9,9 @@ package model;
  */
 public class VinylCollection extends MusicCollection {
 
-	private String size;
-	private String color;
-	private String speed;
+	private String size; // is the vinyl record 7', 10', or 12'
+	private String color; // what color is the vinyl
+	private String speed; // 33 1/3 rpm, 45 rpm, or 78 rpm
 
 	//////// constructors ////////
 	public VinylCollection() {
