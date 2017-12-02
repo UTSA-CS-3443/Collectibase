@@ -1,2 +1,2 @@
-Alien, 1970, Sci-Fi/Horror, Laserdisc, Ridley Scott, no, CLV, NTSC, 2, Mint
-Another Test, 0, , , , , , , , 
+Alien,   1970,   Sci-Fi/Horror,   Laserdisc,   Ridley Scott,   no,   CLV,   NTSC,   2,   Mint
+It's a Mad,  Mad,  Mad,  Mad World,  1963,  Comedy,  Laserdisc,  Stanley Kramer,  Yes,  CLV
