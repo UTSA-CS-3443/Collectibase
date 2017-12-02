@@ -41,23 +41,23 @@ public class YGOController {
 	@FXML
 	public TextField serialNumberField;
 	@FXML
-	TableView<YuGiOhCollection> ygoTable;
+	public TableView<YuGiOhCollection> ygoTable;
 	@FXML
-	TableColumn<YuGiOhCollection, String> rarityColumn;
+	public TableColumn<YuGiOhCollection, String> rarityColumn;
 	@FXML
-	TableColumn<YuGiOhCollection, String> conditionColumn;
+	public TableColumn<YuGiOhCollection, String> conditionColumn;
 	@FXML
-	TableColumn<YuGiOhCollection, String> valueColumn;
+	public TableColumn<YuGiOhCollection, String> valueColumn;
 	@FXML
-	TableColumn<YuGiOhCollection, String> nameColumn;
+	public TableColumn<YuGiOhCollection, String> nameColumn;
 	@FXML
-	TableColumn<YuGiOhCollection, String> cardTypeColumn;
+	public TableColumn<YuGiOhCollection, String> cardTypeColumn;
 	@FXML
-	TableColumn<YuGiOhCollection, String> attackColumn;
+	public TableColumn<YuGiOhCollection, String> attackColumn;
 	@FXML
-	TableColumn<YuGiOhCollection, String> defenseColumn;
+	public TableColumn<YuGiOhCollection, String> defenseColumn;
 	@FXML
-	TableColumn<YuGiOhCollection, String> serialNumberColumn;
+	public TableColumn<YuGiOhCollection, String> serialNumberColumn;
 	
 	public void initialize() {
 		cellValueFactory();
@@ -86,7 +86,7 @@ public class YGOController {
 	
 	public void insertButtonHandle() {
 		YuGiOhCollection ygoAdd = new YuGiOhCollection();
-		//Error checks if any fields are empty, autopopulate with null
+		//Error checks if any fields are empty, auto populate with null
 		if (rarityField.getText().equals("")) {
 			ygoAdd.setRarity("");
 		} else {
