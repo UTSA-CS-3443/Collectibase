@@ -1,29 +1,30 @@
 package model;
 
 /*********
- * A trading card game collection consisting of Yu-Gi-Oh cards.
- * Preset card statistics are card name, type, attack, defense, and 
- * serial number. 
+ * A trading card game collection consisting of Yu-Gi-Oh cards. Preset card
+ * statistics are card name, type, attack, defense, and serial number.
  * 
  * 
  * @author brendatrejo
  *
+ *         Debuggers:
+ * @author Travis
  */
 
 public class YuGiOhCollection extends TCGCollection {
 
-	private String cardType; //spell, trap, etc. 
-	private String attack; //some number
-	private String defense; //some number
-	private String serialNumber; //optional serial number
-	
+	private String cardType; // spell, trap, etc.
+	private String attack; // some number
+	private String defense; // some number
+	private String serialNumber; // optional serial number
+
 	public YuGiOhCollection() {
 		super("", "", "", "");
 	}
-	
-	public YuGiOhCollection(String rarity, String condition, String value, String name,
-						String cardType, String attack, String defense, String serialNumber) {
-		super(rarity, condition, value, name);
+
+	public YuGiOhCollection(String rarity, String condition, String value, String name, String cardType, String attack,
+			String defense, String serialNumber) {
+		super(name, condition, rarity, value);
 		this.cardType = cardType;
 		this.attack = attack;
 		this.defense = defense;
