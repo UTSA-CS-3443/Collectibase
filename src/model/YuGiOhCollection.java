@@ -23,7 +23,7 @@ public class YuGiOhCollection extends TCGCollection {
 	
 	public YuGiOhCollection(String rarity, String condition, String value, String name,
 						String cardType, String attack, String defense, String serialNumber) {
-		super(rarity, condition, value, name);
+		super(name, condition, rarity, value);
 		this.cardType = cardType;
 		this.attack = attack;
 		this.defense = defense;
