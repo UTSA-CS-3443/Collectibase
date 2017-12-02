@@ -15,8 +15,8 @@ package model;
 public class CassetteCollection extends MusicCollection {
 	
 	private String type; // Type 1, 2, 3, 4, or other
-	private String  writeProtection;
-	private String  audioOutput;
+	private String writeProtection;
+	private String audioOutput;
 	private String endlessLoop;
 	
 	public CassetteCollection() {

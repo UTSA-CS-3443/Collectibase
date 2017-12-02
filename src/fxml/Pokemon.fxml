@@ -1,19 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PokeController">
    <children>
-      <Label layoutX="189.0" layoutY="49.0" text="Pokemon Collection" />
-      <TableView layoutX="70.0" layoutY="110.0" prefHeight="276.0" prefWidth="361.0">
+      <Label layoutX="599.0" layoutY="55.0" text="Pokemon Collection" />
+      <TableView fx:id="pokeTable" layoutX="4.0" layoutY="121.0" prefHeight="401.0" prefWidth="1272.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="rarityColumn" onEditCommit="#changeRarity" prefWidth="119.96810102462769" text="Rarity" />
+          <TableColumn fx:id="conditionColumn" onEditCommit="#changeCondition" prefWidth="151.87996673583984" text="Condition" />
+            <TableColumn fx:id="valueColumn" onEditCommit="#changeValue" prefWidth="143.12008666992188" text="Value" />
+            <TableColumn fx:id="nameColumn" onEditCommit="#changeName" prefWidth="414.82672119140625" text="Name" />
+            <TableColumn fx:id="seriesColumn" minWidth="0.0" onEditCommit="#changeSeries" prefWidth="146.31866455078125" text="Series" />
+            <TableColumn fx:id="setColumn" onEditCommit="#changeSet" prefWidth="171.00738525390625" text="Set" />
+            <TableColumn fx:id="typeColumn" onEditCommit="#changeType" prefWidth="131.8446044921875" text="Type" />
         </columns>
       </TableView>
+      <Button fx:id="backButton" layoutX="72.0" layoutY="59.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
+      <Button fx:id="updateButton" layoutX="1134.0" layoutY="59.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
+      <Button fx:id="insertButton" layoutX="975.0" layoutY="600.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Insert" />
+      <Button fx:id="deleteButton" layoutX="1134.0" layoutY="600.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
+      <GridPane layoutX="47.0" layoutY="537.0" prefHeight="180.0" prefWidth="308.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Rarity:" />
+            <Label text="Condition:" GridPane.rowIndex="1" />
+            <Label text="Value:" GridPane.rowIndex="2" />
+            <Label text="Name:" GridPane.rowIndex="3" />
+            <TextField fx:id="rarityField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+            <TextField fx:id="conditionField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="valueField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="nameField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="407.0" layoutY="539.0" prefHeight="180.0" prefWidth="308.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Series:" />
+            <Label text="Set:" GridPane.rowIndex="1" />
+            <Label text="Type:" GridPane.rowIndex="2" />
+            <TextField fx:id="seriesField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+            <TextField fx:id="setField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="typeField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>

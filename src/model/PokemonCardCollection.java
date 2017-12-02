@@ -29,6 +29,9 @@ public class PokemonCardCollection extends TCGCollection {
 
     public PokemonCardCollection() {
         super("","","","");
+        this.series="";
+        this.set="";
+        this.type="";
     }
     
     public PokemonCardCollection(String rarity, String condition, String value, String name,

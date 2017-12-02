@@ -22,7 +22,7 @@ public class YGOController {
 	public Button backButton;
 	public Button updateButton;
 	public Button deleteButton;
-	public Button intertButton;
+	public Button insertButton;
 	
 	@FXML
 	public TextField rarityField;
@@ -257,7 +257,7 @@ public class YGOController {
 			for (YuGiOhCollection ygo : Storage.allYGO) {
 				String text = ygo.getRarity() + "," + ygo.getCondition() + "," + ygo.getValue() + "," + ygo.getName() +
 						"," + ygo.getCardType() + "," + ygo.getAttack() + "," + ygo.getDefense() + "," + ygo.getSerialNumber() + "\n";
-				writer.write(text);;
+				writer.write(text);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();

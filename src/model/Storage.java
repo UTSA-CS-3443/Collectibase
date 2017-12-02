@@ -20,4 +20,5 @@ public class Storage {
 	public static ObservableList<VinylCollection> allVinyl;
 	public static ObservableList<CassetteCollection> allCassettes;
 	public static ObservableList<LaserDiscCollection> allLD;
+	public static ObservableList<PokemonCardCollection> allPoke;
 }
