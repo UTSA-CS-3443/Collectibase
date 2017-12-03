@@ -1,3 +1,2 @@
-Misfits,25 min,1982,Walk Among Us,Punk,yes,Stereo,no
-Misfits,19 min,1983,Earth A.D,Punk,yes,Mono,no
-art,ye,al,run,ty,wr,au,en
+Misfits,1982,Walk Among Us,25 min,Punk,Yes,Mono,no
+Beastie Boys,1986,Licensed to Ill,45 min,Hip-Hop/Rap,Yes,Stereo,no
