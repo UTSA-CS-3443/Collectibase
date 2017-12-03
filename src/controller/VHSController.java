@@ -303,7 +303,7 @@ public class VHSController{
 			String line;
 			String[] array;
 			while ((line = br.readLine()) != null) {
-				array = line.split(",");
+				array = line.split("%");
 				vhsTable.getItems().add(new VHSCollection(array[0], array[1], array[2], array[3],
 						array[4], array[5], array[6], array[7], array[8], array[9]));
 			}
@@ -320,9 +320,9 @@ public class VHSController{
 			File file = new File("vhs.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (VHSCollection vhs : Storage.allVHS) {
-				String text = vhs.getTitle() + "," + vhs.getGenre() + "," + vhs.getFormat() + "," + vhs.getYear() + ","
-						+ vhs.getDirector() + "," + vhs.getSpecialEdition() + "," + vhs.getHomeRecording() + ","
-						+ vhs.getMultiProgram() + "," + vhs.getMultiTape() + "," + vhs.getSleeveType() + "\n";
+				String text = vhs.getTitle() + "% " + vhs.getGenre() + "% " + vhs.getFormat() + "% " + vhs.getYear() + "% "
+						+ vhs.getDirector() + "% " + vhs.getSpecialEdition() + "% " + vhs.getHomeRecording() + "% "
+						+ vhs.getMultiProgram() + "% " + vhs.getMultiTape() + "% " + vhs.getSleeveType() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {

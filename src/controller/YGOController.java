@@ -239,7 +239,7 @@ public class YGOController {
 			String line;
 			String[] array;
 			while ((line = br.readLine()) != null) {
-				array = line.split(",");
+				array = line.split("%");
 				ygoTable.getItems().add(new YuGiOhCollection(array[0], array[1], array[2], array[3],
 						array[4], array[5], array[6], array[7]));
 			}
@@ -255,8 +255,8 @@ public class YGOController {
 			File file = new File("ygo.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (YuGiOhCollection ygo : Storage.allYGO) {
-				String text = ygo.getRarity() + "," + ygo.getCondition() + "," + ygo.getValue() + "," + ygo.getName() +
-						"," + ygo.getCardType() + "," + ygo.getAttack() + "," + ygo.getDefense() + "," + ygo.getSerialNumber() + "\n";
+				String text = ygo.getRarity() + "% " + ygo.getCondition() + "% " + ygo.getValue() + "% " + ygo.getName() +
+						"% " + ygo.getCardType() + "% " + ygo.getAttack() + "% " + ygo.getDefense() + "% " + ygo.getSerialNumber() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {

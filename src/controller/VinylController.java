@@ -228,7 +228,7 @@ public class VinylController {
 			String line;
 			String[] array;
 			while ((line = br.readLine()) != null) {
-				array = line.split(",");
+				array = line.split("%");
 				vinylTable.getItems().add(new VinylCollection(array[0],array[1],array[2],array[3],array[4], array[5], array[6] ));	
 			}
 			br.close();
@@ -246,7 +246,7 @@ public class VinylController {
 			File file = new File("vinyl.txt");
 			write = new BufferedWriter(new FileWriter(file));
 			for(VinylCollection vin : Storage.allVinyl) {
-				String text = vin.getArtist() + "," + vin.getAlbum() + "," + vin.getYear() + ","  + vin.getRunningTime() + "," + vin.getSize() + "," + vin.getColor() + "," + vin.getSpeed() + "\n";
+				String text = vin.getArtist() + "% " + vin.getYear() + "% " + vin.getAlbum() + "% "  + vin.getRunningTime() + "% " + vin.getSize() + "% " + vin.getColor() + "% " + vin.getSpeed() + "\n";
 				write.write(text);
 			}
 			

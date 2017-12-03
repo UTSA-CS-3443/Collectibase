@@ -227,7 +227,7 @@ public class CDController {
 			String line;
 			String[] array;
 			while ((line = br.readLine()) != null) {
-				array = line.split(",");
+				array = line.split("%");
 				cdTable.getItems().add(new CDCollection(array[0],array[1],array[2],array[3],array[4], array[5], array[6] ));	
 			}
 			br.close();
@@ -245,7 +245,7 @@ public class CDController {
 			File file = new File("cd.txt");
 			write = new BufferedWriter(new FileWriter(file));
 			for(CDCollection cd : Storage.allCD) {
-				String text = cd.getArtist() + "," + cd.getAlbum() + "," + cd.getYear() + ","  + cd.getRunningTime() + "," + cd.getMultiCD() + "," + cd.getPoster() + "," + cd.getEnhancedCD() + "\n";
+				String text = cd.getArtist() + "% " + cd.getAlbum() + "% " + cd.getYear() + "% "  + cd.getRunningTime() + "% " + cd.getMultiCD() + "% " + cd.getPoster() + "% " + cd.getEnhancedCD() + "\n";
 				write.write(text);
 			}
 			

@@ -300,9 +300,9 @@ public class MTGController {
 			File file = new File("mtg.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (MTGCollection mtg : Storage.allMTG) {
-				String text =  mtg.getName() + "," + mtg.getCondition() + "," + mtg.getRarity() + "," + mtg.getValue() + ","
-						+ mtg.getManaCost() + "," + mtg.getCardType() + "," + mtg.getCardSet() + ","
-						+ mtg.getArtistInfo() + "," + mtg.getPowerToughness() + "," + mtg.getCardColor() + "\n";
+				String text =  mtg.getName() + "% " + mtg.getCondition() + "% " + mtg.getRarity() + "% " + mtg.getValue() + "% "
+						+ mtg.getManaCost() + "% " + mtg.getCardType() + "% " + mtg.getCardSet() + "% "
+						+ mtg.getArtistInfo() + "% " + mtg.getPowerToughness() + "% " + mtg.getCardColor() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {
@@ -320,7 +320,7 @@ public class MTGController {
 			String line;
 			String[] array;
 			while ((line = br.readLine()) != null) {
-				array = line.split(",");
+				array = line.split("%");
 				mtgTable.getItems().add(new MTGCollection(array[0], array[1], array[2], array[3],
 						array[4], array[5], array[6], array[7], array[8], array[9]));
 			}

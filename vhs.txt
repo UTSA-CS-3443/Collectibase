@@ -1,1 +1,2 @@
-Joe Dirt,Comedy,VHS,2001,Dennie Gordon,no,no,no,no,cardboard
+Joe Dirt%   Comedy%   VHS%   2001%   Dennie Gordon%   no%   no%   no%   no%   cardboard
+A Goofy Movie%   Children%   VHS%   1996%   Disney%   No%   Yes%   No%   No%   Generic

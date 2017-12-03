@@ -293,7 +293,7 @@ public class LDController {
 			String line;
 			String[] array;
 			while ((line = br.readLine()) != null) {
-				array = line.split(",");
+				array = line.split("%");
 				ldTable.getItems().add(new LaserDiscCollection(array[0], array[1], array[2], array[3],
 						array[4], array[5], array[6], array[7], array[8], array[9]));
 			}
@@ -311,9 +311,9 @@ public class LDController {
 			File file = new File("laserdisc.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (LaserDiscCollection dvd : Storage.allLD) {
-				String text = dvd.getTitle() + ", " + dvd.getYear() + ", " + dvd.getGenre() + ", " + dvd.getFormat() + ", "
-						+ dvd.getDirector() + ", " + dvd.getSpecialEdition() + ", " + dvd.getEncodingFormat() + ", "
-						+ dvd.getRegion() + ", " + dvd.getSides() + ", " + dvd.getCover() + "\n";
+				String text = dvd.getTitle() + "% " + dvd.getYear() + "% " + dvd.getGenre() + "% " + dvd.getFormat() + "% "
+						+ dvd.getDirector() + "% " + dvd.getSpecialEdition() + "% " + dvd.getEncodingFormat() + "% "
+						+ dvd.getRegion() + "% " + dvd.getSides() + "% " + dvd.getCover() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {

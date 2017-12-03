@@ -17,8 +17,8 @@ public class MusicCollection {
 	//////// constructors ////////
 	public MusicCollection(String artist, String year, String album, String runTime) {
 		setArtist(artist); // maybe album name?
-		setYear(year); // year the album was released
 		setAlbum(album);
+		setYear(year); // year the album was released
 		setRunningTime(runTime);
 	}
 	

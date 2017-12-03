@@ -1,1 +1,2 @@
-Sword of Light,fair,Rare,$5,3 any color,Artifact,unkown,Matt Stewart,n/a,mutli
+Sword of Light%   fair%   Rare%   $5%   3 any color%   Artifact%   unkown%   Matt Stewart%   n/a%   mutli
+Magic Card%   Mint%   Common%   $.05%   1 Green%   Beast%   Nemesis%   %   10/10%   Green

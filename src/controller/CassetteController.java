@@ -249,7 +249,7 @@ public class CassetteController {
 			String line;
 			String[] array;
 			while ((line = br.readLine()) != null) {
-				array = line.split(",");
+				array = line.split("%");
 				cassTable.getItems().add(new CassetteCollection(array[0], array[1], array[2], array[3], array[4],
 						array[5], array[6], array[7]));
 			}
@@ -265,9 +265,9 @@ public class CassetteController {
 			File file = new File("cassette.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (CassetteCollection cass : Storage.allCassettes) {
-				String text = cass.getArtist() + "," + cass.getYear() + "," + cass.getAlbum() + ","
-						+ cass.getRunningTime() + "," + cass.getType() + "," + cass.getWriteProtection() + ","
-						+ cass.getAudioOutput() + "," + cass.getEndlessLoop() + "\n";
+				String text = cass.getArtist() + "% " + cass.getYear() + "% " + cass.getAlbum() + "% "
+						+ cass.getRunningTime() + "% " + cass.getType() + "% " + cass.getWriteProtection() + "% "
+						+ cass.getAudioOutput() + "% " + cass.getEndlessLoop() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {

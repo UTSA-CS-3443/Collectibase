@@ -290,7 +290,7 @@ public class DVDController {
 			String line;
 			String[] array;
 			while ((line = br.readLine()) != null) {
-				array = line.split(",");
+				array = line.split("%");
 				dvdTable.getItems().add(new DVDCollection(array[0], array[1], array[2], array[3],
 						array[4], array[5], array[6], array[7], array[8], array[9]));
 			}
@@ -308,9 +308,9 @@ public class DVDController {
 			File file = new File("dvd.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (DVDCollection dvd : Storage.allDVD) {
-				String text = dvd.getTitle() + "," + dvd.getYear() + "," + dvd.getGenre() + "," + dvd.getFormat() + ","
-						+ dvd.getDirector() + "," + dvd.getSpecialEdition() + "," + dvd.getCaseType() + ","
-						+ dvd.getSpecialFeaturing() + "," + dvd.getCriterion() + "," + dvd.getSpineNumber() + "\n";
+				String text = dvd.getTitle() + "% " + dvd.getYear() + "% " + dvd.getGenre() + "% " + dvd.getFormat() + "% "
+						+ dvd.getDirector() + "% " + dvd.getSpecialEdition() + "% " + dvd.getCaseType() + "% "
+						+ dvd.getSpecialFeaturing() + "% " + dvd.getCriterion() + "% " + dvd.getSpineNumber() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {

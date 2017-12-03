@@ -1,2 +1,3 @@
-Misfits,1982,Walk Among Us,25 min,Punk,Yes,Mono,no
-Beastie Boys,1986,Licensed to Ill,45 min,Hip-Hop/Rap,Yes,Stereo,no
+Misfits%   1982%   Walk Among Us%   25 min%   Punk%   Yes%   Mono%   no
+Beastie Boys%   1986%   Licensed to Ill%   45 min%   Hip-Hop/Rap%   Yes%   Stereo%   no
+The Clash%   1979%   London Calling%   65:07%   Punk%   Yes%   Stereo%   No
