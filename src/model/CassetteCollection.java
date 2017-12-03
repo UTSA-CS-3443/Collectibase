@@ -9,6 +9,11 @@ package model;
  * endlessLoop: Whether the tape plays forever or not, you know. Self explanatory, dude. 
  * 
  * @author Brenda Trejo
+ * 
+ * Debugged by:
+ * @author Travis
+ * 
+ * Fixed issue with constructor that would swap entries in the table for cassette collection.
  *
  */
 
