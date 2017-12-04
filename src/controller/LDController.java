@@ -311,9 +311,9 @@ public class LDController {
 			File file = new File("laserdisc.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (LaserDiscCollection dvd : Storage.allLD) {
-				String text = dvd.getTitle() + "% " + dvd.getYear() + "% " + dvd.getGenre() + "% " + dvd.getFormat() + "% "
-						+ dvd.getDirector() + "% " + dvd.getSpecialEdition() + "% " + dvd.getEncodingFormat() + "% "
-						+ dvd.getRegion() + "% " + dvd.getSides() + "% " + dvd.getCover() + "\n";
+				String text = dvd.getTitle() + "%" + dvd.getYear() + "%" + dvd.getGenre() + "%" + dvd.getFormat() + "%"
+						+ dvd.getDirector() + "%" + dvd.getSpecialEdition() + "%" + dvd.getEncodingFormat() + "%"
+						+ dvd.getRegion() + "%" + dvd.getSides() + "%" + dvd.getCover() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {

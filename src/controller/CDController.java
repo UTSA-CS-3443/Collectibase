@@ -245,7 +245,7 @@ public class CDController {
 			File file = new File("cd.txt");
 			write = new BufferedWriter(new FileWriter(file));
 			for(CDCollection cd : Storage.allCD) {
-				String text = cd.getArtist() + "% " + cd.getAlbum() + "% " + cd.getYear() + "% "  + cd.getRunningTime() + "% " + cd.getMultiCD() + "% " + cd.getPoster() + "% " + cd.getEnhancedCD() + "\n";
+				String text = cd.getArtist() + "%" + cd.getAlbum() + "%" + cd.getYear() + "%"  + cd.getRunningTime() + "%" + cd.getMultiCD() + "%" + cd.getPoster() + "%" + cd.getEnhancedCD() + "\n";
 				write.write(text);
 			}
 			

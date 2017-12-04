@@ -15,13 +15,13 @@
       <Label layoutX="589.0" layoutY="47.0" text="Vinyl Collection" />
       <TableView fx:id="vinylTable" layoutX="11.0" layoutY="116.0" prefHeight="399.0" prefWidth="1259.0">
         <columns>
-          <TableColumn fx:id="artistColumn" onEditCommit="#changeArtist" prefWidth="144.0" text="Artist" />
-          <TableColumn fx:id="albumColumn" minWidth="0.0" onEditCommit="#changeAlbum" prefWidth="108.0" text="Album" />
-            <TableColumn fx:id="yearColumn" minWidth="0.0" onEditCommit="#changeYear" prefWidth="87.0" text="Year" />
-            <TableColumn fx:id="runningColumn" onEditCommit="#changeRunning" prefWidth="144.0" text="Running Time" />
-            <TableColumn fx:id="sizeColumn" minWidth="0.0" onEditCommit="#changeSize" prefWidth="136.0" text="Size" />
-            <TableColumn fx:id="colorColumn" minWidth="0.0" onEditCommit="#changeColor" prefWidth="149.0" text="Color" />
-            <TableColumn fx:id="speedColumn" minWidth="9.0" onEditCommit="#changeSpeed" prefWidth="198.0" text="Speed" />
+          <TableColumn fx:id="artistColumn" onEditCommit="#changeArtist" prefWidth="218.57301330566406" text="Artist" />
+          <TableColumn fx:id="albumColumn" minWidth="0.0" onEditCommit="#changeAlbum" prefWidth="382.4270477294922" text="Album" />
+            <TableColumn fx:id="yearColumn" minWidth="0.0" onEditCommit="#changeYear" prefWidth="91.99258422851562" text="Year" />
+            <TableColumn fx:id="runningColumn" onEditCommit="#changeRunning" prefWidth="151.47305297851562" text="Running Time" />
+            <TableColumn fx:id="sizeColumn" minWidth="0.0" onEditCommit="#changeSize" prefWidth="122.69369506835938" text="Size" />
+            <TableColumn fx:id="colorColumn" minWidth="0.0" onEditCommit="#changeColor" prefWidth="143.25250244140625" text="Color" />
+            <TableColumn fx:id="speedColumn" minWidth="9.0" onEditCommit="#changeSpeed" prefWidth="150.5970458984375" text="Speed" />
         </columns>
       </TableView>
       <GridPane layoutX="71.0" layoutY="531.0" prefHeight="112.0" prefWidth="308.0">
@@ -77,7 +77,7 @@
       </GridPane>
       <Button fx:id="backButton" layoutX="71.0" layoutY="53.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
       <Button fx:id="updateButton" layoutX="1144.0" layoutY="53.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
-      <Button fx:id="deleteButton" layoutX="898.0" layoutY="612.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
+      <Button fx:id="deleteButton" layoutX="1100.0" layoutY="614.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
       <Button fx:id="insertButton" layoutX="987.0" layoutY="612.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Insert" />
    </children>
 </AnchorPane>

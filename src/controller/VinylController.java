@@ -246,7 +246,7 @@ public class VinylController {
 			File file = new File("vinyl.txt");
 			write = new BufferedWriter(new FileWriter(file));
 			for(VinylCollection vin : Storage.allVinyl) {
-				String text = vin.getArtist() + "% " + vin.getYear() + "% " + vin.getAlbum() + "% "  + vin.getRunningTime() + "% " + vin.getSize() + "% " + vin.getColor() + "% " + vin.getSpeed() + "\n";
+				String text = vin.getArtist() + "%" + vin.getYear() + "%" + vin.getAlbum() + "%"  + vin.getRunningTime() + "%" + vin.getSize() + "%" + vin.getColor() + "%" + vin.getSpeed() + "\n";
 				write.write(text);
 			}
 			

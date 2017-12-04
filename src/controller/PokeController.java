@@ -206,8 +206,8 @@ public class PokeController {
 			File file = new File("poke.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (PokemonCardCollection poke : Storage.allPoke) {
-				String text = poke.getRarity() + "% " + poke.getCondition() + "% " + poke.getValue() + "% " +
-						poke.getName() + "% " + poke.getSeries() + "," + poke.getSet() + "% " + poke.getType() + "\n";
+				String text = poke.getRarity() + "%" + poke.getCondition() + "%" + poke.getValue() + "%" +
+						poke.getName() + "%" + poke.getSeries() + "%" + poke.getSet() + "%" + poke.getType() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {

@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LDController">
    <children>
-      <Label layoutX="573.0" layoutY="30.0" text="Laserdisc Collection" />
+      <Label layoutX="573.0" layoutY="30.0" text="LaserDisc Collection" />
       <TableView fx:id="ldTable" layoutX="11.0" layoutY="80.0" prefHeight="399.0" prefWidth="1259.0">
         <columns>
           <TableColumn fx:id="titleColumn" prefWidth="214.0" text="Title" />
@@ -79,7 +79,7 @@
       </GridPane>
       <Button fx:id="backButton" layoutX="73.0" layoutY="25.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
       <Button fx:id="updateButton" layoutX="1125.0" layoutY="25.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
-      <Button fx:id="insertButton" layoutX="836.0" layoutY="661.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Add" />
+      <Button fx:id="insertButton" layoutX="836.0" layoutY="661.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Insert" />
       <Button fx:id="deleteButton" layoutX="1207.0" layoutY="661.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
    </children>
 </AnchorPane>

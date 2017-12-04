@@ -300,9 +300,9 @@ public class MTGController {
 			File file = new File("mtg.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (MTGCollection mtg : Storage.allMTG) {
-				String text =  mtg.getName() + "% " + mtg.getCondition() + "% " + mtg.getRarity() + "% " + mtg.getValue() + "% "
-						+ mtg.getManaCost() + "% " + mtg.getCardType() + "% " + mtg.getCardSet() + "% "
-						+ mtg.getArtistInfo() + "% " + mtg.getPowerToughness() + "% " + mtg.getCardColor() + "\n";
+				String text =  mtg.getName() + "%" + mtg.getCondition() + "%" + mtg.getRarity() + "%" + mtg.getValue() + "%"
+						+ mtg.getManaCost() + "%" + mtg.getCardType() + "%" + mtg.getCardSet() + "%"
+						+ mtg.getArtistInfo() + "%" + mtg.getPowerToughness() + "%" + mtg.getCardColor() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {

@@ -265,9 +265,9 @@ public class CassetteController {
 			File file = new File("cassette.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (CassetteCollection cass : Storage.allCassettes) {
-				String text = cass.getArtist() + "% " + cass.getYear() + "% " + cass.getAlbum() + "% "
-						+ cass.getRunningTime() + "% " + cass.getType() + "% " + cass.getWriteProtection() + "% "
-						+ cass.getAudioOutput() + "% " + cass.getEndlessLoop() + "\n";
+				String text = cass.getArtist() + "%" + cass.getYear() + "%" + cass.getAlbum() + "%"
+						+ cass.getRunningTime() + "%" + cass.getType() + "%" + cass.getWriteProtection() + "%"
+						+ cass.getAudioOutput() + "%" + cass.getEndlessLoop() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {

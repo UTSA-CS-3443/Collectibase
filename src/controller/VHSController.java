@@ -320,9 +320,9 @@ public class VHSController{
 			File file = new File("vhs.txt");
 			writer = new BufferedWriter(new FileWriter(file));
 			for (VHSCollection vhs : Storage.allVHS) {
-				String text = vhs.getTitle() + "% " + vhs.getGenre() + "% " + vhs.getFormat() + "% " + vhs.getYear() + "% "
-						+ vhs.getDirector() + "% " + vhs.getSpecialEdition() + "% " + vhs.getHomeRecording() + "% "
-						+ vhs.getMultiProgram() + "% " + vhs.getMultiTape() + "% " + vhs.getSleeveType() + "\n";
+				String text = vhs.getTitle() + "%" + vhs.getGenre() + "%" + vhs.getFormat() + "%" + vhs.getYear() + "%"
+						+ vhs.getDirector() + "%" + vhs.getSpecialEdition() + "%" + vhs.getHomeRecording() + "%"
+						+ vhs.getMultiProgram() + "%" + vhs.getMultiTape() + "%" + vhs.getSleeveType() + "\n";
 				writer.write(text);
 			}
 		} catch (Exception ex) {
