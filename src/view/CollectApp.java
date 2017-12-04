@@ -18,7 +18,8 @@ public class CollectApp extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/fxml/CollectMainMenu.fxml"));
-			primaryStage.setScene(new Scene(root, 500, 575));
+			//primaryStage.setScene(new Scene(root, 500, 575));
+			primaryStage.setScene(new Scene(root, 500, 246));
 			primaryStage.setTitle("Collectibase");
 			primaryStage.show();
 		} catch (Exception e) {
