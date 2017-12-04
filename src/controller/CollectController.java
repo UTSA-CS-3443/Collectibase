@@ -3,17 +3,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import view.CollectApp;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.MenuButton;
 import javafx.scene.layout.AnchorPane;
-
-import java.awt.Desktop.Action;
-import java.io.IOException;
-
-import javafx.event.Event;
 
 /**
  * This controller is for the main menu of the 
@@ -38,7 +31,7 @@ public class CollectController{
 	public String getChoiceValue;
 	
 	@FXML
-	public static String passString;
+	public String passString;
 	@FXML 
 	public String fxmlString;
 	@FXML
@@ -56,7 +49,7 @@ public class CollectController{
 	@FXML
 	public void initialize() {
 		musicChoice.getItems().addAll("CD","Vinyl","Cassette");	
-		movieChoice.getItems().addAll("VHS","DVD","Laser Disc");
+		movieChoice.getItems().addAll("VHS","DVD","Laserdisc");
 		cardChoice.getItems().addAll("MTG", "Pokemon","Yu-Gi-Oh");
 		//nextButton.setTooltip(new Tooltip("Next"));
 		musicChoice.setTooltip(new Tooltip("Select a music collection"));
@@ -153,22 +146,31 @@ public class CollectController{
 		if(a == "VHS") {
 			fxmlString = "/fxml/VHS.fxml";
 			path = "/vhs.txt";
+			childScene.setTitle("Collectibase - VHS");
 		}else if(a == "DVD") {
 			fxmlString = "/fxml/DVD.fxml";
-		}else if(a == "Laser Disc") {
+			childScene.setTitle("Collectibase - DVD");
+		}else if(a == "Laserdisc") {
 			fxmlString = "/fxml/LaserDisc.fxml";
+			childScene.setTitle("Collectibase - Laserdisc");
 		}else if(a == "CD") {
 			fxmlString = "/fxml/CD.fxml";
+			childScene.setTitle("Collectibase - CD");
 		}else if(a == "Vinyl") {
 			fxmlString = "/fxml/Vinyl.fxml";
+			childScene.setTitle("Collectibase - Vinyl");
 		}else if(a == "Cassette") {
 			fxmlString = "/fxml/Cassette.fxml";
+			childScene.setTitle("Collectibase - Cassette");
 		}else if(a == "Pokemon") {
 			fxmlString = "/fxml/Pokemon.fxml";
+			childScene.setTitle("Collectibase - Pokemon Cards");
 		}else if(a == "MTG") {
 			fxmlString = "/fxml/MTG.fxml";
+			childScene.setTitle("Collectibase - Magic the Gathering Cards");
 		}else if(a == "Yu-Gi-Oh") {
 			fxmlString = "/fxml/Yu-Gi-Oh.fxml";
+			childScene.setTitle("Collectibase - Yu-Gi-Oh Cards");
 		}
 		
 		try {
@@ -176,6 +178,7 @@ public class CollectController{
 		childScene.setScene(new Scene(root,1280,720));
 		childScene.show();
 		CollectApp.stage.hide(); // closes the main menu
+		
 		
 		}catch(Exception e) {
 			e.printStackTrace();
