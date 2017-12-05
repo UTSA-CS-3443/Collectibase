@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DVDController">
    <children>
@@ -26,7 +27,10 @@
             <TableColumn fx:id="spineNumberColumn" onEditCommit="#changeSpineNumber" prefWidth="142.0" text="Spine Number" />
         </columns>
       </TableView>
-      <Label layoutX="597.0" layoutY="43.0" text="DVD Collection" />
+      <Label layoutX="541.0" layoutY="24.0" text="DVD Collection">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
       <GridPane layoutX="14.0" layoutY="497.0" prefHeight="201.0" prefWidth="388.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -78,7 +82,7 @@
          </children>
       </GridPane>
       <Button fx:id="backButton" layoutX="38.0" layoutY="29.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
-      <Button fx:id="updateButton" layoutX="1147.0" layoutY="43.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
+      <Button fx:id="updateButton" layoutX="1151.0" layoutY="29.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
       <Button fx:id="insertButton" layoutX="932.0" layoutY="645.0" mnemonicParsing="false" onAction="#insertButtonHandle" prefHeight="27.0" prefWidth="69.0" text="Insert" />
       <Button fx:id="deleteButton" layoutX="1144.0" layoutY="645.0" mnemonicParsing="false" onAction="#deleteButtonHandle" prefHeight="27.0" prefWidth="69.0" text="Delete" />
    </children>

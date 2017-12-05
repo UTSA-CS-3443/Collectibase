@@ -9,10 +9,14 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.YGOController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.YGOController">
    <children>
-      <Label layoutX="588.0" layoutY="35.0" text="Yu-Gi-Oh Collection" />
+      <Label layoutX="531.0" layoutY="34.0" text="Yu-Gi-Oh Collection">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
       <TableView fx:id="ygoTable" layoutX="5.0" layoutY="78.0" prefHeight="401.0" prefWidth="1271.0">
         <columns>
           <TableColumn fx:id="rarityColumn" onEditStart="#changeRarity" prefWidth="115.46230554580688" text="Rarity" />
@@ -69,8 +73,8 @@
             <TextField fx:id="serialNumberField" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Button fx:id="backButton" layoutX="44.0" layoutY="39.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
-      <Button fx:id="updateButton" layoutX="1156.0" layoutY="32.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
+      <Button fx:id="backButton" layoutX="52.0" layoutY="39.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
+      <Button fx:id="updateButton" layoutX="1156.0" layoutY="39.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
       <Button fx:id="insertButton" layoutX="931.0" layoutY="573.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Insert" />
       <Button fx:id="deleteButton" layoutX="1156.0" layoutY="573.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
    </children>

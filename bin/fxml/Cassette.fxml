@@ -9,10 +9,14 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CassetteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CassetteController">
    <children>
-      <Label layoutX="560.0" layoutY="33.0" text="Cassette Collection" />
+      <Label layoutX="558.0" layoutY="22.0" text="Cassette Collection">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
       <TableView fx:id="cassTable" layoutX="4.0" layoutY="76.0" prefHeight="401.0" prefWidth="1272.0">
         <columns>
           <TableColumn fx:id="artistColumn" onEditCommit="#changeArtist" prefWidth="254.2062644958496" text="Artist" />
@@ -70,7 +74,7 @@
          </children>
       </GridPane>
       <Button fx:id="backButton" layoutX="43.0" layoutY="27.0" mnemonicParsing="false" onAction="#backButtonHandle" text="Back" />
-      <Button fx:id="updateButton" layoutX="1164.0" layoutY="21.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
+      <Button fx:id="updateButton" layoutX="1162.0" layoutY="27.0" mnemonicParsing="false" onAction="#updateButtonHandle" text="Update" />
       <Button fx:id="insertButton" layoutX="911.0" layoutY="581.0" mnemonicParsing="false" onAction="#insertButtonHandle" text="Insert" />
       <Button fx:id="deleteButton" layoutX="1164.0" layoutY="581.0" mnemonicParsing="false" onAction="#deleteButtonHandle" text="Delete" />
    </children>
