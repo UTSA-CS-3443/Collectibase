@@ -23,13 +23,13 @@ public class MTGCollection extends TCGCollection {
 	 * @param name
 	 */
 	public MTGCollection() {
-		super("", "", "", "");
-		this.manaCost = "";
-		this.cardType = "";
-		this.cardSet = "";
-		this.artistInfo = "";
-		this.powerToughness = "";
-		this.cardColor = "";
+		super(" ", " ", " ", " ");
+		this.manaCost = " ";
+		this.cardType = " ";
+		this.cardSet = " ";
+		this.artistInfo = " ";
+		this.powerToughness = " ";
+		this.cardColor = " ";
 	}
 
 	public MTGCollection(String name, String condition, String rarity, String value, String manaCost, String cardType,

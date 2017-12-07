@@ -26,11 +26,11 @@ public class CassetteCollection extends MusicCollection {
 	
 	public CassetteCollection() {
 
-		super("","0","","");
-		this.type = "";
-		this.writeProtection = "";
-		this.audioOutput = "";
-		this.endlessLoop = "";
+		super(" ","0"," "," ");
+		this.type = " ";
+		this.writeProtection = " ";
+		this.audioOutput = " ";
+		this.endlessLoop = " ";
 	}
 	
 	public CassetteCollection(String artist, String year, String album, String runningTime, String type, String writeProtection, String audioOutput, String endlessLoop) {

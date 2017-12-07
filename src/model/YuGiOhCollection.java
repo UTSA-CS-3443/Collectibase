@@ -19,7 +19,7 @@ public class YuGiOhCollection extends TCGCollection {
 	private String serialNumber; // optional serial number
 
 	public YuGiOhCollection() {
-		super("", "", "", "");
+		super(" ", " ", " ", " ");
 	}
 
 	public YuGiOhCollection(String rarity, String condition, String value, String name, String cardType, String attack,

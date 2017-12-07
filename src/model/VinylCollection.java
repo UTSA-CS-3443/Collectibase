@@ -15,7 +15,7 @@ public class VinylCollection extends MusicCollection {
 
 	//////// constructors ////////
 	public VinylCollection() {
-		super("", "0", "", "0");
+		super(" ", "0", " ", "0");
 		this.size = "";
 		this.color = "";
 		this.speed = "";

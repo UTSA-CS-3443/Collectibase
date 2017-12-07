@@ -17,10 +17,10 @@ public class CDCollection extends MusicCollection {
 
 	//////// constructors ////////
 	public CDCollection() {
-		super("", "", "", "");
-		this.multiCD = "";
-		this.poster = "";
-		this.enhancedCD = "";
+		super(" ", " ", " ", " ");
+		this.multiCD = " ";
+		this.poster = " ";
+		this.enhancedCD = " ";
 	}
 
 	public CDCollection(String artist, String year, String album, String runtime, String multiCD, String poster,

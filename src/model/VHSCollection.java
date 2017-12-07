@@ -17,11 +17,11 @@ public class VHSCollection extends MoviesCollection {
 
 	//////// constructors ////////
 	public VHSCollection() {
-		super("", "0","", "", "", "");
-		this.homeRecording = "";
-		this.multiProgram = "";
-		this.multiTape = "";
-		this.sleeveType = "";
+		super(" ", "0"," ", " ", " ", " ");
+		this.homeRecording = " ";
+		this.multiProgram = " ";
+		this.multiTape = " ";
+		this.sleeveType = " ";
 	}
 
 	public VHSCollection(String title, String genre, String format, String year, String director, String specialEdition, String homeRecordings, String multiProgram, String multiTape, String sleeveType ) {

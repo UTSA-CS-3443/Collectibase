@@ -30,10 +30,10 @@ public class PokemonCardCollection extends TCGCollection {
 
 	/***** Constructor *****/
 	public PokemonCardCollection() {
-		super("", "", "", "");
-		this.series = "";
-		this.set = "";
-		this.type = "";
+		super(" ", " ", " ", " ");
+		this.series = " ";
+		this.set = " ";
+		this.type = " ";
 	}
 
 	public PokemonCardCollection(String rarity, String condition, String value, String name, String series, String set,

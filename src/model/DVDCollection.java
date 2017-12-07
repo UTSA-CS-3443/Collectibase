@@ -17,11 +17,11 @@ public class DVDCollection extends MoviesCollection {
 	
 	//////// constructors ////////
 	public DVDCollection() {
-		super("", "0", "", "", "", "");
-		this.caseType = "";
-		this.specialFeaturing = "";
-		this.criterion = "";
-		this.spineNumber = "";
+		super(" ", "0", " ", " ", " ", " ");
+		this.caseType = " ";
+		this.specialFeaturing = " ";
+		this.criterion = " ";
+		this.spineNumber = " ";
 	}
 	
 	public DVDCollection(String title, String year, String genre, String format, String director, String specialEdition, String caseType, String specialFeatDisc, String criterion, String spineNumber ) {

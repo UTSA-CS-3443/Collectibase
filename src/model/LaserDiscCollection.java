@@ -16,11 +16,11 @@ public class LaserDiscCollection extends MoviesCollection {
 	
 	//////// constructors ////////
 	public LaserDiscCollection() {
-		super("", "0", "", "", "", "");
-		this.encodingFormat = "";
-		this.region = "";
-		this.sides = "";
-		this.cover = "";
+		super(" ", "0", " ", " ", " ", " ");
+		this.encodingFormat = " ";
+		this.region = " ";
+		this.sides = " ";
+		this.cover = " ";
 	}
 	
 	public LaserDiscCollection(String title, String year, String genre, String format, String director, String specialEdition, String encodingFormat, String region, String sides,String cover ) {
