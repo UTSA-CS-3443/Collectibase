@@ -193,42 +193,42 @@ public class YGOController {
 	/****
 	 * Double clicking the the cell alows you to edit info
 	 */
-	public void changeRarity(CellEditEvent edditedCell) {
+	public void changeRarity(CellEditEvent<YuGiOhCollection, String> edditedCell) {
 		YuGiOhCollection raritySelected = ygoTable.getSelectionModel().getSelectedItem();
 		raritySelected.setRarity(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeCondition(CellEditEvent edditedCell) {
+	public void changeCondition(CellEditEvent<YuGiOhCollection, String> edditedCell) {
 		YuGiOhCollection conditionSelected = ygoTable.getSelectionModel().getSelectedItem();
 		conditionSelected.setCondition(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeValue(CellEditEvent edditedCell) {
+	public void changeValue(CellEditEvent<YuGiOhCollection, String> edditedCell) {
 		YuGiOhCollection valueSelected = ygoTable.getSelectionModel().getSelectedItem();
 		valueSelected.setValue(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeName(CellEditEvent edditedCell) {
+	public void changeName(CellEditEvent<YuGiOhCollection, String> edditedCell) {
 		YuGiOhCollection nameSelected = ygoTable.getSelectionModel().getSelectedItem();
 		nameSelected.setName(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeCardType(CellEditEvent edditedCell) {
+	public void changeCardType(CellEditEvent<YuGiOhCollection, String> edditedCell) {
 		YuGiOhCollection cardTypeSelected = ygoTable.getSelectionModel().getSelectedItem();
 		cardTypeSelected.setCardType(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeAttack(CellEditEvent edditedCell) {
+	public void changeAttack(CellEditEvent<YuGiOhCollection, String> edditedCell) {
 		YuGiOhCollection attackSelected = ygoTable.getSelectionModel().getSelectedItem();
 		attackSelected.setAttack(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeDefense(CellEditEvent edditedCell) {
+	public void changeDefense(CellEditEvent<YuGiOhCollection, String> edditedCell) {
 		YuGiOhCollection defenseSelected = ygoTable.getSelectionModel().getSelectedItem();
 		defenseSelected.setDefense(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeSerialNumber(CellEditEvent edditedCell) {
+	public void changeSerialNumber(CellEditEvent<YuGiOhCollection, String> edditedCell) {
 		YuGiOhCollection serialNumberSelected = ygoTable.getSelectionModel().getSelectedItem();
 		serialNumberSelected.setSerialNumber(edditedCell.getNewValue().toString());
 	}

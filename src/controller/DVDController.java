@@ -227,19 +227,19 @@ public class DVDController {
 	 * 
 	 * @param edditedCell
 	 */
-	public void changeTitleName(CellEditEvent edditedCell) {
+	public void changeTitleName(CellEditEvent<DVDCollection, String> edditedCell) {
 
 		DVDCollection titleSelected = dvdTable.getSelectionModel().getSelectedItem();
 		titleSelected.setTitle(edditedCell.getNewValue().toString());
 
 	}
 	
-	public void changeGenre(CellEditEvent edditedCell1) {
+	public void changeGenre(CellEditEvent<DVDCollection, String> edditedCell1) {
 		DVDCollection genreSelected = dvdTable.getSelectionModel().getSelectedItem();
 		genreSelected.setGenre(edditedCell1.getNewValue().toString());
 	}
 	
-	public void changeFormat(CellEditEvent edditedCell) {
+	public void changeFormat(CellEditEvent<DVDCollection, String> edditedCell) {
 		DVDCollection formatSelected = dvdTable.getSelectionModel().getSelectedItem();
 		formatSelected.setFormat(edditedCell.getNewValue().toString());
 	}
@@ -249,37 +249,37 @@ public class DVDController {
 	 * 
 	 * @param edditedCell
 	 */
-	public void changeYear(CellEditEvent edditedCell) {
+	public void changeYear(CellEditEvent<DVDCollection, String> edditedCell) {
 		DVDCollection yearSelected = dvdTable.getSelectionModel().getSelectedItem();
 		yearSelected.setYear(edditedCell.getNewValue().toString());
 	}
 
-	public void changeDirector(CellEditEvent edditedCell) {
+	public void changeDirector(CellEditEvent<DVDCollection, String> edditedCell) {
 		DVDCollection directorSelected = dvdTable.getSelectionModel().getSelectedItem();
 		directorSelected.setDirector(edditedCell.getNewValue().toString());
 	}
 
-	public void changeSpecialEdition(CellEditEvent edditedCell) {
+	public void changeSpecialEdition(CellEditEvent<DVDCollection, String> edditedCell) {
 		DVDCollection specialSelected = dvdTable.getSelectionModel().getSelectedItem();
 		specialSelected.setSpecialEdition(edditedCell.getNewValue().toString());
 	}
 
-	public void changeCaseType(CellEditEvent edditedCell) {
+	public void changeCaseType(CellEditEvent<DVDCollection, String> edditedCell) {
 		DVDCollection caseSelected = dvdTable.getSelectionModel().getSelectedItem();
 		caseSelected.setCaseType(edditedCell.getNewValue().toString());
 	}
 
-	public void changeCriterion(CellEditEvent edditedCell) {
+	public void changeCriterion(CellEditEvent<DVDCollection, String> edditedCell) {
 		DVDCollection criterionSelected = dvdTable.getSelectionModel().getSelectedItem();
 		criterionSelected.setCriterion(edditedCell.getNewValue().toString());
 	}
 
-	public void changeSpineNumber(CellEditEvent edditedCell) {
+	public void changeSpineNumber(CellEditEvent<DVDCollection, String> edditedCell) {
 		DVDCollection spineNumberSelected = dvdTable.getSelectionModel().getSelectedItem();
 		spineNumberSelected.setSpineNumber(edditedCell.getNewValue().toString());
 	}
 
-	public void changeSpecialFeaturing(CellEditEvent edditedCell) {
+	public void changeSpecialFeaturing(CellEditEvent<DVDCollection, String> edditedCell) {
 		DVDCollection specialFeaturingSelected = dvdTable.getSelectionModel().getSelectedItem();
 		specialFeaturingSelected.setSpecialFeaturing(edditedCell.getNewValue().toString());
 	}

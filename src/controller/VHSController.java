@@ -14,9 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.util.converter.IntegerStringConverter;
 import model.Storage;
-import model.Tools;
 import model.VHSCollection;
 import view.CollectApp;
 
@@ -240,19 +238,19 @@ public class VHSController{
 	 * 
 	 * @param edditedCell
 	 */
-	public void changeTitleName(CellEditEvent edditedCell) {
+	public void changeTitleName(CellEditEvent<VHSCollection, String> edditedCell) {
 
 		VHSCollection titleSelected = vhsTable.getSelectionModel().getSelectedItem();
 		titleSelected.setTitle(edditedCell.getNewValue().toString());
 
 	}
 
-	public void changeGenre(CellEditEvent edditedCell1) {
+	public void changeGenre(CellEditEvent<VHSCollection, String> edditedCell1) {
 		VHSCollection genreSelected = vhsTable.getSelectionModel().getSelectedItem();
 		genreSelected.setGenre(edditedCell1.getNewValue().toString());
 	}
 
-	public void changeFormat(CellEditEvent edditedCell) {
+	public void changeFormat(CellEditEvent<VHSCollection, String> edditedCell) {
 		VHSCollection formatSelected = vhsTable.getSelectionModel().getSelectedItem();
 		formatSelected.setFormat(edditedCell.getNewValue().toString());
 	}
@@ -262,37 +260,37 @@ public class VHSController{
 	 * 
 	 * @param edditedCell
 	 */
-	public void changeYear(CellEditEvent edditedCell) {
+	public void changeYear(CellEditEvent<VHSCollection, String> edditedCell) {
 		VHSCollection yearSelected = vhsTable.getSelectionModel().getSelectedItem();
 		yearSelected.setYear(edditedCell.getNewValue().toString());
 	}
 
-	public void changeDirector(CellEditEvent edditedCell) {
+	public void changeDirector(CellEditEvent<VHSCollection, String> edditedCell) {
 		VHSCollection directorSelected = vhsTable.getSelectionModel().getSelectedItem();
 		directorSelected.setDirector(edditedCell.getNewValue().toString());
 	}
 
-	public void changeSpecialEdition(CellEditEvent edditedCell) {
+	public void changeSpecialEdition(CellEditEvent<VHSCollection, String> edditedCell) {
 		VHSCollection specialSelected = vhsTable.getSelectionModel().getSelectedItem();
 		specialSelected.setSpecialEdition(edditedCell.getNewValue().toString());
 	}
 
-	public void changeHomeRecordings(CellEditEvent edditedCell) {
+	public void changeHomeRecordings(CellEditEvent<VHSCollection, String> edditedCell) {
 		VHSCollection homeSelected = vhsTable.getSelectionModel().getSelectedItem();
 		homeSelected.setHomeRecording(edditedCell.getNewValue().toString());
 	}
 
-	public void changeMultiProgram(CellEditEvent edditedCell) {
+	public void changeMultiProgram(CellEditEvent<VHSCollection, String> edditedCell) {
 		VHSCollection multiProgramSelected = vhsTable.getSelectionModel().getSelectedItem();
 		multiProgramSelected.setMultiProgram(edditedCell.getNewValue().toString());
 	}
 
-	public void changeMultiTape(CellEditEvent edditedCell) {
+	public void changeMultiTape(CellEditEvent<VHSCollection, String> edditedCell) {
 		VHSCollection multiTapeSelected = vhsTable.getSelectionModel().getSelectedItem();
 		multiTapeSelected.setMultiTape(edditedCell.getNewValue().toString());
 	}
 
-	public void changeSleeveType(CellEditEvent edditedCell) {
+	public void changeSleeveType(CellEditEvent<VHSCollection, String> edditedCell) {
 		VHSCollection sleeveSelected = vhsTable.getSelectionModel().getSelectedItem();
 		sleeveSelected.setSleeveType(edditedCell.getNewValue().toString());
 	}

@@ -14,7 +14,6 @@ import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import model.Storage;
-import model.YuGiOhCollection;
 import model.PokemonCardCollection;
 import view.CollectApp;
 
@@ -171,31 +170,31 @@ public class PokeController {
 		typeColumn.setCellFactory(TextFieldTableCell.forTableColumn());	
 	} //cellValueFactory
 	
-	public void changeRarity(CellEditEvent edditedCell) {
+	public void changeRarity(CellEditEvent<PokemonCardCollection, String>  edditedCell) {
 		PokemonCardCollection raritySelected = pokeTable.getSelectionModel().getSelectedItem();
 		raritySelected.setRarity(edditedCell.getNewValue().toString());
 	}
-	public void changeCondition(CellEditEvent edditedCell) {
+	public void changeCondition(CellEditEvent<PokemonCardCollection, String>  edditedCell) {
 		PokemonCardCollection conditionSelected = pokeTable.getSelectionModel().getSelectedItem();
 		conditionSelected.setCondition(edditedCell.getNewValue().toString());
 	}
-	public void changeValue(CellEditEvent edditedCell) {
+	public void changeValue(CellEditEvent<PokemonCardCollection, String>  edditedCell) {
 		PokemonCardCollection valueSelected = pokeTable.getSelectionModel().getSelectedItem();
 		valueSelected.setValue(edditedCell.getNewValue().toString());
 	}
-	public void changeName(CellEditEvent edditedCell) {
+	public void changeName(CellEditEvent<PokemonCardCollection, String>  edditedCell) {
 		PokemonCardCollection nameSelected = pokeTable.getSelectionModel().getSelectedItem();
 		nameSelected.setName(edditedCell.getNewValue().toString());
 	}
-	public void changeSeries(CellEditEvent edditedCell) {
+	public void changeSeries(CellEditEvent<PokemonCardCollection, String> edditedCell) {
 		PokemonCardCollection seriesSelected = pokeTable.getSelectionModel().getSelectedItem();
 		seriesSelected.setSeries(edditedCell.getNewValue().toString());
 	}
-	public void changeSet(CellEditEvent edditedCell) {
+	public void changeSet(CellEditEvent<PokemonCardCollection, String>  edditedCell) {
 		PokemonCardCollection setSelected = pokeTable.getSelectionModel().getSelectedItem();
 		setSelected.setSet(edditedCell.getNewValue().toString());
 	}
-	public void changeType(CellEditEvent edditedCell) {
+	public void changeType(CellEditEvent<PokemonCardCollection, String>  edditedCell) {
 		PokemonCardCollection typeSelected = pokeTable.getSelectionModel().getSelectedItem();
 		typeSelected.setType(edditedCell.getNewValue().toString());
 	} 

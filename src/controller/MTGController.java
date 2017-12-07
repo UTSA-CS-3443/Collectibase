@@ -18,7 +18,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import model.MTGCollection;
 import model.Storage;
-import model.VHSCollection;
 import view.CollectApp;
 /**
  * 
@@ -237,58 +236,57 @@ public class MTGController {
 		cardColorColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 	}
 	
-	public void changeName(CellEditEvent edittedCell) {
+	public void changeName(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection name = mtgTable.getSelectionModel().getSelectedItem();
 		name.setName(edittedCell.getNewValue().toString());
 	}
 	
-	public void changeCondition(CellEditEvent edittedCell) {
+	public void changeCondition(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection condition = mtgTable.getSelectionModel().getSelectedItem();
 		condition.setCondition(edittedCell.getNewValue().toString());
 		
 	}
 	
-	public void changeRarity(CellEditEvent edittedCell) {
+	public void changeRarity(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection rarity = mtgTable.getSelectionModel().getSelectedItem();
 		rarity.setRarity(edittedCell.getNewValue().toString());
 		
 	}
 	
-	public void changeValue(CellEditEvent edittedCell) {
+	public void changeValue(CellEditEvent<MTGCollection, String> edittedCell) {
 		MTGCollection value = mtgTable.getSelectionModel().getSelectedItem();
 		value.setValue(edittedCell.getNewValue().toString());
 	}
 	
-	public void changeMana(CellEditEvent edittedCell) {
+	public void changeMana(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection mana = mtgTable.getSelectionModel().getSelectedItem();
 		mana.setManaCost(edittedCell.getNewValue().toString());
 	}
 	
-	public void changeCardType(CellEditEvent edittedCell) {
+	public void changeCardType(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection type = mtgTable.getSelectionModel().getSelectedItem();
 		type.setCardType(edittedCell.getNewValue().toString());
 		
 	}
 	
-	public void changeCardSet(CellEditEvent edittedCell) {
+	public void changeCardSet(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection set = mtgTable.getSelectionModel().getSelectedItem();
 		set.setCardSet(edittedCell.getNewValue().toString());
 		
 	}
 	
-	public void changeArtist(CellEditEvent edittedCell) {
+	public void changeArtist(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection artist = mtgTable.getSelectionModel().getSelectedItem();
 		artist.setArtistInfo(edittedCell.getNewValue().toString());
 		
 	}
 	
-	public void changePower(CellEditEvent edittedCell) {
-		
+	public void changePower(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection power = mtgTable.getSelectionModel().getSelectedItem();
 		power.setPowerToughness(edittedCell.getNewValue().toString());
 	}
 	
-	public void changeColor(CellEditEvent edittedCell) {
+	public void changeColor(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection color = mtgTable.getSelectionModel().getSelectedItem();
 		color.setCardColor(edittedCell.getNewValue().toString());
 		

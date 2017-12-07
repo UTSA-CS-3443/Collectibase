@@ -185,38 +185,38 @@ public class CDController {
 		enhancedColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 	}
 	
-	public void changeArtist(CellEditEvent edditedCell) {
+	public void changeArtist(CellEditEvent<CDCollection, String> edditedCell) {
 		CDCollection artistSelected = cdTable.getSelectionModel().getSelectedItem();
 		artistSelected.setArtist(edditedCell.getNewValue().toString());
 		
 	}
 	
-	public void changeAlbum(CellEditEvent edditedCell) {
+	public void changeAlbum(CellEditEvent<CDCollection, String> edditedCell) {
 		CDCollection albumSelected = cdTable.getSelectionModel().getSelectedItem();
 		albumSelected.setAlbum(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeRunning(CellEditEvent edditedCell) {
+	public void changeRunning(CellEditEvent<CDCollection, String> edditedCell) {
 		CDCollection runSelected = cdTable.getSelectionModel().getSelectedItem();
 		runSelected.setRunningTime(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeMulti(CellEditEvent edditedCell) {
+	public void changeMulti(CellEditEvent<CDCollection, String> edditedCell) {
 		CDCollection multiSelected = cdTable.getSelectionModel().getSelectedItem();
 		multiSelected.setMultiCD(edditedCell.getNewValue().toString());
 	}
 	
-	public void changePoster(CellEditEvent edditedCell) {
+	public void changePoster(CellEditEvent<CDCollection, String> edditedCell) {
 		CDCollection posterSelected = cdTable.getSelectionModel().getSelectedItem();
 		posterSelected.setPoster(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeEnhanced(CellEditEvent edditedCell) {
+	public void changeEnhanced(CellEditEvent<CDCollection, String> edditedCell) {
 		CDCollection enhancedSelected = cdTable.getSelectionModel().getSelectedItem();
 		enhancedSelected.setEnhancedCD(edditedCell.getNewValue().toString());
 	}
 	
-	public void changeYear(CellEditEvent edditedCell) {
+	public void changeYear(CellEditEvent<CDCollection, String> edditedCell) {
 		CDCollection yearSelected = cdTable.getSelectionModel().getSelectedItem();
 		yearSelected.setYear(edditedCell.getNewValue().toString());
 	}

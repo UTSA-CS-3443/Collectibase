@@ -203,42 +203,42 @@ public class CassetteController {
 	/****
 	 * The methods below allow you to edit an item by double clicking the cell.
 	 */
-	public void changeArtist(CellEditEvent edditedCell) {
+	public void changeArtist(CellEditEvent<CassetteCollection, String> edditedCell) {
 		CassetteCollection artistSelected = cassTable.getSelectionModel().getSelectedItem();
 		artistSelected.setArtist(edditedCell.getNewValue().toString());
 	}
 
-	public void changeYear(CellEditEvent edditedCell) {
+	public void changeYear(CellEditEvent<CassetteCollection, String> edditedCell) {
 		CassetteCollection yearSelected = cassTable.getSelectionModel().getSelectedItem();
 		yearSelected.setYear(edditedCell.getNewValue().toString());
 	}
 
-	public void changeAlbum(CellEditEvent edditedCell) {
+	public void changeAlbum(CellEditEvent<CassetteCollection, String> edditedCell) {
 		CassetteCollection albumSelected = cassTable.getSelectionModel().getSelectedItem();
 		albumSelected.setAlbum(edditedCell.getNewValue().toString());
 	}
 
-	public void changeRunningTime(CellEditEvent edditedCell) {
+	public void changeRunningTime(CellEditEvent<CassetteCollection, String> edditedCell) {
 		CassetteCollection runningTimeSelected = cassTable.getSelectionModel().getSelectedItem();
 		runningTimeSelected.setRunningTime(edditedCell.getNewValue().toString());
 	}
 
-	public void changeType(CellEditEvent edditedCell) {
+	public void changeType(CellEditEvent<CassetteCollection, String> edditedCell) {
 		CassetteCollection typeSelected = cassTable.getSelectionModel().getSelectedItem();
 		typeSelected.setType(edditedCell.getNewValue().toString());
 	}
 
-	public void changeWriteProtection(CellEditEvent edditedCell) {
+	public void changeWriteProtection(CellEditEvent<CassetteCollection, String> edditedCell) {
 		CassetteCollection writeProtectionSelected = cassTable.getSelectionModel().getSelectedItem();
 		writeProtectionSelected.setWriteProtection(edditedCell.getNewValue().toString());
 	}
 
-	public void changeAudioOutput(CellEditEvent edditedCell) {
+	public void changeAudioOutput(CellEditEvent<CassetteCollection, String> edditedCell) {
 		CassetteCollection audioOutputSelected = cassTable.getSelectionModel().getSelectedItem();
 		audioOutputSelected.setAudioOutput(edditedCell.getNewValue().toString());
 	}
 
-	public void changeEndlessLoop(CellEditEvent edditedCell) {
+	public void changeEndlessLoop(CellEditEvent<CassetteCollection, String> edditedCell) {
 		CassetteCollection endlessLoopSelected = cassTable.getSelectionModel().getSelectedItem();
 		endlessLoopSelected.setEndlessLoop(edditedCell.getNewValue().toString());
 	}
