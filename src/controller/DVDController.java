@@ -1,6 +1,14 @@
 package controller;
 
 import java.io.BufferedReader;
+
+/******************
+ * DVDController is responsible for connecting listeners in the DVD.fxml file 
+ * to variables in the DVDCollection class. DVDController is also responsible for 
+ * updating the DVD.txt file to be used for DVD.fxml's TableView. 
+ * 
+ * @author Brenda Trejo
+ */
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
@@ -69,11 +77,20 @@ public class DVDController {
 	//ObservableList<DVDCollection> allDVD;
 	
 
+	/*******
+	 * initialize initializes the cells in DVD.fxml's TableView to their respective variables in
+	 * the DVDCollection. initialize also pre-populates the TableView with the variables in
+	 * DVD.txt.
+	 */
 	public void initialize() {
 		cellValueFactory();
 		getDVDFromFile();
 	}
 	
+	/***********
+	 * backButtonHandle is responsible for returning to Collectibase's main screen and saves any new entered
+	 * information to DVD.txt before exiting.
+	 */
 	public void backButtonHandle() {
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
@@ -85,6 +102,9 @@ public class DVDController {
 		}
 	}
 	
+	/*************
+	 * updateButtonHandle is responsible for updating DVD.fxml's TableView and DVD.txt whenever pressed.
+	 */
 	public void updateButtonHandle() {
 		Storage.allDVD = dvdTable.getItems();
 		try {
@@ -95,6 +115,11 @@ public class DVDController {
 
 	}
 	
+	/*************
+	 * insertButtonHandle is responsible for inserting any text in the text fields onto the TableView.
+	 * Empty fields are also accounted for. After the fields have been inserted they are cleared and 
+	 * DVD.txt is updated. 
+	 */
 	public void insertButtonHandle() {
 		DVDCollection dvdAdd = new DVDCollection();
 		// error checks if text fields are empty
@@ -181,6 +206,10 @@ public class DVDController {
 		}
 	}
 	
+	/**************
+	 * deleteButtonHandle deletes a selected field or row from DVD.fxml's TableView. DVD.txt is also updated by 
+	 * removing the respective variables from the file. 
+	 */
 	public void deleteButtonHandle() {
 		ObservableList<DVDCollection> dvdSelected;
 		Storage.allDVD = dvdTable.getItems();
@@ -194,6 +223,11 @@ public class DVDController {
 		}
 	}
 	
+	/**********
+	 * cellValueFactory is responsible for connecting the variable columns with it's
+	 * respective variable in DVDCollection. cellValueFactory also allows for a single cell
+	 * to be edited when double clicked. 
+	 */
 	public void cellValueFactory() {
 		titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 		genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
@@ -223,9 +257,11 @@ public class DVDController {
 	
 
 	/**
-	 * when double clicking, you can change the info
+	 * The methods below update a single variable of a collection when it's cell is double
+	 * clicked.
 	 * 
-	 * @param edditedCell
+	 * @param edditedCell: the cell that was edited in the TableView will be the 
+	 * variable that is changed in the collection.
 	 */
 	public void changeTitleName(CellEditEvent<DVDCollection, String> edditedCell) {
 
@@ -243,12 +279,7 @@ public class DVDController {
 		DVDCollection formatSelected = dvdTable.getSelectionModel().getSelectedItem();
 		formatSelected.setFormat(edditedCell.getNewValue().toString());
 	}
-	
-	/**
-	 * makes the year column changable with double clicking it
-	 * 
-	 * @param edditedCell
-	 */
+
 	public void changeYear(CellEditEvent<DVDCollection, String> edditedCell) {
 		DVDCollection yearSelected = dvdTable.getSelectionModel().getSelectedItem();
 		yearSelected.setYear(edditedCell.getNewValue().toString());
@@ -284,6 +315,9 @@ public class DVDController {
 		specialFeaturingSelected.setSpecialFeaturing(edditedCell.getNewValue().toString());
 	}
 	
+	/************
+	 * getDVDFromFile updates DVD.fxml's TableView by reading what is in DVD.txt
+	 */
 	private void getDVDFromFile() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File("dvd.txt")));
@@ -302,6 +336,13 @@ public class DVDController {
 		}
 	}
 
+	/*************
+	 * writeDVDFile is responsible for writing to the DVD.txt file in order to frequently update
+	 * the TableView.
+	 * 
+	 * @throws Exception: In the case that the collection has not been previously created, the
+	 * DVD.txt file is not found. 
+	 */
 	public void writeDVDFile() throws Exception {
 		Writer writer = null;
 		try {

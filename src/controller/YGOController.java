@@ -17,6 +17,14 @@ import model.Storage;
 import model.YuGiOhCollection;
 import view.CollectApp;
 
+/*************
+ * YGOController is responsible for connecting listeners in
+ * Yu-Gi-Oh.fxml to variables in YuGiOhCollection. YGOController is also
+ * responsible for updating the ygo.txt file to be user for Yu-Gi-Oh.fxml's TableView.
+ *  
+ * @author Brenda Trejo
+ *
+ */
 public class YGOController {
 
 	public Button backButton;
@@ -59,11 +67,20 @@ public class YGOController {
 	@FXML
 	public TableColumn<YuGiOhCollection, String> serialNumberColumn;
 	
+	/*******
+	 * initialize initializes the cells in Yu-Gi-Oh.fxml's TableView to their respective
+	 * variables in the YuGiOhCollection. initialize also pre-populates the TableView with the data in
+	 * ygo.txt.
+	 */
 	public void initialize() {
 		cellValueFactory();
 		getYGOFromFile();
 	} //initialize
 	
+	/***********
+	 * backButtonHandle is responsible for returning to Collectibase's main screen and saves any
+	 * new entered information to ygo.txt before exiting. 
+	 */
 	public void backButtonHandle() {
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
@@ -75,6 +92,9 @@ public class YGOController {
 		}
 	} //backButtonHandle
 	
+	/***********
+	 * updateButtonHandle is responsible for updating Yu-Gi-Oh.fxml's TableView and ygo.txt whenever pressed.
+	 */
 	public void updateButtonHandle() {
 		Storage.allYGO = ygoTable.getItems();
 		try {
@@ -84,6 +104,11 @@ public class YGOController {
 		}
 	} //updateButtonHandle
 	
+	/***************
+	 * insertButtonHandle is responsible for inserting any text in Yu-Gi-Oh.fxml's TextFields
+	 * onto the TableView. Empty cells are also accounted for. After the fields have been inserted
+	 * they are cleared and ygo.txt is updated. 
+	 */
 	public void insertButtonHandle() {
 		YuGiOhCollection ygoAdd = new YuGiOhCollection();
 		//Error checks if any fields are empty, auto populate with null
@@ -155,6 +180,11 @@ public class YGOController {
 		}
 	} //insertButtonHandle
 	
+	/******************
+	 * deleteButtonHandle deletes a selected field or row from Yu-Gi-Oh.fxml's TableView. 
+	 * ygo.txt is also update by deleting the respective variable 
+	 * fields from the file. 
+	 */
 	public void deleteButtonHandle() {
 		ObservableList<YuGiOhCollection> ygoSelected;
 		Storage.allYGO = ygoTable.getItems();
@@ -168,6 +198,11 @@ public class YGOController {
 		}
 	} //deleteButtonHandle
 	
+	/*****************
+	 * cellValueFactory is responsible for connecting the variable columns with it's respective
+	 * variable in YuGiOhCollection. cellValueFactory also allows for a single cell to be edited 
+	 * when double clicked. 
+	 */
 	public void cellValueFactory() {
 		rarityColumn.setCellValueFactory(new PropertyValueFactory<>("rarity"));
 		conditionColumn.setCellValueFactory(new PropertyValueFactory<>("condition"));
@@ -190,8 +225,11 @@ public class YGOController {
 		serialNumberColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 	} //cellValueFactory
 	
-	/****
-	 * Double clicking the the cell alows you to edit info
+	/***********8
+	 * The methods below updates a single variable of a collectible when it's cell
+	 * is double clicked. 
+	 * @param edditedCell: the cell that was edited in Yu-Gi-Oh.fxml's TableView will be the 
+	 * variable that is changed in YuGiOhCollection.
 	 */
 	public void changeRarity(CellEditEvent<YuGiOhCollection, String> edditedCell) {
 		YuGiOhCollection raritySelected = ygoTable.getSelectionModel().getSelectedItem();
@@ -233,6 +271,9 @@ public class YGOController {
 		serialNumberSelected.setSerialNumber(edditedCell.getNewValue().toString());
 	}
 	
+	/***********
+	 * getYGOFromFile updates Yu-Gi-Oh.fxml's TableView by reading the data in ygo.txt.
+	 */
 	private void getYGOFromFile() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File("ygo.txt")));
@@ -249,6 +290,10 @@ public class YGOController {
 		}
 	} //getYGOFromFile
 	
+	/***********
+	 * writeYGOFile is responsible for writing to ygo.txt in order to update Yu-Gi-Oh.fxml's TableView.
+	 * @throws Exception: In the case that the collection has not been previously created, the ygo.txt file is not found. 
+	 */
 	public void writeYGOFile() throws Exception {
 		Writer writer = null;
 		try {

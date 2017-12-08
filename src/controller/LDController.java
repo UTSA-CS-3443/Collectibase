@@ -18,8 +18,9 @@ import model.Storage;
 import view.CollectApp;
 
 /**
- * controller for the laserdisc interface
- * @author Travis
+ * LDController is responsible for connecting listeners in the LaserDisc.fxml
+ * file to variables in the LaserDiscCollection class. LDController is also responsible for
+ * updaating the laserdisc.txt file to be user for LaserDisc.fxml's TableView. 
  *
  */
 public class LDController {
@@ -72,12 +73,20 @@ public class LDController {
 	@FXML
 	TableColumn<LaserDiscCollection, String> coverColumn;
 	
-
+	/**********
+	 * initialize initializes the cells in the TableView to their respective variables in
+	 * the LaserDiscCollection. initialize also pre-populates the TableView with the variables in 
+	 * LaserDisc.txt.
+	 */
 	public void initialize() {
 		cellValueFactory();
 		getLDFromFile();
 	}
 	
+	/***********
+	 * backButtonHandle is responsible for returning to Collectibase's main screen and writes any new 
+	 * entered information to LaserDisc.txt before exiting. 
+	 */
 	public void backButtonHandle() {
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
@@ -89,6 +98,9 @@ public class LDController {
 		}
 	}
 	
+	/**************
+	 * updateButtonHandle is responsible for updating the TableView and LaserDisc.txt file whenever pressed.
+	 */
 	public void updateButtonHandle() {
 		Storage.allLD = ldTable.getItems();
 		try {
@@ -99,6 +111,12 @@ public class LDController {
 
 	}
 	
+	/***********
+	 * insertButtonHandle is responsible for inserting any text in the text friends onto the TableView. 
+	 * Empty fields are also accounted for. After the fields have been inserted they are cleared and LaserDisc.txt
+	 * is updated.
+	 * 
+	 */
 	public void insertButtonHandle() {
 		LaserDiscCollection ldAdd = new LaserDiscCollection();
 		// error checks if text fields are empty
@@ -185,6 +203,10 @@ public class LDController {
 		}
 	}
 	
+	/************
+	 * deleteButtonHandle deletes a selected field or row from the TableView. LaserDisc.txt is also updated by 
+	 * deleting the respective fields from the file. 
+	 */
 	public void deleteButtonHandle() {
 		ObservableList<LaserDiscCollection> ldSelected;
 		Storage.allLD = ldTable.getItems();
@@ -198,6 +220,10 @@ public class LDController {
 		}
 	}
 	
+	/*********
+	 * cellValueFactory is responsible for connecting the variable columns with it's respective variable in
+	 * LaserDiscCollection. cellValueFactory also allows for a single cell to be edited by the user when double clicked. 
+	 */
 	public void cellValueFactory() {
 		titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 		genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
@@ -227,9 +253,11 @@ public class LDController {
 	
 
 	/**
-	 * when double clicking, you can change the info
+	 * The methods below update a single variable of the collectible when it's
+	 * cell is double clicked. 
 	 * 
-	 * @param edditedCell
+	 * @param edditedCell: the cell that was edited in the TableView will be the variable
+	 * that is changed in the collection. 
 	 */
 	public void changeTitleName(CellEditEvent<LaserDiscCollection, String> edditedCell) {
 		LaserDiscCollection titleSelected = ldTable.getSelectionModel().getSelectedItem();
@@ -246,12 +274,7 @@ public class LDController {
 		LaserDiscCollection formatSelected = ldTable.getSelectionModel().getSelectedItem();
 		formatSelected.setFormat(edditedCell.getNewValue().toString());
 	}
-	
-	/**
-	 * makes the year column changable with double clicking it
-	 * 
-	 * @param edditedCell
-	 */
+
 	public void changeYear(CellEditEvent<LaserDiscCollection, String> edditedCell) {
 		LaserDiscCollection yearSelected = ldTable.getSelectionModel().getSelectedItem();
 		yearSelected.setYear(edditedCell.getNewValue().toString());
@@ -287,6 +310,9 @@ public class LDController {
 		coverSelected.setCover(edditedCell.getNewValue().toString());
 	}
 	
+	/*********
+	 * getLDFromFile updates the TableView in LaserDisc.fxml file by reading what is in LaserDisc.txt
+	 */
 	private void getLDFromFile() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File("laserdisc.txt")));
@@ -305,6 +331,10 @@ public class LDController {
 		}
 	}
 
+	/**************
+	 * writeLDFile is responsible for writing to the LaserDisc.txt file in order to frequently update the TableView.
+	 * @throws Exception: In the case that the collection has not been previously created, the LaserDisc.txt file is not found. 
+	 */
 	public void writeLDFile() throws Exception {
 		Writer writer = null;
 		try {

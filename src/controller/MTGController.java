@@ -20,13 +20,15 @@ import model.MTGCollection;
 import model.Storage;
 import view.CollectApp;
 /**
+ * MTGController is responsible for connection listeners to the MTG.txt file
+ * to variables in the MTGCollection class. MTGController is also responsible for
+ * updating the MTG.txt file to be used for the MTG.fxml's TableView. 
  * 
+ * @author Jesus Nieto
+ * @author Travis Lawson
  * 
- * 
- * Debugged by Jesus and Travis.
- * 
- * @author Jesus
- * @author Travis
+ * @debugger Jesus Nieto
+ * @debugger Travis Lawson
  *
  */
 public class MTGController {
@@ -81,13 +83,21 @@ public class MTGController {
 	public TableColumn<MTGCollection, String> cardColorColumn;
 	
 	
-	
+	/**********
+	 * initialize initializes the cells in the TableView to their respective variables in
+	 * the MTGCollection. initialize also pre-populates the TableView with the variables in
+	 * MTG.txt.
+	 */
 	public void initialize() {
 		cellValueFactory();
 		getMTGFromFile();
 
 	}
 	
+	/*******************
+	 * backButtonHandle is responsible for returning to Collectibase's main screen and saves any new entered 
+	 * information to MTG.txt before exiting. 
+	 */
 	public void backButtonHandle() {
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
@@ -100,6 +110,9 @@ public class MTGController {
 
 	}
 	
+	/***************
+	 * updateButtonHandle is responsible for updating the TableView and MTG.txt file whenever pressed. 
+	 */
 	public void updateButtonHandle() {
 		Storage.allMTG = mtgTable.getItems();
 		try {
@@ -110,6 +123,10 @@ public class MTGController {
 
 	}
 	
+	/***********8
+	 * insertButtonHandle is responsible for inserting any text fields onto the TableView. Empty fields
+	 * are also accounted for. After the fields have been inserted they are cleared and MTG.txt is updated. 
+	 */
 	public void insertButtonHandle() {
 		MTGCollection mtgAdd = new MTGCollection();
 		// error checks if text fields are empty
@@ -197,6 +214,10 @@ public class MTGController {
 	}
 	
 	
+	/****************
+	 * deleteButtonHandle deletes a selected field or row from the TableView. MTG.txt is also updated by
+	 * deleting the respective fields from the file. 
+	 */
 	public void deleteButtonHandle() {
 		ObservableList<MTGCollection> mtgSelected;
 		Storage.allMTG = mtgTable.getItems();
@@ -210,7 +231,10 @@ public class MTGController {
 		}
 	} 
 	
-	
+	/************8
+	 * cellValueFactory is responsible for connecting the variable columns with it's respective variable in MTGCollection.
+	 * cellValueFactory also allows for a single cell to be edited when double clicked. 
+	 */
 	public void cellValueFactory() {
 		nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 		conditionColumn.setCellValueFactory(new PropertyValueFactory<>("condition"));
@@ -236,6 +260,12 @@ public class MTGController {
 		cardColorColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 	}
 	
+	/***************
+	 * The methods below update a single variable of a collectible when it's cell is 
+	 * double clicked. 
+	 * @param edittedCell: the cell that was edited in the TableView will be the variable
+	 * that is changed in the collection. 
+	 */
 	public void changeName(CellEditEvent<MTGCollection, String>  edittedCell) {
 		MTGCollection name = mtgTable.getSelectionModel().getSelectedItem();
 		name.setName(edittedCell.getNewValue().toString());
@@ -292,6 +322,10 @@ public class MTGController {
 		
 	}
 	
+	/*************
+	 * writeMTGFile is responsible for writing to the mtg.txt file in order to frequently update the TableView.
+	 * @throws Exception: In the case that the collection has not been previously created, the mtg.txt file is not found. 
+	 */
 	public void writeMTGFile() throws Exception {
 		Writer writer = null;
 		try {
@@ -312,6 +346,9 @@ public class MTGController {
 		}
 	}
 	
+	/**********
+	 * getMTGFromFile updates MTG.fxml's TableView by reading what is in mtg.txt.
+	 */
 	private void getMTGFromFile() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File("mtg.txt")));

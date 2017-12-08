@@ -9,10 +9,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.AnchorPane;
 
 /**
- * This controller is for the main menu of the 
- * 
- * Class will handle the input from the UI design
- * @author jesusnieto
+ * CollectController is the main screen of Collectibase and allows the
+ * user to navigate between collection pages.
+ * @author Jesus Nieto
  *
  */
 public class CollectController{
@@ -44,7 +43,8 @@ public class CollectController{
 	
 	
 	/**
-	 * this initializes the values in the choice box 
+	 * initialize initialized all drop-down menu boxes along with the collections 
+	 * that are contained inside them.
 	 */
 	@FXML
 	public void initialize() {
@@ -96,8 +96,10 @@ public class CollectController{
 	}
 	
 	/**
-	 * This gets the choice of any choice Box
-	 * @param choiceBox
+	 * getChoice is responsible for initializing the choiceValue which is the collection
+	 * that the user selected. 
+	 * 
+	 * @param choiceBox choice: The user's selected collection from the drop-down boxes.
 	 */
 	public void getChoice(ChoiceBox<String> choice) {
 		getChoiceValue = choice.getValue();
@@ -106,7 +108,8 @@ public class CollectController{
 	}
 	
 	/**
-	 * This function/method displays an error if no 
+	 * alert is responsible for displaying an alert message if no collection
+	 * was selected. 
 	 * 
 	 */
 	public void alert() {
@@ -119,17 +122,17 @@ public class CollectController{
 	}
 	
 	/**
-	 * this method will hold the original choice value
-	 * so it can be passed to the next controller
+	 * passString initializes the passString to be used when deciding which
+	 * collection stage to open. 
 	 * 
-	 * @param y
+	 * @param String y: The collection to be opened
 	 */
 	public void passString(String y) {
 		this.passString = y;
 	}
 	
 	/**
-	 * this will reset the choice value when you select a choice in the UI
+	 * resetChoiceBoxValue is responsible for clearing the user's choice once selected. 
 	 * @param choiceBox
 	 */
 	public void resetChoiceBoxValue(ChoiceBox<String> choiceBox) {
@@ -139,8 +142,8 @@ public class CollectController{
 	
 	/**
 	 * 
-	 * this function/method decides which fxml is going to use
-	 * @param a
+	 * changeScene switches to a collection's scene page respective to user's choice. 
+	 * @param a: the user's selected collection
 	 */
 	public void changeScene(String a){
 		if(a == "VHS") {

@@ -23,10 +23,12 @@ import model.VinylCollection;
 
 import view.CollectApp;
 
-/**
+/**********
+ * VinylController is responsible for connecting listeners in Vinyl.fxml
+ * to variables in VinylCollection. VinylController is also responsible for
+ * updating the vinyl.txt file to be user for Vinyl.fxml's TableView. 
  * 
- * controller for vinyl collection fxml
- * @author Travis
+ * @author Travis Lawson
  *
  */
 public class VinylController {
@@ -60,11 +62,20 @@ public class VinylController {
 	@FXML
 	TableColumn<VinylCollection, String> speedColumn;
 	
+	/*********
+	 * initialize initializes the cells in Vinyl.fxml's TableView to their respective
+	 * variables in VinylCollection. initialize also pre-populates the TableView with the data
+	 * in vinyl.txt.
+	 */
 	public void initialize() {
 		cellValueFactory();
 		getVinylFromFile();
 	}
-		
+	
+	/************
+	 * backButtonHandle is responsible for returning to Collectibase's main screen and saves any new
+	 * entered information to vinyl.txt before exiting. 
+	 */
 	public void backButtonHandle(){
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
@@ -77,6 +88,10 @@ public class VinylController {
 		
 	}
 	
+	/************
+	 * insertButtonHandle is responsible for inserting any text in the Vinyl.fxml's TextField's onto the TableView.
+	 * Empty also accounted for. After the fields have been inserted they are cleared and vinyl.txt is updated. 
+	 */
 	public void insertButtonHandle() {
 		VinylCollection vinylAdd = new VinylCollection();
 		if(artistField.getText().equals("")) {
@@ -140,6 +155,10 @@ public class VinylController {
 		
 	}
 	
+	/**********
+	 * deleteButtonhandle deletes a selected field or row from vinyl.fxml's TableView. vinyl.txt is also updated 
+	 * by deleting the respective fields from the file. 
+	 */
 	public void deleteButtonHandle() {
 		ObservableList<VinylCollection> cdSelected;
 		Storage.allVinyl = vinylTable.getItems();
@@ -155,7 +174,9 @@ public class VinylController {
 		
 		
 	}
-	
+	/*************
+	 * updateButtonHandle is responsible for updating vinyl.fxml's TableView and vinyl.txt file whenever pressed. 
+	 */
 	public void updateButtonHandle() {
 		Storage.allVinyl = vinylTable.getItems();
 		try {
@@ -166,6 +187,10 @@ public class VinylController {
 		
 	}
 	
+	/*************
+	 * cellValueFactory is responsible for connecting the variable columns with it's respective variable in
+	 * VinylCollection. cellValueFactory also allows for a single cell to be edited when double clicked. 
+	 */
 	public void cellValueFactory() {
 		artistColumn.setCellValueFactory(new PropertyValueFactory<>("artist"));
 		albumColumn.setCellValueFactory(new PropertyValueFactory<>("album"));
@@ -186,6 +211,12 @@ public class VinylController {
 		yearColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 	}
 	
+	/*************
+	 * The methods below updates a single variable of a collectible when it's cell is
+	 * double clicked. 
+	 * @param edditedCell: the cell that was edited in vinyl.fxml's TableView will be the variable that is 
+	 * changed in VinylCollection. 
+	 */
 	public void changeArtist(CellEditEvent<Integer, String> edditedCell) {
 		VinylCollection artistSelected = vinylTable.getSelectionModel().getSelectedItem();
 		artistSelected.setArtist(edditedCell.getNewValue().toString());
@@ -222,6 +253,10 @@ public class VinylController {
 		yearSelected.setYear(edditedCell.getNewValue().toString());
 	}
 	
+	/************
+	 * getVinylFromFile updates Vinyl.fxml's TableView in the in the Vinyl.fxml file by reading the data in
+	 * vinyl.txt
+	 */
 	private void getVinylFromFile() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File("vinyl.txt")));
@@ -240,6 +275,11 @@ public class VinylController {
 		
 	}
 	
+	/**************8
+	 * writeVinylFile is responsible for writing to vinyl.txt in order to update
+	 * Vinyl.fxml's TableView.
+	 * @throws Exception: In the case that the collection has not been previously created, the vinyl.txt file is not found. 
+	 */
 	private void writeVinylFile() throws Exception{
 		Writer write = null;
 		try {

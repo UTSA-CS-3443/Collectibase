@@ -17,6 +17,14 @@ import model.Storage;
 import model.PokemonCardCollection;
 import view.CollectApp;
 
+/*********************
+ * PokeController is responsible for connecting listeners to the Pokemon.fxml file
+ * to variables in the PokemonCollection class. PokeController is also responsible for
+ * updating the poke.txt file to be user for Pokemon.fxml's TableView. 
+ * 
+ * @author Brenda Trejo
+ *
+ */
 public class PokeController {
 	public Button backButton;
 	public Button updateButton;
@@ -54,11 +62,19 @@ public class PokeController {
 	@FXML
 	TableColumn<PokemonCardCollection, String> typeColumn;
 	
+	/**************
+	 * initialize initializes the cells in the TableView to their respective variables in
+	 * the PokemonCollection. initialize also pre-populates the TableView with the data in poke.txt.
+	 */
 	public void initialize() {
 		cellValueFactory();
 		getPokeFromFile();
 	} //initialize
 	
+	/***********
+	 * backButtonHandle is responsible for returning to Collectibase's main screen and saves any new
+	 * entered information to poke.txt before exiting.
+	 */
 	public void backButtonHandle() {
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
@@ -70,6 +86,9 @@ public class PokeController {
 		}
 	} //backButtonHandle
 	
+	/***********
+	 * updateButtonHandle is responsible for updating the TableView and poke.txt file whenever pressed. 
+	 */
 	public void updateButtonHandle() {
 		Storage.allPoke = pokeTable.getItems();
 		try {
@@ -79,6 +98,10 @@ public class PokeController {
 		}
 	} //updateButtonHandle
 	
+	/************
+	 * insertButtonHandle is responsible for inserting any text in the text fields onto the TableView. Empty fields
+	 * are also accounted for. After the fields have been inserted they are cleared and poke.txt is updated. 
+	 */
 	public void insertButtonHandle() {
 		PokemonCardCollection pokeAdd = new PokemonCardCollection();
 		//Error checks if any fields are empty, auto populate
@@ -137,6 +160,10 @@ public class PokeController {
 		}
 	} //insertButtonHandle
 	
+	/************
+	 * deleteButtonHandle deletes a selected field or row from the TableView. poke.txt is also updated by
+	 * deleting the respective fields from the file. 
+	 */
 	public void deleteButtonHandle() {
 		ObservableList<PokemonCardCollection> pokeSelected;
 		Storage.allPoke = pokeTable.getItems();
@@ -150,6 +177,10 @@ public class PokeController {
 		}
 	} //deleteButtonHandle
 	
+	/**********
+	 * cellValueFactory is responsible for connecting the variable columns with it's respective variable in 
+	 * PokemonCollection. cellValueFactory also allows for a single cell to be edited when double clicked. 
+	 */
 	public void cellValueFactory() {
 		rarityColumn.setCellValueFactory(new PropertyValueFactory<>("rarity"));
 		conditionColumn.setCellValueFactory(new PropertyValueFactory<>("condition"));
@@ -170,6 +201,12 @@ public class PokeController {
 		typeColumn.setCellFactory(TextFieldTableCell.forTableColumn());	
 	} //cellValueFactory
 	
+	/************
+	 * The methods below update a single variable of a collection when it's cell is
+	 * double clicked. 
+	 * @param edditedCell: the cell that was edited in the TableView will be the variable that is
+	 * changed in the collection. 
+	 */
 	public void changeRarity(CellEditEvent<PokemonCardCollection, String>  edditedCell) {
 		PokemonCardCollection raritySelected = pokeTable.getSelectionModel().getSelectedItem();
 		raritySelected.setRarity(edditedCell.getNewValue().toString());
@@ -199,6 +236,11 @@ public class PokeController {
 		typeSelected.setType(edditedCell.getNewValue().toString());
 	} 
 	
+	/************
+	 * writePokeFile is responsible for writing to the poke.txt file in order to frequently update
+	 * the TableView. 
+	 * @throws Exception: In the case that the collection has not been created, the poke.txt file is not found. 
+	 */
 	public void writePokeFile() throws Exception {
 		Writer writer = null;
 		try {
@@ -217,6 +259,9 @@ public class PokeController {
 		}
 	} //writePokeFile
 	
+	/*************
+	 * getPokeFromFile updates the TableView in the Pokemon.fxml by reading what is in poke.txt. 
+	 */
 	public void getPokeFromFile() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File("poke.txt")));

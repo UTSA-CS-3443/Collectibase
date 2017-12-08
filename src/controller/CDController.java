@@ -25,8 +25,11 @@ import view.CollectApp;
 
 /**
  * 
- * controller for CD collection fxml
- * @author jesusnieto
+ * CDController is responsible for connecting the listeners in the CD fxml file
+ * to variables in the CDCollection class. CDController is also responsible for
+ * updating the cd.txt file to be user for the CD fxml's TableView.
+ * 
+ * @author Jesus Nieto
  *
  */
 public class CDController {
@@ -60,11 +63,20 @@ public class CDController {
 	TableColumn<CDCollection, String> enhancedColumn;
 	//ObservableList<CDCollection> allCD;
 	
+	/******
+	 * initialize initializes the cell's in the TableView to their respective variables in
+	 * the CDCollection. initialize also pre-populates the TableView with the variables in
+	 * CD.txt.
+	 */
 	public void initialize() {
 		cellValueFactory();
 		getCDFromFile();
 	}
-		
+	
+	/************
+	 * backButtonHandle is responsible for returning to Collectibase's main screen and saves any new entered
+	 * information to CD.txt before exiting. 
+	 */
 	public void backButtonHandle(){
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
@@ -77,6 +89,9 @@ public class CDController {
 		
 	}
 	
+	/***********
+	 * updateButtonHandle is responsible for updating the TableView and CD.txt file whenever pressed.
+	 */
 	public void insertButtonHandle() {
 		CDCollection cdAdd = new CDCollection();
 		if(artistField.getText().equals("")) {
@@ -140,6 +155,10 @@ public class CDController {
 		
 	}
 	
+	/**************
+	 * deleteButtonHandle deletes a selected field or row from the TableView. CD.txt is also updated by deleting the respective
+	 * fields from the file. 
+	 */
 	public void deleteButtonHandle() {
 		ObservableList<CDCollection> cdSelected;
 		Storage.allCD = cdTable.getItems();
@@ -166,6 +185,10 @@ public class CDController {
 		
 	}
 	
+	/*************8
+	 * cellValueFactory is responsible for connecting the variable columns with it's respective variable in 
+	 * CDCollection. cellValueFactory also allows for a single cell to be edited when double clicked. 
+	 */
 	public void cellValueFactory() {
 		artistColumn.setCellValueFactory(new PropertyValueFactory<>("artist"));
 		albumColumn.setCellValueFactory(new PropertyValueFactory<>("album"));
@@ -185,6 +208,11 @@ public class CDController {
 		enhancedColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 	}
 	
+	/**************88
+	 * The following methods below update a single variable of a collectible when it's cell
+	 * is double clicked. 
+	 * @param edditedCell: the cell that was edited in the TableView
+	 */
 	public void changeArtist(CellEditEvent<CDCollection, String> edditedCell) {
 		CDCollection artistSelected = cdTable.getSelectionModel().getSelectedItem();
 		artistSelected.setArtist(edditedCell.getNewValue().toString());
@@ -221,6 +249,10 @@ public class CDController {
 		yearSelected.setYear(edditedCell.getNewValue().toString());
 	}
 	
+	/*********
+	 * getCDFromFile updates the TableView in the CD fxml file by reading
+	 * what is in CD.txt
+	 */
 	private void getCDFromFile() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File("cd.txt")));
@@ -239,6 +271,11 @@ public class CDController {
 		
 	}
 	
+	/*****
+	 * writeCDFile is responsible for writing to the Cd.txt file in order to frequently update 
+	 * the Table View.
+	 * @throws Exception: In the case that the collection has not been previously created, the cassette.txt file is not found.
+	 */
 	private void writeCDFile() throws Exception{
 		Writer write = null;
 		try {

@@ -18,13 +18,13 @@ import model.Storage;
 import view.CollectApp;
 
 /**
- * 
+ *  CassetteController is responsible for connecting listeners in Cassette.fxml
+ *  to variables in CassetteCollection. CassetteController is also responsible for
+ *  updating the cassette.txt file to be used for Cassette.fxml's TableView. 
  * 
  * @author Brenda Trejo
- * debugged by:
  * 
- * @author Travis
- * 			initialize was misspelled causing the cellValueFactory and getCassetteFromFile functions not to be called. 
+ * @debugger Travis Lawson 
  *
  */
 public class CassetteController {
@@ -70,11 +70,20 @@ public class CassetteController {
 	@FXML
 	TableColumn<CassetteCollection, String> endlessLoopColumn;
 
+	/**********
+	 * initialize initializes the cells in Cassette.fxml's TableView to their respective variables in
+	 * the CassetteCollection. initialize also pre-populates the TableView with the data in
+	 * cassette.txt
+	 */
 	public void initialize() {
 		cellValueFactory();
 		getCassetteFromFile();
 	}
 
+	/****
+	 * backButtonHandle is responsible for returning to Collectibase's main screen and saves any new entered information to cassette.txt
+	 * before exiting. 
+	 */
 	public void backButtonHandle() {
 		CollectApp.stage.show();
 		CollectController.childScene.hide();
@@ -86,6 +95,9 @@ public class CassetteController {
 		}
 	} // backButtonHandle
 
+	/*********
+	 * updateButtonHandle is responsible for updating the TableView and cassette.txt file whenever pressed.
+	 */
 	public void updateButtonHandle() {
 		Storage.allCassettes = cassTable.getItems();
 		try {
@@ -95,6 +107,10 @@ public class CassetteController {
 		}
 	} // updateButtonHandle
 
+	/**************
+	 * insertButtonHandle is responsible for inserting any text in the text fields onto the TableView. Empty fields are
+	 * also accounted for. After the fields have been inserted they are cleared and cassette.txt is updated.
+	 */
 	public void insertButtonHandle() {
 		CassetteCollection cassAdd = new CassetteCollection();
 		// Accounts for empty fields
@@ -166,6 +182,10 @@ public class CassetteController {
 		}
 	} // insertButtonHandle
 
+	/******
+	 * deleteButtonHandle deletes a selected field or row from the TableView. Cassette.txt is also updated by deleting the respective
+	 * fields from the file. 
+	 */
 	public void deleteButtonHandle() {
 		ObservableList<CassetteCollection> cassSelected;
 		Storage.allCassettes = cassTable.getItems();
@@ -179,6 +199,10 @@ public class CassetteController {
 		}
 	} // deleteButtonHandle
 
+	/**************
+	 * cellValueFactory is responsible for connecting the variable columns with it's respective variable in 
+	 * CassetteCollection. cellValueFactory also allows for a single cell to be edited when double clicked. 
+	 */
 	public void cellValueFactory() {
 		artistColumn.setCellValueFactory(new PropertyValueFactory<>("artist"));
 		yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
@@ -201,7 +225,10 @@ public class CassetteController {
 	} // cellValueFactory
 
 	/****
-	 * The methods below allow you to edit an item by double clicking the cell.
+	 * The methods below updates a single variable of a collectible when it's cell is double
+	 * clicked. 
+	 * @param edditedCell: the cell that was edited in Cassette.fxml's TableView will be the variable that is 
+	 * changed in CassetteCollection.
 	 */
 	public void changeArtist(CellEditEvent<CassetteCollection, String> edditedCell) {
 		CassetteCollection artistSelected = cassTable.getSelectionModel().getSelectedItem();
@@ -243,6 +270,9 @@ public class CassetteController {
 		endlessLoopSelected.setEndlessLoop(edditedCell.getNewValue().toString());
 	}
 
+	/**************
+	 * getCassetteFromFile updates the TableView in the Cassette.fxml file by reading the data in cassette.txt
+	 */
 	private void getCassetteFromFile() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File("cassette.txt")));
@@ -259,7 +289,11 @@ public class CassetteController {
 		}
 	} // getCassFromFile
 
-	/* public */ private void writeCassetteFile() throws Exception {
+	/*******************************
+	 * writeCassetteFile is responsible for writing to cassette.txt in order to update Cassette.fxml's TableView. 
+	 * @throws Exception: In the case that the collection has not been previously created, the cassette.txt file is not found.
+	 */
+	private void writeCassetteFile() throws Exception {
 		Writer writer = null;
 		try {
 			File file = new File("cassette.txt");

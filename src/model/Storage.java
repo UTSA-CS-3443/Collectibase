@@ -3,12 +3,13 @@ package model;
 import javafx.collections.ObservableList;
 
 /**
- * The purpose of the class is to hold temporary storage for the 
- * collections when reading and writing into the file to keep the
- * table views updated when accessing them again. 
+ * The storage class is responsible for temporary storage of the collections when reading and writing 
+ * to their respective files. The Observable List is used to keep the TableViews of the fxml files
+ * updated. 
  * 
- * @author jesusnieto
- * @author Travis
+ * 
+ * @author Jesus Nieto
+ * @author Travis Lawson
  *
  */
 public class Storage {

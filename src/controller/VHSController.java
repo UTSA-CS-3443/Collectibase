@@ -19,10 +19,11 @@ import model.VHSCollection;
 import view.CollectApp;
 
 /**
- * Controller for the VHS database. Inserts, delete, and go back to the main
- * menu.
+ * VHSController is responsible for connecting listeners in VHS.fxml
+ * to variables in VHSCollection. VHSController is also responsible for 
+ * updating the VHS.txt file to be used for VHS.fxml's TableView. 
  * 
- * @author jesusnieto
+ * @author Jesus Nieto
  *
  */
 public class VHSController{
@@ -72,16 +73,21 @@ public class VHSController{
 	public TableColumn<VHSCollection, String> multiTapeColumn;
 	@FXML
 	public TableColumn<VHSCollection, String> sleeveTypeColumn;
-	//ObservableList<VHSCollection> allVHS;
 
+	/*************
+	 * initialize initializes the cells in the TableView to their respective variables in
+	 * the VHSCollection. initialize also pre-populates the TableView with the data in
+	 * VHS.txt.
+	 */
 	public void initialize() {
 		cellValueFactory();
 		getVHSFromFile();
 
 	}
 
-	/**
-	 * This function/method handles the back button so it can go the the main menu.
+	/*********
+	 * backButtonHandle is responsible for returning to Collectibase's main screen and saves any new
+	 * entered information to VHS.txt before exiting. 
 	 */
 	public void backButtonHandle() {
 		CollectApp.stage.show();
@@ -95,8 +101,8 @@ public class VHSController{
 
 	}
 
-	/**
-	 * this button is for when user changes a value in the table view
+	/********
+	 * updateButtonHandle is responsible for updating the TableView and VHS.txt whenever pressed.
 	 */
 	public void updateButtonHandle() {
 		Storage.allVHS = vhsTable.getItems();
@@ -108,6 +114,10 @@ public class VHSController{
 
 	}
 
+	/***********8
+	 * insertButtonHandle is responsible for inserting any text in the text fields onto the TableView. 
+	 * Empty fields are also accounted for. After the fields have been inserted they are cleared and VHS.txt is updated.
+	 */
 	public void insertButtonHandle() {
 		VHSCollection vhsAdd = new VHSCollection();
 		// error checks if text fields are empty
@@ -193,6 +203,10 @@ public class VHSController{
 		}
 	}
 
+	/***********
+	 * deleteButtonHandle deletes a selected field or row from the TableView. VHS.txt is
+	 * also updated by deleting the respective fields from the file. 
+	 */
 	public void deleteButtonHandle() {
 		ObservableList<VHSCollection> vhsSelected;
 		Storage.allVHS = vhsTable.getItems();
@@ -206,6 +220,10 @@ public class VHSController{
 		}
 	}
 
+	/*********
+	 * cellValueFactory is responsible for connecting the variable columns with it's respective
+	 * variable in VHSCollection. cellValueFactory also allows for a single cell to be edited when double clicked. 
+	 */
 	public void cellValueFactory() {
 		titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 		genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
@@ -233,10 +251,11 @@ public class VHSController{
 
 	}
 
-	/**
-	 * when double clicking, you can change the info
-	 * 
-	 * @param edditedCell
+	/*******
+	 * The methods below update a single variable of a collectible when it's cell
+	 * is double clicked.
+	 * @param edditedCell: the cell that was edited in VHS.fxml's TableView will be the 
+	 * variable that is changed in VHSCollection. 
 	 */
 	public void changeTitleName(CellEditEvent<VHSCollection, String> edditedCell) {
 
@@ -255,11 +274,6 @@ public class VHSController{
 		formatSelected.setFormat(edditedCell.getNewValue().toString());
 	}
 
-	/**
-	 * makes the year column changable with double clicking it
-	 * 
-	 * @param edditedCell
-	 */
 	public void changeYear(CellEditEvent<VHSCollection, String> edditedCell) {
 		VHSCollection yearSelected = vhsTable.getSelectionModel().getSelectedItem();
 		yearSelected.setYear(edditedCell.getNewValue().toString());
@@ -295,6 +309,9 @@ public class VHSController{
 		sleeveSelected.setSleeveType(edditedCell.getNewValue().toString());
 	}
 
+	/********
+	 * getVHSFromFile updates VHS.fxml's TableView by reading the data in VHS.txt.
+	 */
 	private void getVHSFromFile() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File("vhs.txt")));
@@ -312,6 +329,11 @@ public class VHSController{
 
 		}
 	}
+	
+	/**************
+	 * writeVHSFile is responsible for writing to VHS.txt in order to update VHS.fxml's TableView.
+	 * @throws Exception: In case that the collection has not been previously created, the vhs.txt file is not found. 
+	 */
 	public void writeVHSFile() throws Exception {
 		Writer writer = null;
 		try {
