@@ -275,7 +275,7 @@ public class VinylController {
 		
 	}
 	
-	/**************8
+	/**************
 	 * writeVinylFile is responsible for writing to vinyl.txt in order to update
 	 * Vinyl.fxml's TableView.
 	 * @throws Exception: In the case that the collection has not been previously created, the vinyl.txt file is not found. 
